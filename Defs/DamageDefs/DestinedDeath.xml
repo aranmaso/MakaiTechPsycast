@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<DamageDef>
+    <defName>DestinedDeath_DeathBolt</defName>
+    <label>Death Bolt</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has died in an explosion.</deathMessage>
+    <hediff>Cut</hediff>
+    <hediffSolid>Crack</hediffSolid>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+	<additionalHediffs>
+		<li>
+			<hediff>MakaiTechPsy_DD_Decay</hediff>
+			<severityPerDamageDealt>1</severityPerDamageDealt>
+		</li>
+		<li>
+			<hediff>MakaiPsy_Conceptual_Death</hediff>
+			<severityPerDamageDealt>1</severityPerDamageDealt>
+		</li>
+    </additionalHediffs>
+	<buildingDamageFactor>10</buildingDamageFactor>
+    <plantDamageFactor>10</plantDamageFactor>
+    <armorCategory>Sharp</armorCategory>
+	<defaultDamage>2</defaultDamage>
+	<minDamageToFragment>15</minDamageToFragment>
+	<defaultStoppingPower>0.5</defaultStoppingPower>
+    <defaultArmorPenetration>5.00</defaultArmorPenetration>
+    <isRanged>true</isRanged>
+    <makesAnimalsFlee>true</makesAnimalsFlee>
+	<isExplosive>true</isExplosive>
+	<explosionAffectOutsidePartsOnly>false</explosionAffectOutsidePartsOnly>
+    <explosionHeatEnergyPerCell>200</explosionHeatEnergyPerCell>
+    <explosionCellFleck>MakaiPsyMote_Invis</explosionCellFleck>
+	<!--explosionInteriorFleck>Mote_Invis</explosionInteriorFleck-->
+    <explosionColorCenter>(255,255,0,255)</explosionColorCenter>
+    <explosionColorEdge>(255,255,0,50)</explosionColorEdge>
+    <soundExplosion>Explosion_Bomb</soundExplosion>
+    <combatLogRules>Damage_Bomb</combatLogRules>
+	</DamageDef>
+	
+	<DamageDef>
+	<defName>DestinedDeath_Rot</defName>
+    <label>Decay</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has been rot to death</deathMessage>
+    <hediff>MakaiTechPsy_DD_Rot</hediff>
+    <hediffSolid>Crack</hediffSolid>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+	<additionalHediffs>
+    </additionalHediffs>
+	<buildingDamageFactor>1</buildingDamageFactor>
+    <plantDamageFactor>1</plantDamageFactor>
+    <impactSoundType>Electric</impactSoundType>
+    <armorCategory>Sharp</armorCategory>
+    <overkillPctToDestroyPart>0~0.7</overkillPctToDestroyPart>
+    <isRanged>false</isRanged>
+    <makesAnimalsFlee>true</makesAnimalsFlee>
+	</DamageDef>
+	
+	<DamageDef>
+	<defName>DestinedDeath_RotExplosion</defName>
+    <label>Decay</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has been rot to death</deathMessage>
+    <hediff>MakaiTechPsy_DD_Rot</hediff>
+    <hediffSolid>Crack</hediffSolid>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+	<buildingDamageFactor>1</buildingDamageFactor>
+    <plantDamageFactor>1</plantDamageFactor>
+    <impactSoundType>Electric</impactSoundType>
+    <armorCategory>Sharp</armorCategory>
+    <overkillPctToDestroyPart>0~0.7</overkillPctToDestroyPart>
+    <isRanged>false</isRanged>
+    <makesAnimalsFlee>true</makesAnimalsFlee>
+	<isExplosive>true</isExplosive>
+	<explosionAffectOutsidePartsOnly>false</explosionAffectOutsidePartsOnly>
+    <explosionHeatEnergyPerCell>200</explosionHeatEnergyPerCell>
+    <explosionCellFleck>MakaiPsyMote_Invis</explosionCellFleck>
+	<!--explosionInteriorFleck>Mote_Invis</explosionInteriorFleck-->
+    <explosionColorCenter>(255,255,0,255)</explosionColorCenter>
+    <explosionColorEdge>(255,255,0,50)</explosionColorEdge>
+    <soundExplosion>Explosion_Bomb</soundExplosion>
+    <combatLogRules>Damage_Bomb</combatLogRules>
+	</DamageDef>
+	
+	<DamageDef>
+    <defName>DestinedDeath_13th</defName>
+    <label>Destined Death</label>
+	<defaultDamage>1</defaultDamage>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has met a destined death.</deathMessage>
+    <hediff>Cut</hediff>
+    <hediffSolid>Crush</hediffSolid>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <additionalHediffs>
+      <li>
+        <hediff>MakaiPsy_Conceptual_Death</hediff>
+		<severityPerDamageDealt>1</severityPerDamageDealt>
+      </li>
+    </additionalHediffs>
+    <impactSoundType>Slice</impactSoundType>
+    <armorCategory>Sharp</armorCategory>
+    <overkillPctToDestroyPart>0~0.7</overkillPctToDestroyPart>
+    <isRanged>false</isRanged>
+    <makesAnimalsFlee>true</makesAnimalsFlee>
+  </DamageDef>
+  
+  <DamageDef>
+    <defName>DestinedDeath_SharedDamage</defName>
+    <label>Shared Damage</label>
+	<defaultDamage>1</defaultDamage>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has been killed by shared damage from Life Link</deathMessage>
+    <hediff>Cut</hediff>
+    <hediffSolid>Crush</hediffSolid>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <impactSoundType>Slice</impactSoundType>
+    <armorCategory>Sharp</armorCategory>
+    <overkillPctToDestroyPart>0~0.7</overkillPctToDestroyPart>
+    <isRanged>false</isRanged>
+    <makesAnimalsFlee>true</makesAnimalsFlee>
+  </DamageDef>
+  
+  <DamageDef>
+    <defName>DestinedDeath_LinkExplosion</defName>
+    <label>Shared Damage</label>
+	<defaultDamage>1</defaultDamage>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has been killed by shared damage from Life Link</deathMessage>
+    <hediff>Cut</hediff>
+    <hediffSolid>Crush</hediffSolid>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <impactSoundType>Slice</impactSoundType>
+    <armorCategory>Sharp</armorCategory>
+    <overkillPctToDestroyPart>0~0.7</overkillPctToDestroyPart>
+    <isRanged>false</isRanged>
+    <makesAnimalsFlee>true</makesAnimalsFlee>
+	<isExplosive>true</isExplosive>
+	<explosionHeatEnergyPerCell>200</explosionHeatEnergyPerCell>
+	<explosionColorCenter>(95,87,165,255)</explosionColorCenter>
+    <explosionColorEdge>(95,87,165,50)</explosionColorEdge>
+	<soundExplosion>Explosion_Bomb</soundExplosion>
+    <combatLogRules>Damage_Bomb</combatLogRules>
+  </DamageDef>
+
+</Defs>

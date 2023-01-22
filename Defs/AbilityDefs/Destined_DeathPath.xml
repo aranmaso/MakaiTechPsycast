@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>DestinedDeath_DeathBolt</defName>
+		<label>Death Bolt</label>
+		<description>Syphon energy from the plain of undead, and unleash it into a bolt of energy. &lt;color=#01F1F1&gt;\n\nSuccess: 5 \nGreat Success: 20&lt;/color&gt;</description>
+		<iconPath>Projectiles/DestinedDeath/DeathBolt</iconPath>
+		<abilityClass>MakaiTechPsycast.Ability_Shoot</abilityClass>
+		<castTime>30</castTime>
+		<power>1</power>
+		<range>19.9</range>
+		<targetMode>Pawn</targetMode>
+		<castSound>Shot_ChargeBlaster</castSound>
+		<targetingParameters>
+			<canTargetItems>true</canTargetItems>
+			<canTargetLocations>true</canTargetLocations>
+		</targetingParameters>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_Destined_Death</path>
+				<level>1</level>
+				<order>1</order>
+				<psyfocusCost>0.05</psyfocusCost>
+				<entropyGain>5</entropyGain>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>5</successThreshold>
+				<projectileWhenSuccess>MakaiPsy_DD_Bolt</projectileWhenSuccess>
+				<greatSuccessThreshold>20</greatSuccessThreshold>
+				<projectileWhenGreatSuccess>MakaiPsy_DD_Bolt</projectileWhenGreatSuccess>
+				<projectileWhenFail>MakaiPsy_DD_Bolt</projectileWhenFail>
+				<skillBonus>Intellectual</skillBonus>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>DestinedDeath_SoulPull</defName>
+		<label>Soul pull</label>
+		<description>Focus on a single spot. and pull all nearby pawn toward that location. &lt;color=#01F1F1&gt;\n\nSuccess: 10 \nGreat Success: 20&lt;/color&gt;</description>
+		<iconPath>Abilities/DestinedDeath/SoulPull</iconPath>
+		<abilityClass>MakaiTechPsycast.DestinedDeath.Ability_PullTowardCenter</abilityClass>
+		<castTime>30</castTime>
+		<range>20</range>
+		<radius>4.9</radius>
+		<targetMode>Location</targetMode>
+		<hasAoE>true</hasAoE>
+		<targetingParametersForAoE>
+			<canTargetHumans>True</canTargetHumans>
+			<canTargetAnimals>True</canTargetAnimals>
+			<canTargetBuildings>false</canTargetBuildings>
+		</targetingParametersForAoE>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_Destined_Death</path>
+				<level>2</level>
+				<order>1</order>
+				<psyfocusCost>0.15</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>DestinedDeath_DeathBolt</li>
+				</prerequisites>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>10</successThreshold>
+				<hediffDefWhenSuccess>MakaiPsy_PK_Brain_Mulfunction</hediffDefWhenSuccess>
+				<greatSuccessThreshold>20</greatSuccessThreshold>
+				<hediffDefWhenGreatSuccess>MakaiPsy_PK_Brain_Mulfunction</hediffDefWhenGreatSuccess>
+				<hediffDefWhenFail>MakaiPsy_PK_Brain_Mulfunction</hediffDefWhenFail>
+				<hours>1</hours>
+				<skillBonus>Intellectual</skillBonus>
+				<targetOnlyEnemies>False</targetOnlyEnemies>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>DestinedDeath_CollectSoul</defName>
+		<label>Collect Soul</label>
+		<description>connect to the soul of a downed hostile pawn in target area and drain their soul to caster. empowering caster ability. &lt;color=#01F1F1&gt;\n\nSuccess: 10 \nGreat Success: 20&lt;/color&gt;</description>
+		<iconPath>Abilities/DestinedDeath/CollectSoul</iconPath>
+		<abilityClass>MakaiTechPsycast.DestinedDeath.Ability_CollectSoul</abilityClass>
+		<durationTime>1000</durationTime>
+		<castTime>300</castTime>
+		<targetMode>Location</targetMode>
+		<range>20</range>
+		<radius>4.9</radius>
+		<hasAoE>true</hasAoE>
+		<targetingParametersForAoE>
+			<canTargetHumans>True</canTargetHumans>
+			<canTargetAnimals>True</canTargetAnimals>
+			<canTargetBuildings>false</canTargetBuildings>
+		</targetingParametersForAoE>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_Destined_Death</path>
+				<level>2</level>
+				<order>2</order>
+				<psyfocusCost>0</psyfocusCost>
+				<entropyGain>10</entropyGain>
+				<prerequisites>
+					<li>DestinedDeath_DeathBolt</li>
+				</prerequisites>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>10</successThreshold>
+				<hediffDefWhenSuccess>MakaiTechPsy_DD_MissingSoul</hediffDefWhenSuccess>
+				<greatSuccessThreshold>20</greatSuccessThreshold>
+				<hediffDefWhenGreatSuccess>MakaiTechPsy_DD_MissingSoul</hediffDefWhenGreatSuccess>
+				<hediffDefWhenFail>MakaiTechPsy_DD_MissingSoul</hediffDefWhenFail>
+				<skillBonus>Intellectual</skillBonus>
+				<targetOnlyEnemies>True</targetOnlyEnemies>
+				<targetOnlyDowned>True</targetOnlyDowned>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>DestinedDeath_Reap</defName>
+		<label>Reap</label>
+		<description>materialize a psychic scythe. damaging all pawn in a forward cone. &lt;color=#01F1F1&gt;\n\nSuccess: 5 \nGreat Success: 15&lt;/color&gt;</description>
+		<iconPath>Projectiles/DestinedDeath/SpinScythe/sarispinG</iconPath>
+		<abilityClass>MakaiTechPsycast.Ability_Shoot</abilityClass>
+		<durationTime>1000</durationTime>
+		<range>19.9</range>
+		<castTime>30</castTime>
+		<targetMode>Pawn</targetMode>
+		<castSound>Claw_Sweep</castSound>
+		<requireLineOfSight>false</requireLineOfSight>
+		<targetingParameters>
+			<canTargetItems>false</canTargetItems>
+			<canTargetLocations>false</canTargetLocations>
+		</targetingParameters>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_Destined_Death</path>
+				<level>3</level>
+				<order>1</order>
+				<psyfocusCost>0.15</psyfocusCost>
+				<entropyGain>10</entropyGain>
+				<prerequisites>
+					<li>DestinedDeath_SoulPull</li>
+					<li>DestinedDeath_CollectSoul</li>
+				</prerequisites>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>5</successThreshold>
+				<projectileWhenSuccess>MakaiPsy_Sari_Swipe</projectileWhenSuccess>
+				<greatSuccessThreshold>15</greatSuccessThreshold>
+				<projectileWhenGreatSuccess>MakaiPsy_Sari_Swipe</projectileWhenGreatSuccess>
+				<projectileWhenFail>MakaiPsy_Sari_Swipe</projectileWhenFail>
+				<skillBonus>Intellectual</skillBonus>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>DestinedDeath_Erupt</defName>
+		<label>Soul Eruption</label>
+		<description>manipulate a victim soul to surge with unstable energy. exploding them from the inside. &lt;color=#01F1F1&gt;\n\nSuccess: 10 \nGreat Success: 15&lt;/color&gt;</description>
+		<iconPath>Abilities/DestinedDeath/SoulErupt</iconPath>
+		<abilityClass>MakaiTechPsycast.DestinedDeath.Ability_SoulErupt</abilityClass>
+		<durationTime>1000</durationTime>
+		<castTime>300</castTime>
+		<targetMode>Pawn</targetMode>
+		<range>20</range>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<targetingParameters>
+			<canTargetSelf>False</canTargetSelf>
+			<canTargetHumans>True</canTargetHumans>
+			<canTargetMechs>False</canTargetMechs>
+			<canTargetAnimals>True</canTargetAnimals>
+		</targetingParameters>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_Destined_Death</path>
+				<level>3</level>
+				<order>2</order>
+				<psyfocusCost>0.2</psyfocusCost>
+				<entropyGain>15</entropyGain>
+				<prerequisites>
+					<li>DestinedDeath_DeathBolt</li>
+				</prerequisites>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>5</successThreshold>
+				<damageDef>DestinedDeath_RotExplosion</damageDef>
+				<damageAmount>10</damageAmount>
+				<greatSuccessThreshold>15</greatSuccessThreshold>
+				<skillBonus>Intellectual</skillBonus>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>DestinedDeath_DeathWard</defName>
+		<label>Deathward</label>
+		<description>grant target a deathward. a powerful shield that make them immune to most negative hediff.&lt;color=#01F1F1&gt;\n\nSuccess: 10 \nGreat Success: 18&lt;/color&gt;</description>
+		<iconPath>Abilities/DestinedDeath/Deathward</iconPath>
+		<abilityClass>MakaiTechPsycast.DestinedDeath.Ability_DeathWard</abilityClass>
+		<castTime>120</castTime>
+		<targetMode>Pawn</targetMode>
+		<range>2.9</range>
+		<targetingParameters>
+			<canTargetSelf>True</canTargetSelf>
+			<canTargetHumans>True</canTargetHumans>
+			<canTargetMechs>True</canTargetMechs>
+			<canTargetAnimals>True</canTargetAnimals>
+			<neverTargetHostileFaction>True</neverTargetHostileFaction>
+		</targetingParameters>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_Destined_Death</path>
+				<level>3</level>
+				<order>3</order>
+				<psyfocusCost>0.5</psyfocusCost>
+				<entropyGain>20</entropyGain>
+				<prerequisites>
+					<li>DestinedDeath_CollectSoul</li>
+					<li>DestinedDeath_SoulPull</li>
+				</prerequisites>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>10</successThreshold>
+				<hediffDefWhenSuccess>MakaiTechPsy_DD_Immunity</hediffDefWhenSuccess>
+				<greatSuccessThreshold>18</greatSuccessThreshold>
+				<hediffDefWhenGreatSuccess>MakaiTechPsy_DD_Immunity</hediffDefWhenGreatSuccess>
+				<hediffDefWhenFail>MakaiTechPsy_DD_Immunity</hediffDefWhenFail>
+				<hours>2</hours>
+				<skillBonus>Intellectual</skillBonus>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>DestinedDeath_Helheim</defName>
+		<label>Helheim Strength</label>
+		<description>empower target pawn with unworldly power, increasing their combat capability greatly &lt;color=#01F1F1&gt;\n\nSuccess: 5 \nGreat Success: 15&lt;/color&gt;</description>
+		<iconPath>Abilities/DestinedDeath/HelheimStrength</iconPath>
+		<abilityClass>MakaiTechPsycast.DestinedDeath.Ability_HelheimStrength</abilityClass>
+		<castTime>300</castTime>
+		<targetMode>Pawn</targetMode>
+		<range>2.9</range>
+		<targetingParameters>
+			<canTargetSelf>True</canTargetSelf>
+			<canTargetHumans>True</canTargetHumans>
+			<canTargetMechs>True</canTargetMechs>
+			<canTargetAnimals>True</canTargetAnimals>
+			<neverTargetHostileFaction>True</neverTargetHostileFaction>
+		</targetingParameters>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_Destined_Death</path>
+				<level>4</level>
+				<order>1</order>
+				<psyfocusCost>0.35</psyfocusCost>
+				<entropyGain>5</entropyGain>
+				<prerequisites>
+					<li>DestinedDeath_Linker</li>
+				</prerequisites>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>15</successThreshold>
+				<hediffDefWhenSuccess>MakaiTechPsy_DD_Helheim</hediffDefWhenSuccess>
+				<greatSuccessThreshold>18</greatSuccessThreshold>
+				<hediffDefWhenGreatSuccess>MakaiTechPsy_DD_Helheim</hediffDefWhenGreatSuccess>
+				<hours>1</hours>
+				<skillBonus>Intellectual</skillBonus>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>DestinedDeath_Linker</defName>
+		<label>Life Link</label>
+		<description>using soul link, target up to 6 pawn and link their life force together. if one is harmed. so are the rest.(choosing the same target multiple time then choose different target will make the first target take significantly more damage) &lt;color=#01F1F1&gt;\n\nSuccess: 10 \nGreat Success: 19&lt;/color&gt;</description>
+		<iconPath>Abilities/DestinedDeath/LifeLink</iconPath>
+		<abilityClass>MakaiTechPsycast.DestinedDeath.Ability_LifeLink</abilityClass>
+		<targetCount>6</targetCount>
+		<castTime>30</castTime>
+		<targetModes>
+		<li>Pawn</li>
+		<li>Pawn</li>
+		<li>Pawn</li>
+		<li>Pawn</li>
+		<li>Pawn</li>
+		<li>Pawn</li>
+		</targetModes>
+		<range>22.9</range>
+		<targetingParametersList>
+        <li>
+          <canTargetSelf>True</canTargetSelf>
+          <canTargetPawns>True</canTargetPawns>
+		  <canTargetAnimals>True</canTargetAnimals>
+		  <canTargetMechs>True</canTargetMechs>
+          <canTargetBuildings>False</canTargetBuildings>
+        </li>
+        <li>
+          <canTargetSelf>True</canTargetSelf>
+          <canTargetPawns>True</canTargetPawns>
+		  <canTargetAnimals>True</canTargetAnimals>
+		  <canTargetMechs>True</canTargetMechs>
+          <canTargetBuildings>False</canTargetBuildings>
+        </li>
+		<li>
+          <canTargetSelf>True</canTargetSelf>
+          <canTargetPawns>True</canTargetPawns>
+		  <canTargetAnimals>True</canTargetAnimals>
+		  <canTargetMechs>True</canTargetMechs>
+          <canTargetBuildings>False</canTargetBuildings>
+        </li>
+		<li>
+          <canTargetSelf>True</canTargetSelf>
+          <canTargetPawns>True</canTargetPawns>
+		  <canTargetAnimals>True</canTargetAnimals>
+		  <canTargetMechs>True</canTargetMechs>
+          <canTargetBuildings>False</canTargetBuildings>
+        </li>
+		<li>
+          <canTargetSelf>True</canTargetSelf>
+          <canTargetPawns>True</canTargetPawns>
+		  <canTargetAnimals>True</canTargetAnimals>
+		  <canTargetMechs>True</canTargetMechs>
+          <canTargetBuildings>False</canTargetBuildings>
+        </li>
+		<li>
+          <canTargetSelf>True</canTargetSelf>
+          <canTargetPawns>True</canTargetPawns>
+		  <canTargetAnimals>True</canTargetAnimals>
+		  <canTargetMechs>True</canTargetMechs>
+          <canTargetBuildings>False</canTargetBuildings>
+        </li>
+		</targetingParametersList>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_Destined_Death</path>
+				<level>4</level>
+				<order>2</order>
+				<psyfocusCost>0.1</psyfocusCost>
+				<entropyGain>5</entropyGain>
+				<prerequisites>
+					<li>DestinedDeath_Erupt</li>
+				</prerequisites>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>10</successThreshold>
+				<hediffDefWhenSuccess>MakaiTechPsy_DD_LifeLink</hediffDefWhenSuccess>
+				<greatSuccessThreshold>19</greatSuccessThreshold>
+				<hours>2</hours>
+				<skillBonus>Intellectual</skillBonus>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>DestinedDeath_LinkBomb</defName>
+		<label>Life Link Detonation</label>
+		<description>after a brief moment of concentrating, gain the ability to bargain like a great merchant for a short period.</description>
+		<iconPath>Abilities/DestinedDeath/LinkBomb</iconPath>
+		<abilityClass>MakaiTechPsycast.DestinedDeath.Ability_LifeLinkDetonation</abilityClass>
+		<castTime>100</castTime>
+		<targetMode>Pawn</targetMode>
+		<range>30</range>
+		<targetingParameters>
+			<canTargetSelf>True</canTargetSelf>
+			<canTargetHumans>True</canTargetHumans>
+			<canTargetMechs>True</canTargetMechs>
+			<canTargetAnimals>True</canTargetAnimals>
+		</targetingParameters>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_Destined_Death</path>
+				<level>4</level>
+				<order>3</order>
+				<psyfocusCost>0.2</psyfocusCost>
+				<entropyGain>20</entropyGain>
+				<prerequisites>
+					<li>DestinedDeath_Linker</li>
+				</prerequisites>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>10</successThreshold>
+				<greatSuccessThreshold>18</greatSuccessThreshold>
+				<skillBonus>Intellectual</skillBonus>
+				<damageDef>DestinedDeath_LinkExplosion</damageDef>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>DestinedDeath_LichSoul</defName>
+		<label>Lich Soul</label>
+		<description>Perform a forbidden ritual to extract caster own soul. remove the concept of death from oneself. in exchange, caster will lost ability to regenerate wound. or gain immunity to disease. and can only be heal by interact with their own soul. &lt;color=#01F1F1&gt;\n\nSuccess: 15 \nGreat Success: 20&lt;/color&gt;</description>
+		<iconPath>Things/Items/EssenceDeathSoul</iconPath>
+		<abilityClass>MakaiTechPsycast.DestinedDeath.Ability_LichSoul</abilityClass>
+		<castTime>300</castTime>
+		<targetMode>Self</targetMode>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_Destined_Death</path>
+				<level>5</level>
+				<order>1</order>
+				<psyfocusCost>0.66</psyfocusCost>
+				<entropyGain>66</entropyGain>
+				<prerequisites>
+					<li>DestinedDeath_Linker</li>
+				</prerequisites>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>15</successThreshold>
+				<hediffDefWhenSuccess>MakaiTechPsy_DD_LichSoul</hediffDefWhenSuccess>
+				<greatSuccessThreshold>20</greatSuccessThreshold>
+				<hediffDefWhenGreatSuccess>MakaiTechPsy_DD_LichSoul</hediffDefWhenGreatSuccess>
+				<hediffDefWhenFail>MakaiTechPsy_DD_LichSoul</hediffDefWhenFail>
+				<skillBonus>Intellectual</skillBonus>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+
+</Defs>

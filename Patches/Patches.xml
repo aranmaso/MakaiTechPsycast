@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<!-- <Operation Class="PatchOperationSequence"> -->
+		<!-- <operations> -->
+			<!-- <li Class="PatchOperationAdd"> -->
+				<!-- <xpath>Defs/StatDef[defName="PsychicEntropyMax"]/parts</xpath> -->
+				<!-- <value> -->
+					<!-- <li Class="MakaiTechPsycast.DestinedDeath.StatPart_PsycastSoulConsumed"/> -->
+				<!-- </value> -->
+			<!-- </li> -->
+			<!-- <li Class="PatchOperationAdd"> -->
+				<!-- <xpath>Defs/StatDef[defName="PsychicSensitivity"]/parts</xpath> -->
+				<!-- <value> -->
+					<!-- <li Class="MakaiTechPsycast.DestinedDeath.StatPart_PsycastSoulConsumed"/> -->
+				<!-- </value> -->
+			<!-- </li> -->
+		<!-- </operations> -->
+	<!-- </Operation> -->
+</Patch>

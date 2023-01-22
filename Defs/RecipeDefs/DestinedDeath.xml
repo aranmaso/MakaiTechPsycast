@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<RecipeDef ParentName="SurgeryFlesh">
+		<defName>MakaiPsy_Soul_Restore</defName>
+		<label>Restore Lich Soul</label>
+		<description>transfer lich soul back into their body.</description>
+		<workerClass>MakaiTechPsycast.Recipe_RestoreSoul</workerClass>
+		<jobString>return soul to TargetA.</jobString>
+		<workAmount>1300</workAmount>
+		<hideBodyPartNames>true</hideBodyPartNames>
+		<isViolation>false</isViolation>
+		<targetsBodyPart>false</targetsBodyPart>
+		<removesHediff>MakaiTechPsy_DD_LichSoul</removesHediff>
+		<surgeryIgnoreEnvironment>true</surgeryIgnoreEnvironment>
+		<anesthetize>false</anesthetize>
+		<skillRequirements>
+			<Medicine>13</Medicine>
+		</skillRequirements>
+		<recipeUsers>
+			<li>Human</li>
+		</recipeUsers>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>MakaiTechPsy_DD_Soul</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>MakaiTechPsy_DD_Soul</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+		</products>
+	</RecipeDef>
+</Defs>

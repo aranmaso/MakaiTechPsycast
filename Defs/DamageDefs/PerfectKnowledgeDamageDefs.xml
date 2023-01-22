@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<DamageDef>
+    <defName>MakaiTechPsy_PK_Beam</defName>
+    <label>Seeker Beam</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has their ability to think cease functioned</deathMessage>
+    <hediff>Stab</hediff>
+    <hediffSolid>Crush</hediffSolid>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <additionalHediffs>
+		<li>
+        <hediff>MakaiPsy_PK_Brain_Mulfunction</hediff>
+		</li>
+    </additionalHediffs>
+    <impactSoundType>Slice</impactSoundType>
+    <armorCategory>Sharp</armorCategory>
+    <overkillPctToDestroyPart>0~0.7</overkillPctToDestroyPart>
+    <isRanged>true</isRanged>
+    <makesAnimalsFlee>true</makesAnimalsFlee>
+	</DamageDef>
+
+</Defs>

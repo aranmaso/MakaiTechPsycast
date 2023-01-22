@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThoughtDef>
+    <defName>BI_Bonding</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>7</durationDays>
+    <stackLimit>1</stackLimit>
+    <stackedEffectMultiplier>1</stackedEffectMultiplier>
+    <stages>
+      <li>
+        <label>psychically-bonding</label>
+        <description>This sense of strang familiarity is really nice.</description>
+        <baseMoodEffect>8</baseMoodEffect>
+        <baseOpinionOffset>25</baseOpinionOffset>
+      </li>
+    </stages>
+	</ThoughtDef>
+	
+	<ThoughtDef>
+    <defName>BI_Mending</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>7</durationDays>
+    <stackLimit>7</stackLimit>
+    <stackedEffectMultiplier>0.5</stackedEffectMultiplier>
+    <stages>
+      <li>
+        <label>relation mending</label>
+        <description>This sense of strang familiarity is really nice.</description>
+        <baseOpinionOffset>10</baseOpinionOffset>
+      </li>
+    </stages>
+	</ThoughtDef>
+	
+	<ThoughtDef>
+    <defName>BI_MendingGreat</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>7</durationDays>
+    <stackLimit>7</stackLimit>
+    <stackedEffectMultiplier>0.5</stackedEffectMultiplier>
+    <stages>
+      <li>
+        <label>relation mending</label>
+        <description>This sense of strang familiarity is really nice.</description>
+        <baseOpinionOffset>20</baseOpinionOffset>
+      </li>
+    </stages>
+	</ThoughtDef>
+	
+	<ThoughtDef>
+    <defName>BI_MendingFail</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>7</durationDays>
+    <stackLimit>7</stackLimit>
+    <stackedEffectMultiplier>0.5</stackedEffectMultiplier>
+    <stages>
+      <li>
+        <label>false mending</label>
+        <description>This sense of strang familiarity is really nice.</description>
+        <baseOpinionOffset>-10</baseOpinionOffset>
+      </li>
+    </stages>
+	</ThoughtDef>
+	
+	<ThoughtDef>
+    <defName>BI_CleanseFail</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>1</durationDays>
+    <stackLimit>1</stackLimit>
+    <stackedEffectMultiplier>1</stackedEffectMultiplier>
+    <stages>
+      <li>
+        <label>Mind Mess</label>
+        <description>I don't know why buy I dislike this person.</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+        <baseOpinionOffset>-25</baseOpinionOffset>
+      </li>
+    </stages>
+	</ThoughtDef>
+	
+	<ThoughtDef>
+    <defName>BI_CleanseGreat</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>1</durationDays>
+    <stackLimit>1</stackLimit>
+    <stackedEffectMultiplier>1</stackedEffectMultiplier>
+    <stages>
+      <li>
+        <label>Mind Cleanse</label>
+        <description>I feel like a new person thank to them!</description>
+        <baseMoodEffect>8</baseMoodEffect>
+        <baseOpinionOffset>20</baseOpinionOffset>
+      </li>
+    </stages>
+	</ThoughtDef>
+	
+	<ThoughtDef>
+    <defName>BI_ImaginaryFriend</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>MakaiPsy_BI_ImaginaryFriend</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>My Imaginary Friend!</label>
+        <description>I don't know who this person is but they fun to talk to</description>
+        <baseMoodEffect>25</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>BI_MoodBoost</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>MakaiPsy_BI_MoodBoost</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>My Imaginary Friend!</label>
+        <description>I don't know who this person is but they fun to talk to</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

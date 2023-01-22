@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+	<ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+		<defName>MakaiPsy_TD_MysticSword</defName>
+        <label>Mystic Sword</label>
+        <description>a mystic sword from the sky.</description>
+        <graphicData>
+            <texPath>Things/Items/MysticSword</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+            <drawSize>1</drawSize>
+			<onGroundRandomRotateAngle>0</onGroundRandomRotateAngle>
+        </graphicData>
+        <techLevel>Medieval</techLevel>
+        <weaponTags>
+            <li>MedievalMeleeAdvanced</li>
+            <li>LongSword</li>
+        </weaponTags>
+        <generateCommonality>0.0</generateCommonality>
+        <costList>
+            <Plasteel>100</Plasteel>
+        </costList>
+	    <!-- <stuffCategories> -->
+		<!-- <li>Metallic</li> -->
+		<!-- </stuffCategories> -->
+		<!-- <costStuffCount>250</costStuffCount> -->
+        <thingSetMakerTags>
+            <li>RewardStandardQualitySuper</li>
+        </thingSetMakerTags>
+        <statBases>
+			<MaxHitPoints>2000</MaxHitPoints>
+            <WorkToMake>8000</WorkToMake>
+            <Mass>1.5</Mass>
+			<MarketValue>50</MarketValue>
+			<Flammability>0.5</Flammability>
+        </statBases>
+        <relicChance>1</relicChance>
+        <equippedAngleOffset>-150</equippedAngleOffset>
+        <tools>
+          <li>
+			<label>handle</label>
+			<capacities>
+			  <li>Blunt</li>
+			</capacities>
+			<power>9</power>
+			<cooldownTime>2</cooldownTime>
+		  </li>
+		  <li>
+			<label>point</label>
+			<capacities>
+			  <li>Stab</li>
+			</capacities>
+			<power>23</power>
+			<cooldownTime>2.6</cooldownTime>
+		  </li>
+		  <li>
+			<label>edge</label>
+			<capacities>
+			  <li>Cut</li>
+			</capacities>
+			<power>23</power>
+			<cooldownTime>2.6</cooldownTime>
+		  </li>
+        </tools>
+		<modExtensions>
+		</modExtensions>
+		<comps>
+		<li Class="CompProperties_Styleable" />
+		<li Class="CompProperties_Forbiddable"/>
+		</comps>
+	</ThingDef>
+
+</Defs>

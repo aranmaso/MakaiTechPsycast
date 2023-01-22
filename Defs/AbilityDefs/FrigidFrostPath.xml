@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>FrigidFrost_AbilityOne</defName>
+		<label>Ability One</label>
+		<description>after a brief moment of concentrating, gain the ability to bargain like a great merchant for a short period.</description>
+		<iconPath>Abilities/Archon/GroupLink</iconPath>
+		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+		<durationTime>1000</durationTime>
+		<castTime>30</castTime>
+		<targetMode>Self</targetMode>
+		<radius>10</radius>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_FrigidFrost</path>
+				<level>1</level>
+				<order>2</order>
+				<psyfocusCost>0.1</psyfocusCost>
+				<entropyGain>0</entropyGain>
+			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+				<hediff>MakaiPsy_BI_Trading</hediff>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>FrigidFrost_AbilityTwo</defName>
+		<label>Ability Two</label>
+		<description>after a brief moment of concentrating, gain the ability to bargain like a great merchant for a short period.</description>
+		<iconPath>Abilities/Archon/GroupLink</iconPath>
+		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+		<durationTime>1000</durationTime>
+		<castTime>30</castTime>
+		<targetMode>Self</targetMode>
+		<radius>10</radius>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_FrigidFrost</path>
+				<level>1</level>
+				<order>1</order>
+				<psyfocusCost>0.1</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>FrigidFrost_AbilityFive</li>
+				</prerequisites>
+			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+				<hediff>MakaiPsy_BI_Trading</hediff>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>FrigidFrost_AbilityThree</defName>
+		<label>Ability Three</label>
+		<description>after a brief moment of concentrating, gain the ability to bargain like a great merchant for a short period.</description>
+		<iconPath>Abilities/Archon/GroupLink</iconPath>
+		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+		<durationTime>1000</durationTime>
+		<castTime>30</castTime>
+		<targetMode>Self</targetMode>
+		<radius>10</radius>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_FrigidFrost</path>
+				<level>1</level>
+				<order>3</order>
+				<psyfocusCost>0.1</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>FrigidFrost_AbilityFive</li>
+				</prerequisites>
+			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+				<hediff>MakaiPsy_BI_Trading</hediff>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>FrigidFrost_AbilityFour</defName>
+		<label>Ability Four</label>
+		<description>after a brief moment of concentrating, gain the ability to bargain like a great merchant for a short period.</description>
+		<iconPath>Abilities/Archon/GroupLink</iconPath>
+		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+		<durationTime>1000</durationTime>
+		<castTime>30</castTime>
+		<targetMode>Self</targetMode>
+		<radius>10</radius>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_FrigidFrost</path>
+				<level>2</level>
+				<order>1</order>
+				<psyfocusCost>0.1</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>FrigidFrost_AbilityFive</li>
+				</prerequisites>
+			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+				<hediff>MakaiPsy_BI_Trading</hediff>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>FrigidFrost_AbilityFive</defName>
+		<label>Ability Five</label>
+		<description>after a brief moment of concentrating, gain the ability to bargain like a great merchant for a short period.</description>
+		<iconPath>Abilities/Archon/GroupLink</iconPath>
+		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+		<durationTime>1000</durationTime>
+		<castTime>30</castTime>
+		<targetMode>Self</targetMode>
+		<radius>10</radius>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_FrigidFrost</path>
+				<level>2</level>
+				<order>2</order>
+				<psyfocusCost>0.1</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>FrigidFrost_AbilityOne</li>
+				</prerequisites>
+			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+				<hediff>MakaiPsy_BI_Trading</hediff>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>FrigidFrost_AbilitySix</defName>
+		<label>Ability Six</label>
+		<description>after a brief moment of concentrating, gain the ability to bargain like a great merchant for a short period.</description>
+		<iconPath>Abilities/Archon/GroupLink</iconPath>
+		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+		<durationTime>1000</durationTime>
+		<castTime>30</castTime>
+		<targetMode>Self</targetMode>
+		<radius>10</radius>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_FrigidFrost</path>
+				<level>2</level>
+				<order>3</order>
+				<psyfocusCost>0.1</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>FrigidFrost_AbilityFive</li>
+				</prerequisites>
+			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+				<hediff>MakaiPsy_BI_Trading</hediff>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>FrigidFrost_AbilitySeven</defName>
+		<label>Ability Seven</label>
+		<description>after a brief moment of concentrating, gain the ability to bargain like a great merchant for a short period.</description>
+		<iconPath>Abilities/Archon/GroupLink</iconPath>
+		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+		<durationTime>1000</durationTime>
+		<castTime>30</castTime>
+		<targetMode>Self</targetMode>
+		<radius>10</radius>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_FrigidFrost</path>
+				<level>3</level>
+				<order>1</order>
+				<psyfocusCost>0.1</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>FrigidFrost_AbilityFour</li>
+				</prerequisites>
+			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+				<hediff>MakaiPsy_BI_Trading</hediff>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>FrigidFrost_AbilityEight</defName>
+		<label>Ability Eight</label>
+		<description>after a brief moment of concentrating, gain the ability to bargain like a great merchant for a short period.</description>
+		<iconPath>Abilities/Archon/GroupLink</iconPath>
+		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+		<durationTime>1000</durationTime>
+		<castTime>30</castTime>
+		<targetMode>Self</targetMode>
+		<radius>10</radius>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_FrigidFrost</path>
+				<level>3</level>
+				<order>2</order>
+				<psyfocusCost>0.1</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>FrigidFrost_AbilityFive</li>
+				</prerequisites>
+			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+				<hediff>MakaiPsy_BI_Trading</hediff>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>FrigidFrost_AbilityNine</defName>
+		<label>Ability Nine</label>
+		<description>after a brief moment of concentrating, gain the ability to bargain like a great merchant for a short period.</description>
+		<iconPath>Abilities/Archon/GroupLink</iconPath>
+		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+		<durationTime>1000</durationTime>
+		<castTime>30</castTime>
+		<targetMode>Self</targetMode>
+		<radius>10</radius>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_FrigidFrost</path>
+				<level>3</level>
+				<order>3</order>
+				<psyfocusCost>0.1</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>FrigidFrost_AbilitySix</li>
+				</prerequisites>
+			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+				<hediff>MakaiPsy_BI_Trading</hediff>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>FrigidFrost_AbilityTen</defName>
+		<label>Ability Ten</label>
+		<description>after a brief moment of concentrating, gain the ability to bargain like a great merchant for a short period.</description>
+		<iconPath>Abilities/Archon/GroupLink</iconPath>
+		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+		<durationTime>1000</durationTime>
+		<castTime>30</castTime>
+		<targetMode>Self</targetMode>
+		<radius>10</radius>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_FrigidFrost</path>
+				<level>4</level>
+				<order>1</order>
+				<psyfocusCost>0.1</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>FrigidFrost_AbilityEight</li>
+				</prerequisites>
+			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+				<hediff>MakaiPsy_BI_Trading</hediff>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+
+</Defs>

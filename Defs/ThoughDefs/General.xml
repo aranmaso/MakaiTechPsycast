@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+	<ThoughtDef>
+    <defName>MakaiPsy_SF_HoteiContentment</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>MakaiPsy_SF_SevenFavor_Six</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+	<replaceThoughts>
+		<li>AteRawFood</li>
+		<li>AteKibble</li>
+		<li>AteCorpse</li>
+		<li>AteInsectMeatDirect</li>
+		<li>AteInsectMeatAsIngredient</li>
+		<li>TerribleSpeech</li>
+		<li>UninspiringSpeech</li>
+		<li>AteWithoutTable</li>
+		<li>SleepDisturbed</li>
+		<li>SleptOutside</li>
+		<li>SleptOnGround</li>
+		<li>SleptInCold</li>
+		<li>SleptInHeat</li>
+		<li>WasImprisoned</li>
+		<li>SoakingWet</li>
+		<li>ObservedLayingCorpse</li>
+		<li>EnvironmentDark</li>
+		<li>ApparelDamaged</li>
+		<li>DeadMansApparel</li>
+	</replaceThoughts>
+    <stages>
+      <li>
+        <label>Hotei's Favor of Contentment</label>
+        <description>the life is what it is, find contentment in everything as is, is also happiness</description>
+        <baseMoodEffect>20</baseMoodEffect>
+      </li>
+    </stages>
+	</ThoughtDef>
+</Defs>

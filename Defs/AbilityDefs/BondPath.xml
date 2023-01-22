@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+      <defName>BondIntertwined_Bonding</defName>
+      <label>Bonding Cast</label>
+      <description>form a forceful connection to target memory. make them feel a strong sense of familiarity toward each other.</description>
+      <iconPath>Abilities/BondIntertwined/BondIntertwined_Bonding</iconPath>
+      <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+      <castTime>200</castTime>
+	  <targetCount>2</targetCount>	
+	  <durationTime>420000</durationTime>
+	  <range>2.5</range>
+	  <targetModes>
+        <li>Pawn</li>
+        <li>Pawn</li>
+      </targetModes>
+      <targetingParametersList>
+        <li>
+          <canTargetSelf>True</canTargetSelf>
+          <canTargetPawns>True</canTargetPawns>
+		  <canTargetAnimals>False</canTargetAnimals>
+		  <canTargetMechs>False</canTargetMechs>
+          <canTargetBuildings>False</canTargetBuildings>
+        </li>
+        <li>
+          <canTargetSelf>True</canTargetSelf>
+          <canTargetPawns>True</canTargetPawns>
+		  <canTargetAnimals>False</canTargetAnimals>
+		  <canTargetMechs>False</canTargetMechs>
+          <canTargetBuildings>False</canTargetBuildings>
+        </li>
+      </targetingParametersList>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>MakaiTech_VPE_Bond_Intertwined</path>
+          <level>1</level>
+          <order>1</order>
+          <psyfocusCost>0.10</psyfocusCost>
+          <entropyGain>0</entropyGain>
+		  <psychic>true</psychic>
+        </li>
+		<li Class="MakaiTechPsycast.BondIntertwined.AbilityExtension_WordOfBond">
+		<thoughtDef>BI_Bonding</thoughtDef>
+		</li>
+		<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+			<hediff>MakaiPsy_BI_BondingPsychic</hediff>
+		</li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>BondIntertwined_Link</defName>
+		<label>Bonding Link</label>
+		<description>Creates a sphere of psychic suggestion around the caster, linking all pawns within to the caster and allowing any single target “Mind” psycast to affect all others. The effect ends when those linked move out of range.</description>
+		<iconPath>Abilities/BondIntertwined/BondIntertwined_Link</iconPath>
+		<abilityClass>MakaiTechPsycast.BondIntertwined.Ability_BondLink</abilityClass>
+		<castTime>30</castTime>
+		<targetMode>Self</targetMode>
+		<radius>10</radius>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_Bond_Intertwined</path>
+				<level>2</level>
+				<order>1</order>
+				<psyfocusCost>0.1</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>BondIntertwined_Bonding</li>
+				</prerequisites>
+			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+				<hediff>MakaiPsy_LinkingBond</hediff>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<!--VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+      <defName>BondIntertwined_Link</defName>
+      <label>Linking</label>
+      <description>form a forceful connection to target memory. then drain all knowledge they have to caster. severely damage victim brain and considered hostile by all faction.</description>
+      <iconPath>Abilities/PerfectKnowledge/KnowledgeDrain</iconPath>
+      <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+	  <castSound>PsychicSoothePulserCast</castSound>
+	  <durationTime>60000</durationTime>
+	  <castTime>60</castTime>
+	  <range>45.9</range>
+	  <radius>5.9</radius>
+	  <hasAoE>true</hasAoE>
+	  <targetMode>Location</targetMode>
+	  <showUndrafted>true</showUndrafted>
+      <targetingParametersForAoE>
+		<canTargetSelf>True</canTargetSelf>
+        <canTargetHumans>True</canTargetHumans>
+        <canTargetAnimals>True</canTargetAnimals>
+		<canTargetMechs>False</canTargetMechs>
+		<canTargetBuildings>False</canTargetBuildings>
+      </targetingParametersForAoE>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>MakaiTech_VPE_Bond_Intertwined</path>
+          <level>2</level>
+          <order>1</order>
+          <psyfocusCost>0.10</psyfocusCost>
+          <entropyGain>0</entropyGain>
+		  <psychic>true</psychic>
+		  <prerequisites>
+            <li>BondIntertwined_Bonding</li>
+          </prerequisites>
+        </li>
+		<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+			<hediff>MakaiPsy_LinkingBond</hediff>
+			<durationMultiplier>PsychicSensitivity</durationMultiplier>
+		</li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef-->
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>BondIntertwined_SocialBoost</defName>
+		<label>Social Mind</label>
+		<description>tap into target mind with, and encourage social desire for them. also make animal more likely to bond with them.</description>
+		<iconPath>Abilities/BondIntertwined/BondIntertwined_SocialBoost</iconPath>
+		<abilityClass>MakaiTechPsycast.BondIntertwined.Ability_AffectedByBondLink</abilityClass>
+		<durationTime>60000</durationTime>
+		<range>20</range>
+		<targetMode>Pawn</targetMode>
+		<targetingParameters>
+			<canTargetSelf>True</canTargetSelf>
+			<canTargetMechs>False</canTargetMechs>
+			<canTargetAnimals>False</canTargetAnimals>
+		</targetingParameters>
+		<castTime>60</castTime>
+		<modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>MakaiTech_VPE_Bond_Intertwined</path>
+			<level>2</level>
+			<order>3</order>
+			<psyfocusCost>0.1</psyfocusCost>
+			<entropyGain>5</entropyGain>
+			<prerequisites>
+				<li>BondIntertwined_Bonding</li>
+			</prerequisites>
+        </li>
+		<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+			<hediff>MakaiPsy_BI_SocialBoost</hediff>
+			<durationMultiplier>PsychicSensitivity</durationMultiplier>
+		</li>
+		<!-- if Bonding Link is active, also affect them -->
+		<li Class="MakaiTechPsycast.BondIntertwined.AbilityExtension_ApplyToPawnWithHediff">
+			<hediff>MakaiPsy_LinkingBond</hediff>
+		</li>
+		</modExtensions>
+    </VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>BondIntertwined_Joyous</defName>
+		<label>Joyous Thought</label>
+		<description>after a brief moment of concentrating, fill target mind with joy. fill half their recreation need. rumor say this ability has a chance to grant extra effect. or fail catastrophically. &lt;color=#01F1F1&gt;\n\nSuccess:5 \nGreat Success:20&lt;/color&gt;</description>
+		<iconPath>Abilities/BondIntertwined/BondIntertwined_Joyous</iconPath>
+		<abilityClass>MakaiTechPsycast.BondIntertwined.Ability_SetJoyNeedWithRoll</abilityClass>
+		<castTime>200</castTime>
+		<targetMode>Pawn</targetMode>
+		<targetingParameters>
+			<canTargetSelf>True</canTargetSelf>
+			<canTargetHumans>True</canTargetHumans>
+			<canTargetMechs>False</canTargetMechs>
+			<canTargetAnimals>False</canTargetAnimals>
+		</targetingParameters>
+		<range>5</range>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_Bond_Intertwined</path>
+				<level>2</level>
+				<order>2</order>
+				<psyfocusCost>0.01</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>BondIntertwined_Link</li>
+					<li>BondIntertwined_SocialBoost</li>
+				</prerequisites>
+			</li>
+			<li Class="MakaiTechPsycast.BondIntertwined.AbilityExtension_needDef">
+				<needDef>Joy</needDef>
+				<explosionRadius>14.9</explosionRadius>
+				<onCaster>true</onCaster>
+				<explosionDamageDef>Flame</explosionDamageDef>
+				<explosionDamageAmount>2</explosionDamageAmount>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>5</successThreshold>
+				<greatSuccessThreshold>20</greatSuccessThreshold>
+				<hediffDefWhenFail>MakaiPsy_PK_Brain_Mulfunction</hediffDefWhenFail>
+				<hediffDefWhenGreatSuccess>MakaiPsy_BI_JoyGreat</hediffDefWhenGreatSuccess>
+				<skillBonus>Social</skillBonus>
+				<hours>2</hours>
+				<multiplier>PsychicSensitivity</multiplier>
+				<memoryDefWhenFail>BI_CleanseFail</memoryDefWhenFail>
+				<testingMode>true</testingMode>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>BondIntertwined_Trading</defName>
+		<label>Master Bargain</label>
+		<description>after a brief moment of concentrating, gain the ability to bargain like a great merchant for a short period. have a chance to gain extra effect. &lt;color=#01F1F1&gt;\n\nSuccess:6 \nGreat Success:18&lt;/color&gt;</description>
+		<iconPath>Abilities/BondIntertwined/BondIntertwined_Trading</iconPath>
+		<abilityClass>MakaiTechPsycast.BondIntertwined.Ability_SelfBuffWithRoll</abilityClass>
+		<cooldownTime>5000</cooldownTime>
+		<castTime>30</castTime>
+		<targetMode>Self</targetMode>
+		<radius>10</radius>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_Bond_Intertwined</path>
+				<level>3</level>
+				<order>1</order>
+				<psyfocusCost>0.01</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>BondIntertwined_Link</li>
+					<li>BondIntertwined_SocialBoost</li>
+					<li>BondIntertwined_Joyous</li>
+				</prerequisites>
+			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+				<hediff>MakaiPsy_BI_Trading</hediff>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<hediffDefWhenSuccess>MakaiPsy_BI_Trading</hediffDefWhenSuccess>
+				<successThreshold>6</successThreshold>
+				<hediffDefWhenGreatSuccess>MakaiPsy_BI_TradingGreat</hediffDefWhenGreatSuccess>
+				<greatSuccessThreshold>18</greatSuccessThreshold>
+				<hediffDefWhenFail>MakaiPsy_BI_TradingFail</hediffDefWhenFail>
+				<skillBonus>Social</skillBonus>
+				<hours>2</hours>
+				<multiplier>PsychicSensitivity</multiplier>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>BondIntertwined_Friend</defName>
+		<label>Imaginary Mind</label>
+		<description>induce hallucination into target brain. make them see a non-existing person that they will feel at ease when talking to. basically give them a imaginary friend for a while. during the duration they will wander on their own outside of your control.</description>
+		<iconPath>Abilities/BondIntertwined/BondIntertwined_Friend</iconPath>
+		<abilityClass>MakaiTechPsycast.BondIntertwined.Ability_AffectedByBondLink</abilityClass>
+		<durationTime>5000</durationTime>
+		<range>20</range>
+		<targetMode>Pawn</targetMode>
+		<targetingParameters>
+			<canTargetSelf>True</canTargetSelf>
+			<canTargetMechs>False</canTargetMechs>
+			<canTargetAnimals>False</canTargetAnimals>
+		</targetingParameters>
+		<castTime>200</castTime>
+		<modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>MakaiTech_VPE_Bond_Intertwined</path>
+			<level>4</level>
+			<order>1</order>
+			<psyfocusCost>0.2</psyfocusCost>
+			<entropyGain>5</entropyGain>
+			<prerequisites>
+				<li>BondIntertwined_Trading</li>
+			</prerequisites>
+        </li>
+		<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+			<hediff>MakaiPsy_BI_ImaginaryFriend</hediff>
+		</li>
+		<!-- if Bonding Link is active, also affect them -->
+		<li Class="MakaiTechPsycast.BondIntertwined.AbilityExtension_ApplyToPawnWithHediff">
+			<hediff>MakaiPsy_LinkingBond</hediff>
+		</li>
+		</modExtensions>
+    </VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>BondIntertwined_MindCleanse</defName>
+		<label>Mind Cleanse</label>
+		<description>after a brief moment of concentrating, remove all memories from target. &lt;color=#01F1F1&gt;\n\nSuccess:5 \nGreat Success:15&lt;/color&gt;</description>
+		<iconPath>Abilities/BondIntertwined/BondIntertwined_MindCleanse</iconPath>
+		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+		<castTime>200</castTime>
+		<targetMode>Pawn</targetMode>
+		<targetingParameters>
+			<canTargetSelf>False</canTargetSelf>
+			<canTargetHumans>True</canTargetHumans>
+			<canTargetMechs>False</canTargetMechs>
+			<canTargetAnimals>False</canTargetAnimals>
+		</targetingParameters>
+		<range>5</range>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_Bond_Intertwined</path>
+				<level>4</level>
+				<order>2</order>
+				<psyfocusCost>0.1</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>BondIntertwined_Trading</li>
+				</prerequisites>
+			</li>
+			<li Class="MakaiTechPsycast.BondIntertwined.AbilityExtension_MindCleanse">
+				<hediffDefWhenFail>MakaiPsy_PK_Brain_Mulfunction</hediffDefWhenFail>
+				<hediffDefWhenGreatSuccess>MakaiPsy_BI_JoyGreat</hediffDefWhenGreatSuccess>
+				<skillBonus>Social</skillBonus>
+				<hours>1</hours>
+				<multiplier>PsychicSensitivity</multiplier>
+				<memoryDefWhenFail>BI_CleanseFail</memoryDefWhenFail>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>BondIntertwined_Mending</defName>
+		<label>Relation Mending</label>
+		<description>form a connection between two pawn. increase opinion between them. &lt;color=#01F1F1&gt;\n\nSuccess:8 \nGreat Success:19&lt;/color&gt;</description>
+		<iconPath>Abilities/BondIntertwined/BondIntertwined_Mending</iconPath>
+		<abilityClass>MakaiTechPsycast.BondIntertwined.Ability_RelationMend</abilityClass>
+		<castTime>200</castTime>
+		<targetCount>2</targetCount>
+		<targetModes>
+		<li>Pawn</li>
+		<li>Pawn</li>
+		</targetModes>
+		<range>22.9</range>
+		<targetingParametersList>
+        <li>
+          <canTargetSelf>True</canTargetSelf>
+          <canTargetPawns>True</canTargetPawns>
+		  <canTargetAnimals>False</canTargetAnimals>
+		  <canTargetMechs>False</canTargetMechs>
+          <canTargetBuildings>False</canTargetBuildings>
+        </li>
+        <li>
+          <canTargetSelf>True</canTargetSelf>
+          <canTargetPawns>True</canTargetPawns>
+		  <canTargetAnimals>False</canTargetAnimals>
+		  <canTargetMechs>False</canTargetMechs>
+          <canTargetBuildings>False</canTargetBuildings>
+        </li>
+		</targetingParametersList>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_Bond_Intertwined</path>
+				<level>4</level>
+				<order>3</order>
+				<psyfocusCost>0.1</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>BondIntertwined_Link</li>
+				</prerequisites>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>8</successThreshold>
+				<memoryDefWhenSuccess>BI_Mending</memoryDefWhenSuccess>
+				<greatSuccessThreshold>19</greatSuccessThreshold>
+				<memoryDefWhenGreatSuccess>BI_MendingGreat</memoryDefWhenGreatSuccess>
+				<memoryDefWhenFail>BI_MendingFail</memoryDefWhenFail>
+				<skillBonus>Social</skillBonus>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>BondIntertwined_BBeacon</defName>
+		<label>Bonding Beacon</label>
+		<description>after a brief moment of concentrating, summon a beacon of bond, boosting morale and faction relation with anyone passing by &lt;color=#01F1F1&gt;\n\nSuccess:12 \nGreat Success:19&lt;/color&gt;</description>
+		<iconPath>Abilities/BondIntertwined/BondIntertwined_BBeacon</iconPath>
+		<abilityClass>MakaiTechPsycast.Ability_SpawnThingWithRoll</abilityClass>
+		<durationTime>10000</durationTime>
+		<castTime>60</castTime>
+		<targetMode>Location</targetMode>
+		<range>10</range>
+		<needsTicking>true</needsTicking>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_Bond_Intertwined</path>
+				<level>5</level>
+				<order>1</order>
+				<psyfocusCost>0.1</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>BondIntertwined_Friend</li>
+					<li>BondIntertwined_MindCleanse</li>
+				</prerequisites>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>12</successThreshold>
+				<thingToSpawnWhenSuccess>MakaiTechPsy_BI_DanceTower</thingToSpawnWhenSuccess>
+				<greatSuccessThreshold>19</greatSuccessThreshold>
+				<thingToSpawnWhenGreatSuccess>MakaiTechPsy_BI_DanceTower</thingToSpawnWhenGreatSuccess>
+				<hediffDefWhenGreatSuccess>MakaiPsy_BI_MoodBoost</hediffDefWhenGreatSuccess>
+				<thingToSpawnWhenFail>MakaiTechPsy_BI_UnBondTower</thingToSpawnWhenFail>
+				<hours>1</hours>
+				<skillBonus>Social</skillBonus>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>BondIntertwined_RelationAlter</defName>
+		<label>Mass-Relation Altering</label>
+		<description>after a brief moment of concentrating, mass-altering faction relation with everyone on the map. &lt;color=#01F1F1&gt;\n\nSuccess:12 \nGreat Success:19 \nSkill Required: Social \nMinimum Skill:10&lt;/color&gt;</description>
+		<iconPath>Abilities/BondIntertwined/BondIntertwined_RelationAlter</iconPath>
+		<abilityClass>MakaiTechPsycast.BondIntertwined.Ability_BondAffectFactionRelation</abilityClass>
+		<castTime>60</castTime>
+		<targetMode>Self</targetMode>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_Bond_Intertwined</path>
+				<level>5</level>
+				<order>2</order>
+				<psyfocusCost>0.1</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>BondIntertwined_Mending</li>
+					<li>BondIntertwined_MindCleanse</li>
+				</prerequisites>
+			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+				<hediff>MakaiPsy_BI_Trading</hediff>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>12</successThreshold>
+				<skillRequirementSuccessThreshold>10</skillRequirementSuccessThreshold>
+				<hediffDefWhenSuccess>MakaiPsy_BI_MoodBoost</hediffDefWhenSuccess>
+				<greatSuccessThreshold>19</greatSuccessThreshold>
+				<skillRequirementGreatSuccessThreshold>15</skillRequirementGreatSuccessThreshold>
+				<hediffDefWhenGreatSuccess>MakaiPsy_BI_JoyGreat</hediffDefWhenGreatSuccess>
+				<skillRequirementFailThreshold>5</skillRequirementFailThreshold>
+				<hediffDefWhenFail>MakaiPsy_PK_Brain_Mulfunction</hediffDefWhenFail>
+				<multiplier>PsychicSensitivity</multiplier>
+				<hours>1</hours>
+				<skillBonus>Social</skillBonus>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+  
+	
+
+
+</Defs>

@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+	<ThingDef ParentName="BaseBullet">
+		<defName>MakaitechPsy_PK_ChainBeam</defName>
+		<label>chain beam</label>
+		<thingClass>VFEMech.TeslaProjectile</thingClass>
+		<drawOffscreen>true</drawOffscreen>
+		<graphicData>
+			<texPath>Projectiles/PerfectKnowledge/BeamChain</texPath>
+			<graphicClass>Graphic_Flicker</graphicClass>
+            <shaderType>TransparentPostLight</shaderType>
+		</graphicData>
+		<projectile>
+			<damageDef>Stun</damageDef>
+			<damageAmountBase>1</damageAmountBase>
+			<speed>140</speed>
+		</projectile>
+		<modExtensions>
+			<li Class="VFEMech.TeslaChainingProps">
+				<maxBounceCount>6</maxBounceCount>
+				<damageDef>MakaiTechPsy_PK_Beam</damageDef>
+				<explosionDamageDef>EMP</explosionDamageDef>
+				<impactRadius>2</impactRadius>
+				<targetFriendly>false</targetFriendly>
+				<addFire>true</addFire>
+				<bounceRange>8</bounceRange>
+				<maxLifetime>50</maxLifetime>
+				<impactSound>VPE_ChainBolt_Impact</impactSound>
+			</li>
+		</modExtensions>
+	</ThingDef>
+	
+	<ThingDef ParentName="BaseBullet">
+		<defName>MakaitechPsy_TestingProjectile</defName>
+		<label>chain beam</label>
+		<thingClass>MakaiTechPsycast.Projectile_Testing</thingClass>
+		<drawOffscreen>true</drawOffscreen>
+		<graphicData>
+			<texPath>Things/Projectile/Charge_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+            <shaderType>TransparentPostLight</shaderType>
+		</graphicData>
+		<projectile>
+			<damageDef>Stun</damageDef>
+			<damageAmountBase>1</damageAmountBase>
+			<speed>140</speed>
+		</projectile>
+		<modExtensions>
+			<li Class="MakaiTechPsycast.ModExtension_TestingProjectile">
+			<thing>MakaiPsy_TD_Beam</thing>
+			<healAlly>true</healAlly>
+			</li>
+		</modExtensions>
+	</ThingDef>
+	
+	<ThingDef>
+    <defName>MakaiPsyBeamGraphic</defName>
+    <thingClass>VanillaWeaponsExpandedLaser.LaserBeamGraphic</thingClass>
+    <drawOffscreen>true</drawOffscreen>
+    <label>stardust beam</label>
+    
+    <category>Projectile</category>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <useHitPoints>False</useHitPoints>
+    <neverMultiSelect>True</neverMultiSelect>
+	</ThingDef>
+	
+	<ThingDef Abstract="True" Name="MakaiPsy_BulletLaser" ParentName="BaseBullet">
+    <thingClass>VanillaWeaponsExpandedLaser.LaserBeam</thingClass>
+    <drawOffscreen>true</drawOffscreen>
+    <beamGraphic>MakaiPsyBeamGraphic</beamGraphic>
+   
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Projectile/Charge_Small</texPath>
+      <shaderType>TransparentPostLight</shaderType>
+      <drawSize>1.5</drawSize>
+    </graphicData>
+	
+    <explosionEffect>MakaiPsy_Ring_ExpandY</explosionEffect>
+    <hitLivingEffect>MakaiPsyLivingImpact</hitLivingEffect>
+    
+    <projectile>
+      <damageDef>Bomb</damageDef>
+      <speed>10000</speed>
+    </projectile>
+    
+    <seam>0.25</seam>
+	</ThingDef>
+	
+	<ThingDef ParentName="MakaiPsy_BulletLaser" Class="VanillaWeaponsExpandedLaser.LaserBeamDef">
+    <defName>MakaiTechPsy_PK_BeamSingle</defName>
+    <label>precise shot</label>
+    <description>A focused, long range laser.</description>
+    <textures>
+      <li>Projectiles/PerfectKnowledge/p_lightning</li>
+    </textures>
+    <seam>0.1</seam>
+    <causefireChance>0</causefireChance>
+	<beamWidth>1.5</beamWidth>
+	<lifetime>60</lifetime>
+    <projectile>
+		<damageDef>MakaiTechPsy_PK_Beam</damageDef>
+		<damageAmountBase>10</damageAmountBase>
+		<armorPenetrationBase>0.5</armorPenetrationBase>
+		<stoppingPower>3</stoppingPower>
+    </projectile>
+	</ThingDef>
+	
+	<ThingDef ParentName="BaseBullet">
+		<defName>MakaiTechPsy_ReflectWarp</defName>
+		<label>energy shot</label>
+		<graphicData>
+			<texPath>Projectiles/makai_bullet_mea</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+		</graphicData>
+		<projectile>
+			<speed>28</speed>
+			<damageDef>MakaiTechPsy_WarpBullet</damageDef>
+			<damageAmountBase>3</damageAmountBase>
+			<armorPenetrationBase>0.5</armorPenetrationBase>
+			<stoppingPower>1</stoppingPower>
+		</projectile>
+	</ThingDef>
+	
+	<ThingDef ParentName="OrbitalStrikeBase">
+    <defName>MakaiPsy_CP_Beam</defName>
+    <label>power beam</label>
+    <thingClass>MakaiTechPsycast.CorruptedProphet.MakaiCP_PowerBeam</thingClass>
+    <comps>
+      <li Class="MakaiTechPsycast.CorruptedProphet.MakaiPsyCompProperties_OrbitalBeam">
+        <width>7</width>
+        <color>(255, 200, 0, 255)</color>
+		<hitSound>Claw_Sweep</hitSound>
+		<offsetZ>8</offsetZ>
+      </li>
+      <li Class="CompProperties_CameraShaker">
+        <mag>0.03</mag>
+      </li>
+    </comps>
+	</ThingDef>
+	
+	<VFECore.ExpandableProjectileDef ParentName="BaseBullet">
+		<defName>MakaiPsy_CP_ClawGrab</defName>
+		<label>claw grab</label>
+		<thingClass>MakaiTechPsycast.MakaiPsy_ExpandableProjectile</thingClass>
+		<graphicData>
+			<texPath>Projectiles/CorruptedProphet/ClawGrabStart</texPath>
+			<texPathFadeOut>Projectiles/CorruptedProphet/ClawGrabFade</texPathFadeOut>
+			<shaderType>Cutout</shaderType>
+		</graphicData>
+		<projectile>
+			<damageDef>CorruptedProphet_CorruptedSky</damageDef>
+			<speed>120</speed>
+			<damageAmountBase>5</damageAmountBase>
+			<armorPenetrationBase>1</armorPenetrationBase>
+		</projectile>
+		<drawOffscreen>true</drawOffscreen>
+		<disableVanillaDamageMethod>true</disableVanillaDamageMethod>
+		<lifeTimeDuration>18</lifeTimeDuration>
+		<widthScaleFactor>0.4</widthScaleFactor>
+		<heightScaleFactor>1</heightScaleFactor>
+		<startingPositionOffset>(0, 0, 0)</startingPositionOffset>
+		<totalSizeScale>1</totalSizeScale>
+		<tickFrameRate>1</tickFrameRate>
+		<finalTickFrameRate>5</finalTickFrameRate>
+		<tickDamageRate>20</tickDamageRate>
+		<dealsDamageOnce>false</dealsDamageOnce>
+		<minDistanceToAffect>1</minDistanceToAffect>
+		<stopWhenHit>false</stopWhenHit>
+	</VFECore.ExpandableProjectileDef>
+	
+	<ThingDef ParentName="PawnFlyerBase">
+        <defName>MakaiPsy_Pull</defName>
+        <thingClass>MakaiTechPsycast.PawnFlyer_Pulled</thingClass>
+        <pawnFlyer>
+            <flightDurationMin>0.2</flightDurationMin>
+            <flightSpeed>13</flightSpeed>
+        </pawnFlyer>
+    </ThingDef>
+	
+	<ThingDef ParentName="PawnFlyerBase">
+        <defName>MakaiPsy_PullSlow</defName>
+        <thingClass>MakaiTechPsycast.PawnFlyer_Pulled</thingClass>
+        <pawnFlyer>
+            <flightDurationMin>0.2</flightDurationMin>
+            <flightSpeed>4</flightSpeed>
+        </pawnFlyer>
+    </ThingDef>
+
+	<ThingDef ParentName="OrbitalStrikeBase">
+    <defName>MakaiPsy_CP_Pillar</defName>
+    <label>Pillar beam</label>
+    <thingClass>MakaiTechPsycast.CorruptedProphet.MakaiPsy_CP_PillarStrike</thingClass>
+    <comps>
+      <li Class="MakaiTechPsycast.CorruptedProphet.MakaiPsyCompProperties_PillarBeam">
+        <width>20</width>
+        <color>(255, 255, 255, 255)</color>
+		<sound>OrbitalBeam</sound>
+		<offsetZ>40</offsetZ>
+      </li>
+      <li Class="CompProperties_CameraShaker">
+        <mag>0.03</mag>
+      </li>
+    </comps>
+	</ThingDef>
+	
+	<ThingDef ParentName="BaseBullet">
+		<defName>MakaiPsy_DD_Bolt</defName>
+		<label>Death Bolt</label>
+		<description>A ball of death launched by Destined Death</description>
+		<thingClass>Projectile_Explosive</thingClass>
+		<graphicData>
+			<texPath>Projectiles/DestinedDeath/DeathBolt</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+            <shaderType>MoteGlow</shaderType>
+			<drawSize>2</drawSize>
+		</graphicData>
+		<drawOffscreen>true</drawOffscreen>
+		<projectile>
+			<damageDef>DestinedDeath_DeathBolt</damageDef>
+			<damageAmountBase>1</damageAmountBase>
+			<explosionRadius>3</explosionRadius>
+			<speed>5</speed>
+			<explosionEffect>MakaiPsy_DD_Blast</explosionEffect>
+		</projectile>
+		<comps>
+			<li Class="MakaiTechPsycast.CompProperties_FleckEmitter">
+				<alwaysOn>true</alwaysOn>
+				<moteDefs>
+					<li>MakaiPsyMote_SparkA</li>
+					<li>MakaiPsyMote_SparkB</li>
+					<li>MakaiPsyMote_SparkC</li>
+				</moteDefs>
+				<countPerEmit>1</countPerEmit>
+				<scale>0.5</scale>
+				<scaleMax>1</scaleMax>
+				<rotationMinRate>-30</rotationMinRate>
+				<rotationMaxRate>30</rotationMaxRate>
+				<minRotate>-45</minRotate>
+				<maxRotate>45</maxRotate>
+				<minSpeed>-1</minSpeed>
+				<maxSpeed>1</maxSpeed>
+				<minEmissionInterval>0</minEmissionInterval>
+				<maxEmissionInterval>1</maxEmissionInterval>
+				<propelBackward>true</propelBackward>
+				<propelSlowdown>6</propelSlowdown>
+			</li>
+			<li Class="MakaiTechPsycast.CompProperties_ProjectileExtraEffect">
+				<hurtInterval>120</hurtInterval>
+				<damageAmount>5</damageAmount>
+				<armorPen>1</armorPen>
+				<radius>2</radius>
+				<hurtRadius>1</hurtRadius>
+				<hurtNearbyPawn>true</hurtNearbyPawn>
+				<!-- <catchAndLaunchBackBullet>true</catchAndLaunchBackBullet> -->
+				<!-- <catchInterval>10</catchInterval> -->
+				<!-- <catchRadius>3</catchRadius> -->
+				<!-- <pullRadius>20</pullRadius> -->
+				<!-- <pullPawn>true</pullPawn> -->
+				<!-- <makeGoToJob>true</makeGoToJob> -->
+				<hediffBonus>MakaiTechPsy_DD_CollectSoul</hediffBonus>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	<VFECore.ExpandableProjectileDef ParentName="BaseBullet">
+		<defName>MakaiPsy_Sari_Swipe</defName>
+		<label>scythe sweep</label>
+		<thingClass>MakaiTechPsycast.MakaiPsy_ExpandableProjectile</thingClass>
+		<graphicData>
+			<texPath>Projectiles/DestinedDeath/destineddeath</texPath>
+			<texPathFadeOut>Projectiles/DestinedDeath/destineddeathFade</texPathFadeOut>
+			<shaderType>MoteGlow</shaderType>
+		</graphicData>
+		<projectile>
+			<damageDef>DestinedDeath_13th</damageDef>
+			<speed>50</speed>
+			<damageAmountBase>15</damageAmountBase>
+			<armorPenetrationBase>66.6</armorPenetrationBase>
+		</projectile>
+		<drawOffscreen>true</drawOffscreen>
+		<lifeTimeDuration>50</lifeTimeDuration>
+		<widthScaleFactor>2</widthScaleFactor>
+		<heightScaleFactor>1</heightScaleFactor>
+		<startingPositionOffset>(0, 0, 0)</startingPositionOffset>
+		<totalSizeScale>1</totalSizeScale>
+		<tickFrameRate>20</tickFrameRate>
+		<finalTickFrameRate>10</finalTickFrameRate>
+		<tickDamageRate>20</tickDamageRate>
+		<dealsDamageOnce>true</dealsDamageOnce>
+		<minDistanceToAffect>2</minDistanceToAffect>
+	</VFECore.ExpandableProjectileDef>
+	
+	<!-- True Destruction -->
+	
+	<ThingDef ParentName="BaseBullet">
+		<defName>MakaiPsy_TD_ProxyMine</defName>
+		<label>Energized Bolt</label>
+		<description>A slow moving orb that burst at nearest enemies.</description>
+		<graphicData>
+			<texPath>Things/Mote/Mote_MakaiGreenEMP</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+            <shaderType>MoteGlow</shaderType>
+			<drawSize>2</drawSize>
+		</graphicData>
+		<drawOffscreen>true</drawOffscreen>
+		<projectile>
+			<damageDef>TrueDestruction_ProxyNoDamage</damageDef>
+			<damageAmountBase>1</damageAmountBase>
+			<armorPenetrationBase>1</armorPenetrationBase>
+			<speed>10</speed>
+		</projectile>
+		<comps>
+			<li Class="MakaiTechPsycast.CompProperties_FleckEmitter">
+				<alwaysOn>true</alwaysOn>
+				<moteDefs>
+					<li>MakaiPsyMote_WhitePuff</li>
+				</moteDefs>
+				<scale>0.2</scale>
+				<scaleMax>0.5</scaleMax>
+				<rotationMinRate>-30</rotationMinRate>
+				<rotationMaxRate>30</rotationMaxRate>
+				<minRandomOffsetX>-0.1</minRandomOffsetX>
+				<maxRandomOffsetX>0.1</maxRandomOffsetX>
+				<minRandomOffsetY>-0.3</minRandomOffsetY>
+				<maxRandomOffsetY>0.3</maxRandomOffsetY>
+				<minRotate>-45</minRotate>
+				<maxRotate>45</maxRotate>
+				<minSpeed>-1</minSpeed>
+				<maxSpeed>1</maxSpeed>
+				<minEmissionInterval>0</minEmissionInterval>
+				<maxEmissionInterval>1</maxEmissionInterval>
+				<countPerEmit>1</countPerEmit>
+			</li>
+			<li Class="MakaiTechPsycast.CompProperties_ProximityBurst">
+				<shrapnelCount>15</shrapnelCount>
+				<range>5</range>
+				<burstRange>3</burstRange>
+				<checkInterval>5</checkInterval>
+				<proximityOnTargetDistance>true</proximityOnTargetDistance>
+				<distanceFromTargetToProx>30</distanceFromTargetToProx>
+				<shrapnelBulletDef>
+					<li>Bullet_Revolver</li>
+					<!-- <li>MakaiPsy_TD_SpawnThingOnImpact</li> -->
+				</shrapnelBulletDef>
+			</li>
+			<li Class="VFECore.CompProperties_HomingProjectile">
+				<homingDistanceFractionPassed>0.3</homingDistanceFractionPassed>
+				<homingCorrectionTickRate>2</homingCorrectionTickRate>
+				<initialDispersionFromTarget>45</initialDispersionFromTarget>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	<ThingDef ParentName="BaseGrenadeProjectile">
+	<defName>MakaiPsy_TD_SpawnThingOnImpact</defName>
+		<label>spawner Bolt</label>
+		<description>A slow moving orb that burst at nearest enemies.</description>
+		<graphicData>
+			<texPath>Things/Projectile/Grenade</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+            <shaderType>MoteGlow</shaderType>
+			<drawSize>1</drawSize>
+		</graphicData>
+		<drawOffscreen>true</drawOffscreen>
+		<projectile>
+			<damageDef>TrueDestruction_ProxyNoDamageSpawnThingExplode</damageDef>
+			<explosionRadius>0.1</explosionRadius>
+			<damageAmountBase>0</damageAmountBase>
+			<!-- <explosionDelay>100</explosionDelay> -->
+			<speed>10</speed>
+			<arcHeightFactor>2</arcHeightFactor>
+			<shadowSize>0.4</shadowSize>
+			<postExplosionSpawnThingDef>TrapIED_HighExplosive</postExplosionSpawnThingDef>
+		</projectile>		
+	
+	</ThingDef>
+	
+	<ThingDef ParentName="BaseBullet">
+	<defName>MakaiPsy_TD_SwordRain</defName>
+		<label>Rain Bolt</label>
+		<description>sword</description>
+		<thingClass>Projectile_Explosive</thingClass>
+		<graphicData>
+			<texPath>Projectiles/sunbladeProjectile</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+            <shaderType>Cutout</shaderType>
+			<drawSize>2.5</drawSize>
+		</graphicData>
+		<drawOffscreen>true</drawOffscreen>
+		<projectile>
+			<damageDef>TrueDestruction_SwordRain</damageDef>
+			<damageAmountBase>10</damageAmountBase>
+			<armorPenetrationBase>1</armorPenetrationBase>
+			<explosionRadius>0.1</explosionRadius>
+			<speed>60</speed>
+			<arcHeightFactor>2</arcHeightFactor>
+			<!-- <shadowSize>0.4</shadowSize> -->
+			<explosionEffect>MakaiPsy_TD_BlastSmall</explosionEffect>
+			<postExplosionSpawnThingDef>MakaiPsy_TD_MysticSword</postExplosionSpawnThingDef>
+			<postExplosionSpawnChance>0.01</postExplosionSpawnChance>
+			<postExplosionSpawnThingCount>1</postExplosionSpawnThingCount>
+		</projectile>		
+		<comps>
+			<li Class="MakaiTechPsycast.CompProperties_FleckEmitter">
+				<alwaysOn>true</alwaysOn>
+				<moteDefs>
+					<li>MakaiPsyMote_SparkA</li>
+					<li>MakaiPsyMote_SparkB</li>
+					<li>MakaiPsyMote_SparkC</li>
+				</moteDefs>
+				<countPerEmit>1</countPerEmit>
+				<scale>0.5</scale>
+				<scaleMax>1</scaleMax>
+				<rotationMinRate>-30</rotationMinRate>
+				<rotationMaxRate>30</rotationMaxRate>
+				<minRotate>-45</minRotate>
+				<maxRotate>45</maxRotate>
+				<minSpeed>-1</minSpeed>
+				<maxSpeed>1</maxSpeed>
+				<minEmissionInterval>0</minEmissionInterval>
+				<maxEmissionInterval>1</maxEmissionInterval>
+				<propelBackward>true</propelBackward>
+				<propelSlowdown>6</propelSlowdown>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	<ThingDef ParentName="BaseBullet">
+	<defName>MakaiPsy_TD_HeavenlyChain</defName>
+		<label>Chain Bolt</label>
+		<description>chain of heaven</description>
+		<!-- <thingClass>Projectile_Explosive</thingClass> -->
+		<graphicData>
+			<texPath>Projectiles/makai_bullet_mea</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+            <shaderType>MoteGlow</shaderType>
+			<drawSize>1</drawSize>
+		</graphicData>
+		<drawOffscreen>true</drawOffscreen>
+		<projectile>
+			<damageDef>TrueDestruction_SwordRain</damageDef>
+			<damageAmountBase>10</damageAmountBase>
+			<!-- <explosionRadius>0.1</explosionRadius> -->
+			<speed>60</speed>
+			<arcHeightFactor>2</arcHeightFactor>
+			<!-- <shadowSize>0.4</shadowSize> -->
+			<!-- <explosionEffect>MakaiPsy_TD_BlastSmall</explosionEffect> -->
+			<!-- <postExplosionSpawnThingDef>MakaiPsy_TD_MysticSword</postExplosionSpawnThingDef> -->
+			<!-- <postExplosionSpawnChance>0.01</postExplosionSpawnChance> -->
+			<!-- <postExplosionSpawnThingCount>1</postExplosionSpawnThingCount> -->
+		</projectile>		
+		<comps>
+			<li Class="MakaiTechPsycast.CompProperties_FleckEmitter">
+				<alwaysOn>true</alwaysOn>
+				<moteDefs>
+					<li>MakaiPsyMote_ChainA</li>
+				</moteDefs>
+				<countPerEmit>1</countPerEmit>
+				<scale>2</scale>
+				<scaleMax>2</scaleMax>
+				<rotationMinRate>0</rotationMinRate>
+				<rotationMaxRate>0</rotationMaxRate>
+				<minRotate>0</minRotate>
+				<maxRotate>0</maxRotate>
+				<minSpeed>0</minSpeed>
+				<maxSpeed>0</maxSpeed>
+				<minEmissionInterval>0</minEmissionInterval>
+				<maxEmissionInterval>1</maxEmissionInterval>
+				<propelBackward>false</propelBackward>
+				<propelSlowdown>24</propelSlowdown>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	<ThingDef ParentName="BaseBullet">
+	<defName>MakaiPsy_TD_Rhongo</defName>
+		<label>Spear of Light</label>
+		<description>A slow moving spear that explode on impact</description>
+		<thingClass>Projectile_Explosive</thingClass>
+		<graphicData>
+			<texPath>Projectiles/TrueDestruction/RhongoTest</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+            <shaderType>Cutout</shaderType>
+			<drawSize>(2.5,18)</drawSize>
+			<drawOffset>(0,0.2,6.5)</drawOffset>
+		</graphicData>
+		<drawOffscreen>true</drawOffscreen>
+		<projectile>
+			<damageDef>TrueDestruction_Rhongo</damageDef>
+			<damageAmountBase>200</damageAmountBase>
+			<armorPenetrationBase>2</armorPenetrationBase>
+			<flyOverhead>true</flyOverhead>
+			<explosionRadius>20</explosionRadius>
+			<speed>5</speed>
+			<!-- <arcHeightFactor>2</arcHeightFactor> -->
+			<!-- <shadowSize>0.4</shadowSize> -->
+			<explosionEffect>MakaiPsy_TD_BlastBigYellow</explosionEffect>
+		</projectile>		
+		<comps>
+			<li Class="CompProperties_MoteEmitter" MayRequire="ludeon.rimworld.ideology">
+			<mote>Mote_PsychicConditionCauserEffect</mote>
+			<emissionInterval>120</emissionInterval>
+			<soundOnEmission>Archonexus_Throb</soundOnEmission>
+			</li>
+			<li Class="MakaiTechPsycast.CompProperties_FleckEmitter">
+				<alwaysOn>true</alwaysOn>
+				<moteDefs>
+					<li>MakaiPsyMote_RhongoRing</li>
+				</moteDefs>
+				<scale>0.5</scale>
+				<scaleMax>0.5</scaleMax>
+				<minRotate>-45</minRotate>
+				<maxRotate>45</maxRotate>
+				<minSpeed>-1</minSpeed>
+				<maxSpeed>1</maxSpeed>
+				<minEmissionInterval>5</minEmissionInterval>
+				<maxEmissionInterval>5</maxEmissionInterval>
+				<countPerEmit>1</countPerEmit>
+				<propelBackward>true</propelBackward>
+				<propelSlowdown>1</propelSlowdown>
+			</li>
+			<li Class="MakaiTechPsycast.CompProperties_FleckEmitter">
+				<alwaysOn>true</alwaysOn>
+				<useFleck>true</useFleck>
+				<fleckDefs>
+					<li>MakaiPsyMote_RhongoTip</li>
+				</fleckDefs>
+				<scale>1</scale>
+				<scaleMax>1</scaleMax>
+				<minRotate>-45</minRotate>
+				<maxRotate>45</maxRotate>
+				<minSpeed>-1</minSpeed>
+				<maxSpeed>1</maxSpeed>
+				<minEmissionInterval>0</minEmissionInterval>
+				<maxEmissionInterval>1</maxEmissionInterval>
+				<countPerEmit>1</countPerEmit>
+				<!-- <propelBackward>true</propelBackward> -->
+				<!-- <propelSlowdown>1</propelSlowdown> -->
+			</li>
+			<li Class="MakaiTechPsycast.CompProperties_FleckEmitter">
+				<alwaysOn>true</alwaysOn>
+				<moteDefs>
+					<li>MakaiPsyMote_SparkA</li>
+					<li>MakaiPsyMote_SparkB</li>
+					<li>MakaiPsyMote_SparkC</li>
+				</moteDefs>
+				<scale>0.5</scale>
+				<scaleMax>0.5</scaleMax>
+				<minRandomOffsetX>-1</minRandomOffsetX>
+				<maxRandomOffsetX>1</maxRandomOffsetX>
+				<minRandomOffsetY>0</minRandomOffsetY>
+				<maxRandomOffsetY>7</maxRandomOffsetY>
+				<rotationMinRate>5</rotationMinRate>
+				<rotationMaxRate>5</rotationMaxRate>
+				<minRotate>-45</minRotate>
+				<maxRotate>45</maxRotate>
+				<minSpeed>-1</minSpeed>
+				<maxSpeed>1</maxSpeed>
+				<minEmissionInterval>1</minEmissionInterval>
+				<maxEmissionInterval>1</maxEmissionInterval>
+				<countPerEmit>1</countPerEmit>
+				<!-- <propelBackward>true</propelBackward> -->
+				<!-- <propelSlowdown>5</propelSlowdown> -->
+			</li>
+			<li Class="CompProperties_Glower">
+				<overlightRadius>20</overlightRadius>
+				<glowRadius>20</glowRadius>
+				<glowColor>(255,246,129)</glowColor>
+			</li>
+		</comps>
+	</ThingDef>
+	
+
+</Defs>

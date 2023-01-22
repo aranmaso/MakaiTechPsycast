@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+	<VanillaPsycastsExpanded.PsycasterPathDef>
+      <defName>MakaiTech_VPE_Bond_Intertwined</defName>
+      <label>Tieweaver</label>
+      <description>. . .</description>
+      <background>UI/Backgrounds/Bond_Intertwined</background>
+      <altBackground>UI/BackgroundsAlt/Bond_Intertwined</altBackground>
+      <tab>MakaiTech</tab>
+      <tooltip>Tieweaver connect into an otherworldy essence of bond, and use their talent to maintain morale, mend broken relation,or even forge a new bond. Tieweaver not only mend but can also use it to their advantage as well, in a battlefield a Tieweaver is definitely not something you can overlook in their potential. \n\nSkill Bonus: Social</tooltip>
+    </VanillaPsycastsExpanded.PsycasterPathDef>
+	
+	<VanillaPsycastsExpanded.PsycasterPathDef>
+      <defName>MakaiTech_VPE_String_of_Fate</defName>
+      <label>Fateweaver</label>
+      <description>. . .</description>
+      <background>UI/Backgrounds/String_of_Fate</background>
+      <altBackground>UI/BackgroundsAlt/String_of_Fate</altBackground>
+      <tab>MakaiTech</tab>
+      <tooltip>Fateweaver tap deep into an otherworldly psychic wavelength originate from the essence of fate, manipulating and influencing the very causality, rearrange the knot of fate to suit their need. Once having mastered their art, a Fateweaver can change the outcome of batte once lost, or turn someone back from the brink of death.
+	  \ndue to the difficulty in fate manipulation the success threshold will be higher than average. &lt;color=#01F1F1&gt;\n\nSkill Bonus : intellectual&lt;/color&gt;</tooltip>
+    </VanillaPsycastsExpanded.PsycasterPathDef>
+	
+	<VanillaPsycastsExpanded.PsycasterPathDef>
+      <defName>MakaiTech_VPE_Corrupted_Prophet</defName>
+      <label>Lunacy Prophet</label>
+      <description>. . .</description>
+      <background>UI/Backgrounds/Corrupted_Prophet</background>
+      <altBackground>UI/BackgroundsAlt/Corrupted_Prophet</altBackground>
+      <tab>MakaiTech</tab>
+      <tooltip>Lunacy Prophet, the herald of insanity. embrace in the otherworldly essence of corruption. Lunacy Prophet in the frontline is a sign of horror to their enemies, they forsake the psychic gift of archotech and taint it in their madness, and instead connect to the entity outside the domain of the universe. \n\nSkill Bonus: Social</tooltip>
+    </VanillaPsycastsExpanded.PsycasterPathDef>
+	
+	<VanillaPsycastsExpanded.PsycasterPathDef>
+      <defName>MakaiTech_VPE_Destined_Death</defName>
+      <label>Destined Death</label>
+      <description>. . .</description>
+      <background>UI/Backgrounds/Destined_Death</background>
+      <altBackground>UI/BackgroundsAlt/Destined_Death</altBackground>
+      <tab>MakaiTech</tab>
+      <tooltip>their true name shrouded in mystery, but their feat and prowess in the battefield has given them the name "Destined Death", for they held the power to grant their enemies a true dead, one where nothing could bring them back from. throught tapping into the endless domain of the essence of death, harness the soul of their foes to strengthen themselves, and enhance their own ability. rumor has it that at the end of their path, a Destined Death has overcome even death itself. \n\nSkill Bonus: Intellectual</tooltip>
+    </VanillaPsycastsExpanded.PsycasterPathDef>
+	
+	<VanillaPsycastsExpanded.PsycasterPathDef>
+      <defName>MakaiTech_VPE_Distorted_Reality</defName>
+      <!-- <label>D̶͈͠i̸̞͠s̸̘̃t̸͠ͅọ̵̌r̴͖̄t̸̥͊e̸̯͠d̸̎͜ ̴͚͝R̴̪̉e̸̤͆a̵͖̅ĺ̸̮i̴̘͊t̸̢͊y̶̭͊</label> -->
+      <label>Glitch</label>
+      <description>. . .</description>
+      <background>UI/Backgrounds/Distorted_Reality</background>
+      <altBackground>UI/BackgroundsAlt/Distorted_Reality</altBackground>
+      <tab>MakaiTech</tab>
+      <!-- <tooltip>Ģ̵̄l̶̻͌i̸̫̚t̷̯̆ĉ̴̘h̷̟̾hold unimaginable power.and distort the very fabric of reality itself. but be warn, due to the nature of G̸͕͆ĺ̷͓̥̃̇͐͜i̵͓͕͗͂t̸͓̞͊͛́̄ċ̸̠̞̜͂̚͝h̷̬̞̽ 's psy power, nothing can be certain. even they can't tell the exact outcome of their ability. skill bonus will always be random. success and great success threshold will always be random.&lt;color=#01F1F1&gt;\n\nSkill Bonus : random&lt;/color&gt;</tooltip> -->
+      <tooltip>Glitch hold unimaginable power, and could distort the very fabric of reality itself. Be warn, due to the nature of Glitch's psy power, nothing can be certain. even they can't tell the exact outcome of their ability. skill bonus will always be random. success and great success threshold will always be random.&lt;color=#01F1F1&gt;\n\nSkill Bonus : random&lt;/color&gt;</tooltip>
+    </VanillaPsycastsExpanded.PsycasterPathDef>
+	
+	<VanillaPsycastsExpanded.PsycasterPathDef>
+      <defName>MakaiTech_VPE_Existence</defName>
+      <label>Voidwalker</label>
+      <description>. . .</description>
+      <background>UI/Backgrounds/Existence</background>
+      <altBackground>UI/BackgroundsAlt/Existence</altBackground>
+      <tab>MakaiTech</tab>
+      <tooltip>. . .</tooltip>
+    </VanillaPsycastsExpanded.PsycasterPathDef>
+	
+	<VanillaPsycastsExpanded.PsycasterPathDef>
+      <defName>MakaiTech_VPE_FrigidFrost</defName>
+      <label>Frigidstar</label>
+      <description>. . .</description>
+      <background>UI/Backgrounds/FrigidFrost</background>
+      <altBackground>UI/BackgroundsAlt/FrigidFrost</altBackground>
+      <tab>MakaiTech</tab>
+      <tooltip>. . .</tooltip>
+    </VanillaPsycastsExpanded.PsycasterPathDef>
+	
+	<VanillaPsycastsExpanded.PsycasterPathDef>
+      <defName>MakaiTech_VPE_Passioned_Flame</defName>
+      <label>Flameheart</label>
+      <description>. . .</description>
+      <background>UI/Backgrounds/Passioned_Flame</background>
+      <altBackground>UI/BackgroundsAlt/Passioned_Flame</altBackground>
+      <tab>MakaiTech</tab>
+      <tooltip>. . .</tooltip>
+    </VanillaPsycastsExpanded.PsycasterPathDef>
+	
+	<VanillaPsycastsExpanded.PsycasterPathDef>
+      <defName>MakaiTech_VPE_Perfect_Knowledge</defName>
+      <label>Knowledge Seeker</label>
+      <description>Knowledge Seeker, the master of skill manipulation. capable of manipulate people memory and experience. exchanging them between person or steal it for their own use. or make a beacon to grant knowledge to passerby ally.</description>
+      <background>UI/Backgrounds/Perfect_Knowledge</background>
+      <altBackground>UI/BackgroundsAlt/Perfect_Knowledge</altBackground>
+      <tab>MakaiTech</tab>
+      <tooltip>Knowledge Seeker are held in high regard for their intelligence. either by force or by voluntary, Knowledge Seeker could take what they deem necessary from their victim, or grant their ally an unimaginable knowledge unlike their kin the Technomancer, they are in search of the vast unknown yet to be discover by any. \n\nKnowledge is the only thing that certain, and such there is no randomness involve.</tooltip>
+    </VanillaPsycastsExpanded.PsycasterPathDef>
+	
+	<VanillaPsycastsExpanded.PsycasterPathDef>
+      <defName>MakaiTech_VPE_Golden_Order</defName>
+      <label>Enlightened One</label>
+      <description>. . .</description>
+      <background>UI/Backgrounds/Golden_Order</background>
+      <altBackground>UI/BackgroundsAlt/Golden_Order</altBackground>
+      <tab>MakaiTech</tab>
+      <tooltip>Enlightened One are those who has seen the true light of the universe, their mind has been enlightened, capable of calming one who lose their way or those whose mental has reach a critical point. They also a great teacher capable of changing people way of thinking or behavior. \n\nSkill Bonus: Social</tooltip>
+    </VanillaPsycastsExpanded.PsycasterPathDef>
+	
+	<VanillaPsycastsExpanded.PsycasterPathDef>
+      <defName>MakaiTech_VPE_True_Destruction</defName>
+      <label>Deathmarch</label>
+      <description>. . .</description>
+      <background>UI/Backgrounds/True_Destruction</background>
+      <altBackground>UI/BackgroundsAlt/True_Destruction</altBackground>
+      <tab>MakaiTech</tab>
+      <tooltip>Deathmarch stand at the pinnacle of destruction, even the most fortified city would be left with nothing but ruin and debris. the sign of them appearing in the battlefield alone could strike fear into even the bravest. even heaven above would heed the call of Deathmarch. \n"So long as their march never stop, the clock that signal the final day continue" \n\nSkill Bonus: Melee and Shooting</tooltip>
+    </VanillaPsycastsExpanded.PsycasterPathDef>
+	
+	
+</Defs>

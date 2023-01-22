@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>Existence_TempOne</defName>
+		<label>Temp One</label>
+		<description>after a brief moment of concentrating, gain the ability to bargain like a great merchant for a short period.</description>
+		<iconPath>Abilities/Archon/GroupLink</iconPath>
+		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+		<durationTime>1000</durationTime>
+		<castTime>30</castTime>
+		<targetMode>Self</targetMode>
+		<radius>10</radius>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_Existence</path>
+				<level>1</level>
+				<order>2</order>
+				<psyfocusCost>0.1</psyfocusCost>
+				<entropyGain>0</entropyGain>
+			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+				<hediff>MakaiPsy_BI_Trading</hediff>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>Existence_TempTwo</defName>
+		<label>Temp Two</label>
+		<description>after a brief moment of concentrating, gain the ability to bargain like a great merchant for a short period.</description>
+		<iconPath>Abilities/Archon/GroupLink</iconPath>
+		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+		<durationTime>1000</durationTime>
+		<castTime>30</castTime>
+		<targetMode>Self</targetMode>
+		<radius>10</radius>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_Existence</path>
+				<level>2</level>
+				<order>1</order>
+				<psyfocusCost>0.1</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>Existence_TempFive</li>
+				</prerequisites>
+			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+				<hediff>MakaiPsy_BI_Trading</hediff>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>Existence_TempThree</defName>
+		<label>Temp Three</label>
+		<description>after a brief moment of concentrating, gain the ability to bargain like a great merchant for a short period.</description>
+		<iconPath>Abilities/Archon/GroupLink</iconPath>
+		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+		<durationTime>1000</durationTime>
+		<castTime>30</castTime>
+		<targetMode>Self</targetMode>
+		<radius>10</radius>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_Existence</path>
+				<level>2</level>
+				<order>2</order>
+				<psyfocusCost>0.1</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>Existence_TempFive</li>
+				</prerequisites>
+			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+				<hediff>MakaiPsy_BI_Trading</hediff>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>Existence_TempFour</defName>
+		<label>Temp Four</label>
+		<description>after a brief moment of concentrating, gain the ability to bargain like a great merchant for a short period.</description>
+		<iconPath>Abilities/Archon/GroupLink</iconPath>
+		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+		<durationTime>1000</durationTime>
+		<castTime>30</castTime>
+		<targetMode>Self</targetMode>
+		<radius>10</radius>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_Existence</path>
+				<level>3</level>
+				<order>1</order>
+				<psyfocusCost>0.1</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>Existence_TempFive</li>
+				</prerequisites>
+			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+				<hediff>MakaiPsy_BI_Trading</hediff>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>Existence_TempFive</defName>
+		<label>Temp Five</label>
+		<description>after a brief moment of concentrating, gain the ability to bargain like a great merchant for a short period.</description>
+		<iconPath>Abilities/Archon/GroupLink</iconPath>
+		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+		<durationTime>1000</durationTime>
+		<castTime>30</castTime>
+		<targetMode>Self</targetMode>
+		<radius>10</radius>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_Existence</path>
+				<level>3</level>
+				<order>2</order>
+				<psyfocusCost>0.1</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>Existence_TempOne</li>
+				</prerequisites>
+			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+				<hediff>MakaiPsy_BI_Trading</hediff>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>Existence_TempSix</defName>
+		<label>Temp Six</label>
+		<description>after a brief moment of concentrating, gain the ability to bargain like a great merchant for a short period.</description>
+		<iconPath>Abilities/Archon/GroupLink</iconPath>
+		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+		<durationTime>1000</durationTime>
+		<castTime>30</castTime>
+		<targetMode>Self</targetMode>
+		<radius>10</radius>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_Existence</path>
+				<level>3</level>
+				<order>3</order>
+				<psyfocusCost>0.1</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>Existence_TempFive</li>
+				</prerequisites>
+			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+				<hediff>MakaiPsy_BI_Trading</hediff>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>Existence_TempSeven</defName>
+		<label>Temp Seven</label>
+		<description>after a brief moment of concentrating, gain the ability to bargain like a great merchant for a short period.</description>
+		<iconPath>Abilities/Archon/GroupLink</iconPath>
+		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+		<durationTime>1000</durationTime>
+		<castTime>30</castTime>
+		<targetMode>Self</targetMode>
+		<radius>10</radius>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_Existence</path>
+				<level>4</level>
+				<order>1</order>
+				<psyfocusCost>0.1</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>Existence_TempFive</li>
+				</prerequisites>
+			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+				<hediff>MakaiPsy_BI_Trading</hediff>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>Existence_TempEight</defName>
+		<label>Temp Eight</label>
+		<description>after a brief moment of concentrating, gain the ability to bargain like a great merchant for a short period.</description>
+		<iconPath>Abilities/Archon/GroupLink</iconPath>
+		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+		<durationTime>1000</durationTime>
+		<castTime>30</castTime>
+		<targetMode>Self</targetMode>
+		<radius>10</radius>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_Existence</path>
+				<level>4</level>
+				<order>2</order>
+				<psyfocusCost>0.1</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>Existence_TempFive</li>
+				</prerequisites>
+			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+				<hediff>MakaiPsy_BI_Trading</hediff>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>Existence_TempNine</defName>
+		<label>Temp Nine</label>
+		<description>after a brief moment of concentrating, gain the ability to bargain like a great merchant for a short period.</description>
+		<iconPath>Abilities/Archon/GroupLink</iconPath>
+		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+		<durationTime>1000</durationTime>
+		<castTime>30</castTime>
+		<targetMode>Self</targetMode>
+		<radius>10</radius>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_Existence</path>
+				<level>5</level>
+				<order>1</order>
+				<psyfocusCost>0.1</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>Existence_TempSeven</li>
+					<li>Existence_TempEight</li>
+				</prerequisites>
+			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+				<hediff>MakaiPsy_BI_Trading</hediff>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>Existence_TempTen</defName>
+		<label>Temp Ten</label>
+		<description>after a brief moment of concentrating, gain the ability to bargain like a great merchant for a short period.</description>
+		<iconPath>Abilities/Archon/GroupLink</iconPath>
+		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+		<durationTime>1000</durationTime>
+		<castTime>30</castTime>
+		<targetMode>Self</targetMode>
+		<radius>10</radius>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_Existence</path>
+				<level>5</level>
+				<order>2</order>
+				<psyfocusCost>0.1</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>Existence_TempSeven</li>
+					<li>Existence_TempEight</li>
+				</prerequisites>
+			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+				<hediff>MakaiPsy_BI_Trading</hediff>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+
+</Defs>

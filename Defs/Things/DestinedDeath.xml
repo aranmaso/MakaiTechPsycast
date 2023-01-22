@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	
+	<ThingDef ParentName="ResourceBase">
+		<defName>MakaiTechPsy_DD_Soul</defName>
+		<thingClass>MakaiTechPsycast.Soul</thingClass>
+		<label>Lich Soul</label>
+		<description>a soul extracted from living being for becoming a lich.</description>
+		<graphicData>
+			<texPath>Things/Items/EssenceDeathSoul</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1.5</drawSize>
+		</graphicData>
+		<statBases>
+			<MarketValue>1000</MarketValue>
+			<Mass>0.1</Mass>
+			<Flammability>0</Flammability>
+			<DeteriorationRate>0</DeteriorationRate>
+		</statBases>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<useHitPoints>false</useHitPoints>
+		<stackLimit>1</stackLimit>
+		<thingCategories>
+			<li>Items</li>
+		</thingCategories>
+		<comps>
+		<li Class="CompProperties_Usable">
+			<useJob>UseItem</useJob>
+			<useLabel>Use Soul</useLabel>
+			<useDuration>200</useDuration>
+		</li>
+		<li Class="MakaiTechPsycast.CompProperties_UseEffectHealAll">
+		</li>
+		<li Class="CompProperties_UseEffectPlaySound">
+			<soundOnUsed>MechSerumUsed</soundOnUsed>
+		</li>
+		</comps>
+	</ThingDef>
+	
+	<!-- <ThingDef ParentName="ResourceBase"> -->
+		<!-- <defName>MakaiTechPsy_DD_Soul_Common</defName> -->
+		<!-- <thingClass>MakaiTechPsycast.Soul</thingClass> -->
+		<!-- <label>Soul(Common)</label> -->
+		<!-- <description>a common soul extracted from living being</description> -->
+		<!-- <graphicData> -->
+			<!-- <texPath>Things/Items/EssenceDeathSoul</texPath> -->
+			<!-- <graphicClass>Graphic_Single</graphicClass> -->
+			<!-- <drawSize>1.5</drawSize> -->
+		<!-- </graphicData> -->
+		<!-- <statBases> -->
+			<!-- <MarketValue>1</MarketValue> -->
+			<!-- <Mass>0.1</Mass> -->
+			<!-- <Flammability>0</Flammability> -->
+			<!-- <DeteriorationRate>0</DeteriorationRate> -->
+		<!-- </statBases> -->
+		<!-- <healthAffectsPrice>false</healthAffectsPrice> -->
+		<!-- <useHitPoints>false</useHitPoints> -->
+		<!-- <stackLimit>1</stackLimit> -->
+		<!-- <tradeTags> -->
+		<!-- </tradeTags> -->
+		<!-- <thingCategories> -->
+			<!-- <li>Items</li> -->
+		<!-- </thingCategories> -->
+		<!-- <comps> -->
+		<!-- </comps> -->
+	<!-- </ThingDef> -->
+	
+	<RecipeDef ParentName="SurgeryFlesh">
+		<defName>MakaiTechPsy_DD_Soul_Restore</defName>
+		<label>Restore Missing Soul</label>
+		<description>Transfer lich soul into a body that missing a soul.</description>
+		<workerClass>MakaiTechPsycast.Recipe_RestoreSoul</workerClass>
+		<jobString>return soul to TargetA.</jobString>
+		<workAmount>1300</workAmount>
+		<hideBodyPartNames>true</hideBodyPartNames>
+		<isViolation>false</isViolation>
+		<targetsBodyPart>false</targetsBodyPart>
+		<removesHediff>MakaiTechPsy_DD_MissingSoul</removesHediff>
+		<surgeryIgnoreEnvironment>true</surgeryIgnoreEnvironment>
+		<surgerySuccessChanceFactor>9999</surgerySuccessChanceFactor>
+		<anesthetize>false</anesthetize>
+		<researchPrerequisites>
+		</researchPrerequisites>
+		<skillRequirements>
+			<Medicine>13</Medicine>
+		</skillRequirements>
+		<recipeUsers>
+			<li>Human</li>
+		</recipeUsers>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>MakaiTechPsy_DD_Soul</li>
+						<!-- <li>MakaiTechPsy_DD_Soul_Common</li> -->
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>MakaiTechPsy_DD_Soul</li>
+				<!-- <li>MakaiTechPsy_DD_Soul_Common</li> -->
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+		</products>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryFlesh">
+		<defName>MakaiTechPsy_DD_LichSoul_Administer</defName>
+		<label>Administer Lich Soul</label>
+		<description>Administer Lich Soul</description>
+		<workerClass>MakaiTechPsycast.Recipe_AdministerLichSoul</workerClass>
+		<jobString>Administer Lich Soul</jobString>
+		<workAmount>1300</workAmount>
+		<hideBodyPartNames>true</hideBodyPartNames>
+		<isViolation>false</isViolation>
+		<targetsBodyPart>false</targetsBodyPart>
+		<removesHediff>MakaiTechPsy_DD_LichSoul</removesHediff>
+		<surgeryIgnoreEnvironment>true</surgeryIgnoreEnvironment>
+		<surgerySuccessChanceFactor>9999</surgerySuccessChanceFactor>
+		<anesthetize>false</anesthetize>
+		<skillRequirements>
+			<Medicine>13</Medicine>
+		</skillRequirements>
+		<recipeUsers>
+			<li>Human</li>
+		</recipeUsers>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>MakaiTechPsy_DD_Soul</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>MakaiTechPsy_DD_Soul</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+		</products>
+	</RecipeDef>
+	
+</Defs>

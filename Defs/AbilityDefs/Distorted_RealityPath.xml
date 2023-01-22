@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>DistortedReality_DistortWeapon</defName>
+		<label>Distort Equipment</label>
+		<description>Distort the fabric of reality on target weapon, destructively linking it to the many other reality,then force the fabric between the two to collaspe. resulting in target weapon turn into something else. &lt;color=#01F1F1&gt;\n\nSuccess: N/A \nGreat Success: N/A&lt;/color&gt;</description>
+		<iconPath>Abilities/DistortedReality/DistortWeapon</iconPath>
+		<abilityClass>MakaiTechPsycast.DistortedReality.Ability_DistortEquipment</abilityClass>
+		<castTime>30</castTime>
+		<targetMode>Pawn</targetMode>
+		<range>10</range>
+		<targetingParameters>
+			<canTargetSelf>False</canTargetSelf>
+			<canTargetHumans>True</canTargetHumans>
+			<canTargetMechs>True</canTargetMechs>
+			<canTargetAnimals>False</canTargetAnimals>
+			<canTargetBuildings>False</canTargetBuildings>
+		</targetingParameters>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_Distorted_Reality</path>
+				<level>1</level>
+				<order>2</order>
+				<psyfocusCost>0.1</psyfocusCost>
+				<entropyGain>5</entropyGain>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>1</successThreshold>
+				<greatSuccessThreshold>200</greatSuccessThreshold>
+				<skillBonus>Intellectual</skillBonus>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastGoToTargetBase">
+		<defName>DistortedReality_RandomHediff</defName>
+		<label>Distort Health</label>
+		<description>caster peek into other reality of the target pawn, finding one where a target hediff doesn't exist. but be warn. rule of equivalent exchange may still apply. &lt;color=#01F1F1&gt;\n\nSuccess: N/A \nGreat Success: N/A&lt;/color&gt;</description>
+		<iconPath>Abilities/DistortedReality/DistortHealth</iconPath>
+		<abilityClass>MakaiTechPsycast.DistortedReality.Ability_RandomHediffToANewOne</abilityClass>
+		<showUndrafted>true</showUndrafted>
+		<castTime>30</castTime>
+		<targetMode>Pawn</targetMode>
+		<targetingParameters>
+			<canTargetSelf>True</canTargetSelf>
+			<canTargetHumans>True</canTargetHumans>
+			<canTargetMechs>True</canTargetMechs>
+			<canTargetAnimals>True</canTargetAnimals>
+			<canTargetBuildings>False</canTargetBuildings>
+		</targetingParameters>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_Distorted_Reality</path>
+				<level>2</level>
+				<order>1</order>
+				<psyfocusCost>0.20</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>DistortedReality_RandomizedBuilding</li>
+				</prerequisites>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>1</successThreshold>
+				<greatSuccessThreshold>200</greatSuccessThreshold>
+				<skillBonus>Intellectual</skillBonus>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>DistortedReality_RandomizedBuilding</defName>
+		<label>Randomize Building</label>
+		<description>Link into multiple reality and choose at random a possible alternate reality to take place in target location&lt;color=#01F1F1&gt;\n\nSuccess: N/A \nGreat Success: N/A&lt;/color&gt;</description>
+		<iconPath>Abilities/DistortedReality/DistortBuilding</iconPath>
+		<abilityClass>MakaiTechPsycast.DistortedReality.Ability_RandomizedBuilding</abilityClass>
+		<showUndrafted>true</showUndrafted>
+		<castTime>30</castTime>
+		<targetMode>Thing</targetMode>
+		<range>10</range>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_Distorted_Reality</path>
+				<level>2</level>
+				<order>2</order>
+				<psyfocusCost>0.25</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>DistortedReality_DistortWeapon</li>
+				</prerequisites>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>1</successThreshold>
+				<greatSuccessThreshold>200</greatSuccessThreshold>
+				<skillBonus>Intellectual</skillBonus>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastGoToTargetBase">
+		<defName>DistortedReality_AdaptiveArmor</defName>
+		<label>Adaptive Armor</label>
+		<description>expose target body to the essence of distortion, causing it to adapt to any incoming damage&lt;color=#01F1F1&gt;\n\nSuccess: N/A \nGreat Success: N/A&lt;/color&gt;</description>
+		<iconPath>Abilities/DistortedReality/AdaptiveArmor</iconPath>
+		<abilityClass>MakaiTechPsycast.DistortedReality.Ability_AdaptiveArmor</abilityClass>
+		<showUndrafted>true</showUndrafted>
+		<castTime>30</castTime>
+		<targetMode>Pawn</targetMode>
+		<targetingParameters>
+			<canTargetSelf>True</canTargetSelf>
+			<canTargetHumans>True</canTargetHumans>
+			<canTargetMechs>True</canTargetMechs>
+			<canTargetAnimals>True</canTargetAnimals>
+			<canTargetBuildings>False</canTargetBuildings>
+		</targetingParameters>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_Distorted_Reality</path>
+				<level>2</level>
+				<order>3</order>
+				<psyfocusCost>0.15</psyfocusCost>
+				<entropyGain>5</entropyGain>
+				<prerequisites>
+					<li>DistortedReality_RandomizedBuilding</li>
+				</prerequisites>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>1</successThreshold>
+				<hediffDefWhenSuccess>MakaiTechPsy_DR_AdaptiveArmor</hediffDefWhenSuccess>
+				<greatSuccessThreshold>200</greatSuccessThreshold>
+				<hours>1</hours>
+				<skillBonus>Intellectual</skillBonus>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastGoToTargetBase">
+		<defName>DistortedReality_DistortedBlessing</defName>
+		<label>Distorted Blessing</label>
+		<description>touch into the essence of distortion and bless target pawn, every 1 hour the given buff will change at random.&lt;color=#01F1F1&gt;\n\nSuccess: N/A \nGreat Success: N/A&lt;/color&gt;</description>
+		<iconPath>Abilities/DistortedReality/DistortBlessing</iconPath>
+		<abilityClass>MakaiTechPsycast.DistortedReality.Ability_DistortedBlessing</abilityClass>
+		<castTime>30</castTime>
+		<targetMode>Pawn</targetMode>
+		<targetingParameters>
+			<canTargetSelf>True</canTargetSelf>
+			<canTargetHumans>True</canTargetHumans>
+			<canTargetMechs>True</canTargetMechs>
+			<canTargetAnimals>True</canTargetAnimals>
+			<canTargetBuildings>False</canTargetBuildings>
+		</targetingParameters>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_Distorted_Reality</path>
+				<level>3</level>
+				<order>1</order>
+				<psyfocusCost>0.25</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>DistortedReality_RandomizedBuilding</li>
+				</prerequisites>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>1</successThreshold>
+				<hediffDefWhenSuccess>MakaiTechPsy_DR_RandomlyChangeHediff_Main</hediffDefWhenSuccess>
+				<greatSuccessThreshold>200</greatSuccessThreshold>
+				<hours>6</hours>
+				<skillBonus>Intellectual</skillBonus>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>DistortedReality_DistortFabric</defName>
+		<label>Distort the fabric</label>
+		<description>look through the many possibility and alternate reality. then forcing one to take place. caster will have a choice to choose from. the strain on user mind caused them to be in 6 hours coma. &lt;color=#01F1F1&gt;\n\nSuccess: N/A \nGreat Success: N/A&lt;/color&gt;</description>
+		<iconPath>Abilities/DistortedReality/DistortFabric</iconPath>
+		<abilityClass>MakaiTechPsycast.DistortedReality.Ability_RandomizedEvent</abilityClass>
+		<castTime>30</castTime>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_Distorted_Reality</path>
+				<level>3</level>
+				<order>2</order>
+				<psyfocusCost>0.5</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>DistortedReality_RandomizedBuilding</li>
+				</prerequisites>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>1</successThreshold>
+				<greatSuccessThreshold>200</greatSuccessThreshold>
+				<skillBonus>Intellectual</skillBonus>
+			</li>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_PsychicComa">
+				<hours>6</hours>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>DistortedReality_DistortMatter</defName>
+		<label>Distort Matter</label>
+		<description>target a single item, then connect between the timeline and reality to find another possibility where target location contain different item &lt;color=#01F1F1&gt;\n\nSuccess: N/A \nGreat Success: N/A&lt;/color&gt;</description>
+		<iconPath>Abilities/DistortedReality/DistortMatter</iconPath>
+		<abilityClass>MakaiTechPsycast.DistortedReality.Ability_RandomizedItemOnGround</abilityClass>
+		<showUndrafted>true</showUndrafted>
+		<needsTicking>true</needsTicking>
+		<targetMode>Thing</targetMode>
+		<castTime>30</castTime>
+		<targetingParameters>
+			<canTargetItems>true</canTargetItems>
+			<mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable>
+			<thingCategory>Item</thingCategory>
+			<canTargetLocations>false</canTargetLocations>
+			<canTargetPawns>false</canTargetPawns>
+			<canTargetBuildings>false</canTargetBuildings>
+		</targetingParameters>
+		<range>10</range>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_Distorted_Reality</path>
+				<level>4</level>
+				<order>2</order>
+				<psyfocusCost>0.15</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>DistortedReality_DistortedBlessing</li>
+					<li>DistortedReality_DistortFabric</li>
+				</prerequisites>
+			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_FleckOnTarget">
+			  <fleckDefs>
+				<li>PsycastSkipInnerExit</li>
+				<li>PsycastSkipOuterRingExit</li>
+			  </fleckDefs>
+			  <scale>0.42</scale>
+			  <sound>Psycast_Skip_Exit</sound>
+			  <preCastTicks>10</preCastTicks>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>1</successThreshold>
+				<greatSuccessThreshold>200</greatSuccessThreshold>
+				<skillBonus>Intellectual</skillBonus>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastGoToTargetBase">
+		<defName>DistortedReality_ShiftBullet</defName>
+		<label>Shifting Bullet</label>
+		<description>distort target pawn, make any projectile originate from that pawn have a 50% chance to bounce between their foes. &lt;color=#01F1F1&gt;\n\nSuccess: N/A \nGreat Success: N/A&lt;/color&gt;</description>
+		<iconPath>Abilities/DistortedReality/ShiftBullet</iconPath>
+		<abilityClass>MakaiTechPsycast.DistortedReality.Ability_DistortedProjectile</abilityClass>
+		<castTime>60</castTime>
+		<targetMode>Pawn</targetMode>
+		<targetingParameters>
+			<canTargetSelf>True</canTargetSelf>
+			<canTargetHumans>True</canTargetHumans>
+			<canTargetMechs>True</canTargetMechs>
+			<canTargetAnimals>True</canTargetAnimals>
+			<canTargetBuildings>False</canTargetBuildings>
+		</targetingParameters>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_Distorted_Reality</path>
+				<level>4</level>
+				<order>1</order>
+				<psyfocusCost>0.2</psyfocusCost>
+				<entropyGain>10</entropyGain>
+				<prerequisites>
+					<li>DistortedReality_DistortMatter</li>
+				</prerequisites>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>1</successThreshold>
+				<hediffDefWhenSuccess>MakaiTechPsy_DR_DistortBulletBounce</hediffDefWhenSuccess>
+				<greatSuccessThreshold>200</greatSuccessThreshold>
+				<hours>2</hours>
+				<skillBonus>Intellectual</skillBonus>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastGoToTargetBase">
+		<defName>DistortedReality_ShiftShield</defName>
+		<label>Shifting Shield</label>
+		<description>cover the target with a layer of distorted fabric, sending any incoming projectile into the empty void. &lt;color=#01F1F1&gt;\n\nSuccess: N/A \nGreat Success: N/A&lt;/color&gt;</description>
+		<iconPath>Abilities/DistortedReality/ShiftShield</iconPath>
+		<abilityClass>MakaiTechPsycast.DistortedReality.Ability_DistortedShield</abilityClass>
+		<castTime>60</castTime>
+		<targetMode>Pawn</targetMode>
+		<targetingParameters>
+			<canTargetSelf>True</canTargetSelf>
+			<canTargetHumans>True</canTargetHumans>
+			<canTargetMechs>True</canTargetMechs>
+			<canTargetAnimals>True</canTargetAnimals>
+			<canTargetBuildings>False</canTargetBuildings>
+		</targetingParameters>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_Distorted_Reality</path>
+				<level>4</level>
+				<order>3</order>
+				<psyfocusCost>0.2</psyfocusCost>
+				<entropyGain>10</entropyGain>
+				<prerequisites>
+					<li>DistortedReality_DistortMatter</li>
+				</prerequisites>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>1</successThreshold>
+				<hediffDefWhenSuccess>MakaiTechPsy_DR_DistortShield</hediffDefWhenSuccess>
+				<greatSuccessThreshold>200</greatSuccessThreshold>
+				<skillBonus>Intellectual</skillBonus>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>DistortedReality_UltimateDistortion</defName>
+		<label>Ultimate Distortion</label>
+		<description>tear a great rift in causality of the world. pry into group of alternate reality and force a event of choice to happen. &lt;color=#01F1F1&gt;\n\nSuccess: 15 \nGreat Success: 35&lt;/color&gt;</description>
+		<iconPath>Abilities/DistortedReality/UltimateDistortion</iconPath>
+		<abilityClass>MakaiTechPsycast.DistortedReality.Ability_DistortedReality</abilityClass>
+		<castTime>30</castTime>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_Distorted_Reality</path>
+				<level>5</level>
+				<order>2</order>
+				<psyfocusCost>0.5</psyfocusCost>
+				<entropyGain>50</entropyGain>
+				<prerequisites>
+					<li>DistortedReality_DistortMatter</li>
+				</prerequisites>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>15</successThreshold>
+				<greatSuccessThreshold>35</greatSuccessThreshold>
+				<hediffDefWhenFail>MakaiTechPsy_DR_DistortUltimateCount</hediffDefWhenFail>
+				<skillBonus>Intellectual</skillBonus>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+
+</Defs>

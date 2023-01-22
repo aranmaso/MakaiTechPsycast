@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+	<!--VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+    <defName>Perfect_KnowledgeAbiTest</defName>
+    <label>solar pinhole</label>
+    <description>Generate a microscopic skipgate linked to the core of a nearby star for a few days. Solar material leaks through the pinprick in spacetime, illuminating and warming the surrounding area until it closes. The light is enough to work by, but not enough to grow plants.</description>
+    <iconPath>Abilities/Skipmaster/SolarPinhole</iconPath>
+    <abilityClass>VFECore.Abilities.Ability_Spawn</abilityClass>
+    <needsTicking>true</needsTicking>
+    <castTime>15</castTime>
+    <durationTime>30000</durationTime>
+    <radius>14.9</radius>
+    <range>24.9</range>
+    <targetMode>Location</targetMode>
+	<showUndrafted>true</showUndrafted>
+    <modExtensions>
+      <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+        <path>MakaiTech_VPE_Perfect_Knowledge</path>
+        <level>1</level>
+        <order>1</order>
+        <psyfocusCost>0.08</psyfocusCost>
+        <entropyGain>0</entropyGain>
+      </li>
+      <li Class="VFECore.Abilities.AbilityExtension_Spawn">
+        <thing>SolarPinhole</thing>
+      </li>
+      <li Class="VFECore.Abilities.AbilityExtension_EffecterOnTarget">
+        <effecterDef>Skip_Exit</effecterDef>
+        <maintainForTicks>60</maintainForTicks>
+        <scale>0.42</scale>
+      </li>
+      <li Class="VFECore.Abilities.AbilityExtension_FleckOnTarget">
+        <fleckDefs>
+          <li>PsycastSkipInnerExit</li>
+          <li>PsycastSkipOuterRingExit</li>
+        </fleckDefs>
+        <scale>0.42</scale>
+        <sound>Psycast_Skip_Exit</sound>
+        <preCastTicks>5</preCastTicks>
+      </li>
+    </modExtensions>
+  </VFECore.Abilities.AbilityDef-->
+  
+  <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+      <defName>Perfect_Knowledge_Beam</defName>
+      <label>Seek</label>
+      <description>Generate a small flying bit that immediately launched at target like a laser beam. deal moderate damage and disrupt victim ability to think.</description>
+      <iconPath>Abilities/PerfectKnowledge/Seek</iconPath>
+      <abilityClass>VFECore.Abilities.Ability_ShootProjectile</abilityClass>
+      <castTime>3</castTime>
+      <range>20</range>
+	  <power>1</power>
+      <targetMode>Pawn</targetMode>
+      <castSound>Shot_ChargeBlaster</castSound>
+	  <targetingParameters>
+        <canTargetItems>true</canTargetItems>
+        <canTargetLocations>false</canTargetLocations>
+      </targetingParameters>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>MakaiTech_VPE_Perfect_Knowledge</path>
+          <level>1</level>
+          <order>2</order>
+          <psyfocusCost>0.01</psyfocusCost>
+          <entropyGain>2</entropyGain>
+        </li>
+        <li Class="VFECore.Abilities.AbilityExtension_Projectile">
+          <projectile>MakaiTechPsy_PK_BeamSingle</projectile>
+        </li>
+		<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+          <hediff>MakaiPsy_PK_Brain_Mulfunction</hediff>
+		  <bodyPartToApply>Brain</bodyPartToApply>
+          <durationMultiplier>PsychicSensitivity</durationMultiplier>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+      <defName>Perfect_Knowledge_BeamChain</defName>
+      <label>Beam</label>
+      <description>Generate an empowering psychic energy orb that home in and piece through multiple enemies. disrupt victim ability to think.</description>
+      <iconPath>Abilities/PerfectKnowledge/ChainBeam</iconPath>
+      <abilityClass>VFECore.Abilities.Ability_ShootProjectile</abilityClass>
+      <castTime>9</castTime>
+      <range>20</range>
+      <targetMode>Pawn</targetMode>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>MakaiTech_VPE_Perfect_Knowledge</path>
+          <level>1</level>
+          <order>3</order>
+          <psyfocusCost>0.04</psyfocusCost>
+          <entropyGain>5</entropyGain>
+          <prerequisites>
+            <li>Perfect_Knowledge_Beam</li>
+          </prerequisites>
+        </li>
+        <li Class="VFECore.Abilities.AbilityExtension_Projectile">
+          <projectile>MakaitechPsy_PK_ChainBeam</projectile>
+        </li>
+		<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+          <hediff>MakaiPsy_PK_Brain_Mulfunction</hediff>
+		  <bodyPartToApply>Brain</bodyPartToApply>
+          <durationMultiplier>PsychicSensitivity</durationMultiplier>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+      <defName>Perfect_Knowledge_LearnBeacon</defName>
+      <label>Knowledge Beacon</label>
+      <description>Creates a node of psychic entropy in the form of metallic construct. emit psychic aura to passerby colonist that boost their learning and researching ability. last for 1 days. caster will fall into 12 hour coma.</description>
+      <iconPath>Abilities/PerfectKnowledge/KnowledgeBeacon</iconPath>
+	  <castTime>60</castTime>
+	  <castSound>VPE_IceCrystal_Cast</castSound>
+	  <durationTime>60000</durationTime>
+	  <range>6.9</range>
+	  <targetMode>Location</targetMode>
+	  <abilityClass>VFECore.Abilities.Ability_SpawnBuilding</abilityClass>
+	  <needsTicking>true</needsTicking>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>MakaiTech_VPE_Perfect_Knowledge</path>
+          <level>1</level>
+          <order>1</order>
+          <psyfocusCost>0.22</psyfocusCost>
+          <entropyGain>0</entropyGain>
+          <prerequisites>
+			<li>Perfect_Knowledge_Beam</li>
+          </prerequisites>
+        </li>
+		<li Class="VFECore.Abilities.AbilityExtension_Building">
+			<building>MakaiTechPsy_PK_LearningBeacon</building>
+		</li>
+		<li Class="VFECore.Abilities.AbilityExtension_EffecterOnTarget">
+			<effecterDef>Skip_Exit</effecterDef>
+			<maintainForTicks>60</maintainForTicks>
+			<scale>0.42</scale>
+		</li>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_PsychicComa">
+			  <hours>12</hours>
+			  <multiplier>PsychicSensitivity</multiplier>
+		</li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+      <defName>Perfect_Knowledge_XpBeacon</defName>
+      <label>Skill Beacon</label>
+      <description>Creates a node of psychic entropy in the form of a metallic construct, passerby colonist will gain experience in intellectual and crafting. last for half a day and caster fall into 12 hour coma. the construct can't grant exp pass skill level 10.</description>
+      <iconPath>Abilities/PerfectKnowledge/XpBeacon</iconPath>
+	  <castTime>60</castTime>
+	  <castSound>VPE_IceCrystal_Cast</castSound>
+	  <durationTime>30000</durationTime>
+	  <range>6.9</range>
+	  <targetMode>Location</targetMode>
+	  <abilityClass>VFECore.Abilities.Ability_SpawnBuilding</abilityClass>
+	  <needsTicking>true</needsTicking>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>MakaiTech_VPE_Perfect_Knowledge</path>
+          <level>4</level>
+          <order>2</order>
+          <psyfocusCost>0.22</psyfocusCost>
+          <entropyGain>0</entropyGain>
+          <prerequisites>
+			<li>Perfect_Knowledge_SwapConstruct</li>
+			<li>Perfect_Knowledge_SwapInt</li>
+			<li>Perfect_Knowledge_SwapCraft</li>
+			<li>Perfect_Knowledge_DrainSkill</li>
+          </prerequisites>
+        </li>
+		<li Class="VFECore.Abilities.AbilityExtension_Building">
+			<building>MakaiTechPsy_PK_XpBeacon</building>
+		</li>
+		<li Class="VFECore.Abilities.AbilityExtension_EffecterOnTarget">
+			<effecterDef>Skip_Exit</effecterDef>
+			<maintainForTicks>60</maintainForTicks>
+			<scale>0.42</scale>
+		</li>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_PsychicComa">
+			  <hours>12</hours>
+			  <multiplier>PsychicSensitivity</multiplier>
+		</li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+      <defName>Perfect_Knowledge_MechHack</defName>
+      <label>System Berserk</label>
+      <description>Psychically connect to mechanoid system circuit. and disrupt their targeting module causing them to attack everything in sight.</description>
+      <iconPath>Abilities/PerfectKnowledge/MechHack</iconPath>
+      <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+      <castTime>60</castTime>
+	  <goodwillImpact>-10</goodwillImpact>
+      <castSound>VPE_MindControl_Cast</castSound>
+      <durationTime>60100</durationTime>
+      <targetMode>Pawn</targetMode>
+      <range>20</range>
+      <cooldownTime>300</cooldownTime>
+	  <targetingParameters>
+		<canTargetHumans>false</canTargetHumans>
+		<canTargetAnimals>false</canTargetAnimals>
+		<canTargetMechs>true</canTargetMechs>
+        <canTargetItems>false</canTargetItems>
+        <canTargetLocations>false</canTargetLocations>
+      </targetingParameters>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>MakaiTech_VPE_Perfect_Knowledge</path>
+          <level>2</level>
+          <order>1</order>
+          <psyfocusCost>0.08</psyfocusCost>
+          <entropyGain>18</entropyGain>
+          <prerequisites>
+            <li>Perfect_Knowledge_LearnBeacon</li>
+			<li>Perfect_Knowledge_Beam</li>
+          </prerequisites>
+        </li>
+        <li Class="VFECore.Abilities.AbilityExtension_Hediff">
+          <hediff>MakaiPsy_MechHack</hediff>
+          <durationMultiplier>PsychicSensitivity</durationMultiplier>
+        </li>
+        <!--li Class="VFECore.Abilities.AbilityExtension_ExtraHediffs">
+          <onCaster>
+            <li>VPE_MindScramble</li>
+          </onCaster>
+          <onTarget>
+            <li>VPE_MindScramble</li>
+          </onTarget>
+          <durationMultiplier>PsychicSensitivity</durationMultiplier>
+        </li-->
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+      <defName>Perfect_Knowledge_SpawnLearner</defName>
+      <label>Trainer Summon</label>
+      <description>after some period of meditation. condense a copy of caster experience into a usable neurotrainer(intellectual)</description>
+      <iconPath>Abilities/PerfectKnowledge/SpawnTrainer</iconPath>
+	  <castTime>2000</castTime>
+	  <castSound>VPE_IceCrystal_Cast</castSound>
+	  <range>6.9</range>
+	  <targetMode>Location</targetMode>
+	  <abilityClass>VFECore.Abilities.Ability_Spawn</abilityClass>
+	  <needsTicking>true</needsTicking>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>MakaiTech_VPE_Perfect_Knowledge</path>
+          <level>2</level>
+          <order>2</order>
+          <psyfocusCost>0.22</psyfocusCost>
+          <entropyGain>0</entropyGain>
+          <prerequisites>
+            <li>Perfect_Knowledge_BeamChain</li>
+			<li>Perfect_Knowledge_Beam</li>
+          </prerequisites>
+        </li>
+		<li Class="VFECore.Abilities.AbilityExtension_Spawn">
+			<thing>Neurotrainer_Intellectual</thing>
+		</li>
+		<li Class="VFECore.Abilities.AbilityExtension_EffecterOnTarget">
+			<effecterDef>Skip_Exit</effecterDef>
+			<maintainForTicks>60</maintainForTicks>
+			<scale>0.42</scale>
+		</li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+      <defName>Perfect_Knowledge_DrainSkill</defName>
+      <label>knowledge drain</label>
+      <description>form a forceful connection to target memory. then drain all knowledge they have to caster. severely damage victim brain and considered hostile by all faction.</description>
+      <iconPath>Abilities/PerfectKnowledge/KnowledgeDrain</iconPath>
+      <abilityClass>MakaiTechPsycast.PerfectKnowledge.Ability_StealAllIntellectual</abilityClass>
+      <castTime>120</castTime>
+	  <goodwillImpact>-100</goodwillImpact>
+      <targetCount>1</targetCount>
+      <targetModes>
+        <li>Pawn</li>
+      </targetModes>
+      <targetingParametersList>
+        <li>
+          <canTargetSelf>True</canTargetSelf>
+          <canTargetPawns>True</canTargetPawns>
+		  <canTargetAnimals>False</canTargetAnimals>
+		  <canTargetMechs>False</canTargetMechs>
+          <canTargetBuildings>False</canTargetBuildings>
+        </li>
+        <!--li>
+          <canTargetSelf>True</canTargetSelf>
+          <canTargetPawns>True</canTargetPawns>
+		  <canTargetAnimals>False</canTargetAnimals>
+		  <canTargetMechs>False</canTargetMechs>
+          <canTargetBuildings>False</canTargetBuildings>
+        </li-->
+      </targetingParametersList>
+      <range>5.9</range>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>MakaiTech_VPE_Perfect_Knowledge</path>
+          <level>5</level>
+          <order>1</order>
+          <psyfocusCost>0.20</psyfocusCost>
+          <entropyGain>0</entropyGain>
+          <prerequisites>
+            <li>Perfect_Knowledge_SwapInt</li>
+			<li>Perfect_Knowledge_SwapCraft</li>
+          </prerequisites>
+        </li>
+		<li Class="MakaiTechPsycast.PerfectKnowledge.AbilityExtension_Skill">
+			<skillDef>Intellectual</skillDef>
+		</li>
+		<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+          <hediff>MakaiPsy_PK_Brain_Dead</hediff>
+		  <bodyPartToApply>Brain</bodyPartToApply>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+      <defName>Perfect_Knowledge_SwapInt</defName>
+      <label>Intellectual Swap</label>
+      <description>Swap intellectual skill between two pawn.</description>
+      <iconPath>Abilities/PerfectKnowledge/IntSwap</iconPath>
+      <abilityClass>MakaiTechPsycast.PerfectKnowledge.Ability_SwapSkill</abilityClass>
+      <castTime>120</castTime>
+	  <goodwillImpact>-10</goodwillImpact>
+      <targetCount>2</targetCount>	
+      <targetModes>
+        <li>Pawn</li>
+        <li>Pawn</li>
+      </targetModes>
+      <targetingParametersList>
+        <li>
+          <canTargetSelf>True</canTargetSelf>
+          <canTargetPawns>True</canTargetPawns>
+		  <canTargetAnimals>False</canTargetAnimals>
+		  <canTargetMechs>False</canTargetMechs>
+          <canTargetBuildings>False</canTargetBuildings>
+        </li>
+        <li>
+          <canTargetSelf>True</canTargetSelf>
+          <canTargetPawns>True</canTargetPawns>
+		  <canTargetAnimals>False</canTargetAnimals>
+		  <canTargetMechs>False</canTargetMechs>
+          <canTargetBuildings>False</canTargetBuildings>
+        </li>
+      </targetingParametersList>
+      <range>5.9</range>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>MakaiTech_VPE_Perfect_Knowledge</path>
+          <level>4</level>
+          <order>1</order>
+          <psyfocusCost>0.20</psyfocusCost>
+          <entropyGain>0</entropyGain>
+          <prerequisites>
+            <li>Perfect_Knowledge_SwapConstruct</li>
+			<li>Perfect_Knowledge_MechHack</li>
+          </prerequisites>
+        </li>
+		<li Class="MakaiTechPsycast.PerfectKnowledge.AbilityExtension_Skill">
+			<skillDef>Intellectual</skillDef>
+		</li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+      <defName>Perfect_Knowledge_SwapCraft</defName>
+      <label>Crafting Swap</label>
+      <description>Swap crafting skill between two pawn.</description>
+      <iconPath>Abilities/PerfectKnowledge/CraftSwap</iconPath>
+      <abilityClass>MakaiTechPsycast.PerfectKnowledge.Ability_SwapSkill</abilityClass>
+      <castTime>120</castTime>
+	  <goodwillImpact>-10</goodwillImpact>
+      <targetCount>2</targetCount>	
+      <targetModes>
+        <li>Pawn</li>
+        <li>Pawn</li>
+      </targetModes>
+      <targetingParametersList>
+        <li>
+          <canTargetSelf>True</canTargetSelf>
+          <canTargetPawns>True</canTargetPawns>
+		  <canTargetAnimals>False</canTargetAnimals>
+		  <canTargetMechs>False</canTargetMechs>
+          <canTargetBuildings>False</canTargetBuildings>
+        </li>
+        <li>
+          <canTargetSelf>True</canTargetSelf>
+          <canTargetPawns>True</canTargetPawns>
+		  <canTargetAnimals>False</canTargetAnimals>
+		  <canTargetMechs>False</canTargetMechs>
+          <canTargetBuildings>False</canTargetBuildings>
+        </li>
+      </targetingParametersList>
+      <range>5.9</range>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>MakaiTech_VPE_Perfect_Knowledge</path>
+          <level>4</level>
+          <order>3</order>
+          <psyfocusCost>0.20</psyfocusCost>
+          <entropyGain>0</entropyGain>
+          <prerequisites>
+            <li>Perfect_Knowledge_SwapConstruct</li>
+			<li>Perfect_Knowledge_SpawnLearner</li>
+          </prerequisites>
+        </li>
+		<li Class="MakaiTechPsycast.PerfectKnowledge.AbilityExtension_Skill">
+			<skillDef>Crafting</skillDef>
+		</li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+      <defName>Perfect_Knowledge_SwapConstruct</defName>
+      <label>Construction Swap</label>
+      <description>Swap construction skill between two pawn.</description>
+      <iconPath>Abilities/PerfectKnowledge/ConstructSwap</iconPath>
+      <abilityClass>MakaiTechPsycast.PerfectKnowledge.Ability_SwapSkill</abilityClass>
+      <castTime>120</castTime>
+	  <goodwillImpact>-10</goodwillImpact>
+      <targetCount>2</targetCount>	
+      <targetModes>
+        <li>Pawn</li>
+        <li>Pawn</li>
+      </targetModes>
+      <targetingParametersList>
+        <li>
+          <canTargetSelf>True</canTargetSelf>
+          <canTargetPawns>True</canTargetPawns>
+		  <canTargetAnimals>False</canTargetAnimals>
+		  <canTargetMechs>False</canTargetMechs>
+          <canTargetBuildings>False</canTargetBuildings>
+        </li>
+        <li>
+          <canTargetSelf>True</canTargetSelf>
+          <canTargetPawns>True</canTargetPawns>
+		  <canTargetAnimals>False</canTargetAnimals>
+		  <canTargetMechs>False</canTargetMechs>
+          <canTargetBuildings>False</canTargetBuildings>
+        </li>
+      </targetingParametersList>
+      <range>5.9</range>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>MakaiTech_VPE_Perfect_Knowledge</path>
+          <level>3</level>
+          <order>1</order>
+          <psyfocusCost>0.20</psyfocusCost>
+          <entropyGain>0</entropyGain>
+          <prerequisites>
+            <li>Perfect_Knowledge_MechHack</li>
+			<li>Perfect_Knowledge_SpawnLearner</li>
+          </prerequisites>
+        </li>
+		<li Class="MakaiTechPsycast.PerfectKnowledge.AbilityExtension_Skill">
+			<skillDef>Construction</skillDef>
+		</li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+</Defs>

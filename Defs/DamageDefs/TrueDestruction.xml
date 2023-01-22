@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs> 
+
+	<DamageDef>
+    <defName>TrueDestruction_LightningTower</defName>
+    <label>True Blast</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has died in an explosion.</deathMessage>
+    <hediff>Burn</hediff>
+    <hediffSolid>Crack</hediffSolid>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+	<buildingDamageFactor>10</buildingDamageFactor>
+    <plantDamageFactor>10</plantDamageFactor>
+    <armorCategory>Sharp</armorCategory>
+	<defaultDamage>2</defaultDamage>
+	<minDamageToFragment>15</minDamageToFragment>
+	<defaultStoppingPower>0.5</defaultStoppingPower>
+    <defaultArmorPenetration>5.00</defaultArmorPenetration>
+    <isRanged>true</isRanged>
+    <makesAnimalsFlee>true</makesAnimalsFlee>
+	<isExplosive>true</isExplosive>
+	<explosionAffectOutsidePartsOnly>false</explosionAffectOutsidePartsOnly>
+    <explosionHeatEnergyPerCell>200</explosionHeatEnergyPerCell>
+    <explosionCellFleck>MakaiPsyMote_Invis</explosionCellFleck>
+	<!--explosionInteriorFleck>Mote_Invis</explosionInteriorFleck-->
+    <explosionColorCenter>(255,255,0,255)</explosionColorCenter>
+    <explosionColorEdge>(255,255,0,50)</explosionColorEdge>
+    <soundExplosion>Explosion_EMP</soundExplosion>
+    <combatLogRules>Damage_Bomb</combatLogRules>
+	<damageEffecter>MakaiPsy_TD_Blast</damageEffecter>
+	</DamageDef>
+	
+	<DamageDef>
+    <defName>TrueDestruction_LightningTowerBeam</defName>
+    <label>True Blast</label>
+	<defaultDamage>2</defaultDamage>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has lost it mind.</deathMessage>
+    <hediff>Burn</hediff>
+    <hediffSolid>Crush</hediffSolid>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <impactSoundType>Slice</impactSoundType>
+    <armorCategory>Sharp</armorCategory>
+    <overkillPctToDestroyPart>0~0.7</overkillPctToDestroyPart>
+    <isRanged>false</isRanged>
+    <makesAnimalsFlee>true</makesAnimalsFlee>
+  </DamageDef>
+  
+	<DamageDef>
+    <defName>TrueDestruction_ProxyNoDamage</defName>
+    <label>Proxy Damage</label>
+	<defaultDamage>0</defaultDamage>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has lost it mind.</deathMessage>
+    <hediff>Burn</hediff>
+    <hediffSolid>Crush</hediffSolid>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <impactSoundType>Slice</impactSoundType>
+    <armorCategory>Sharp</armorCategory>
+    <overkillPctToDestroyPart>0~0.7</overkillPctToDestroyPart>
+    <isRanged>true</isRanged>
+    <makesAnimalsFlee>true</makesAnimalsFlee>
+	</DamageDef>
+	
+	<DamageDef>
+    <defName>TrueDestruction_ProxyNoDamageSpawnThingExplode</defName>
+    <label>Proxy Damage</label>
+	<defaultDamage>0</defaultDamage>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has been shot to dead</deathMessage>
+    <hediff>Burn</hediff>
+    <hediffSolid>Crush</hediffSolid>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <impactSoundType>Slice</impactSoundType>
+    <armorCategory>Sharp</armorCategory>
+    <overkillPctToDestroyPart>0~0.7</overkillPctToDestroyPart>
+    <isRanged>true</isRanged>
+    <makesAnimalsFlee>true</makesAnimalsFlee>
+	<isExplosive>true</isExplosive>
+    <explosionCellFleck>BlastExtinguisher</explosionCellFleck>
+    <explosionColorEdge>(1, 1, 1, 0.05)</explosionColorEdge>
+	<harmsHealth>false</harmsHealth>
+    <soundExplosion>Explosion_Smoke</soundExplosion>
+	<combatLogRules>Damage_Smoke</combatLogRules>
+	</DamageDef>
+	
+	<DamageDef>
+    <defName>TrueDestruction_SwordRain</defName>
+    <label>Sword Damage</label>
+	<defaultDamage>0</defaultDamage>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has been impaled</deathMessage>
+    <hediff>Cut</hediff>
+    <hediffSolid>Crush</hediffSolid>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <impactSoundType>Slice</impactSoundType>
+    <armorCategory>Sharp</armorCategory>
+    <overkillPctToDestroyPart>0~0.7</overkillPctToDestroyPart>
+    <isRanged>true</isRanged>
+    <makesAnimalsFlee>true</makesAnimalsFlee>
+	<isExplosive>true</isExplosive>
+    <explosionAffectOutsidePartsOnly>false</explosionAffectOutsidePartsOnly>
+    <explosionHeatEnergyPerCell>20</explosionHeatEnergyPerCell>
+    <explosionCellFleck>MakaiPsyMote_Invis</explosionCellFleck>
+    <explosionColorCenter>(255,255,0,255)</explosionColorCenter>
+    <explosionColorEdge>(255,255,0,50)</explosionColorEdge>
+    <soundExplosion>Explosion_EMP</soundExplosion>
+    <combatLogRules>Damage_Bomb</combatLogRules>
+	</DamageDef>
+	
+	<DamageDef>
+    <defName>TrueDestruction_Rhongo</defName>
+    <label>Rhongo Damage</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has been impaled</deathMessage>
+	<buildingDamageFactor>20</buildingDamageFactor>
+	<defaultDamage>200</defaultDamage>
+	<minDamageToFragment>15</minDamageToFragment>
+	<defaultStoppingPower>1</defaultStoppingPower>
+    <defaultArmorPenetration>5.00</defaultArmorPenetration>
+    <hediff>Burn</hediff>
+    <hediffSolid>Burn</hediffSolid>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <impactSoundType>Slice</impactSoundType>
+    <armorCategory>Sharp</armorCategory>
+    <overkillPctToDestroyPart>0~0.7</overkillPctToDestroyPart>
+    <isRanged>true</isRanged>
+    <makesAnimalsFlee>true</makesAnimalsFlee>
+	<isExplosive>true</isExplosive>
+    <explosionAffectOutsidePartsOnly>false</explosionAffectOutsidePartsOnly>
+    <explosionHeatEnergyPerCell>20</explosionHeatEnergyPerCell>
+    <explosionCellFleck>BlastDry</explosionCellFleck>
+    <explosionColorCenter>(255,122,0,255)</explosionColorCenter>
+    <explosionColorEdge>(255,164,80,100)</explosionColorEdge>
+    <soundExplosion>Explosion_Bomb</soundExplosion>
+    <combatLogRules>Damage_Bomb</combatLogRules>
+	</DamageDef>
+</Defs>

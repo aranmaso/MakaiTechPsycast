@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>String_of_Fate_ReverseFate</defName>
+		<label>Reverse Fate</label>
+		<description>throught interfering with target string of fate, reversing their course back. causing whatever condition they have to go backward in a beneficial way. &lt;color=#01F1F1&gt;\n\nSuccess: 15 \nGreat Success: 18&lt;/color&gt;</description>
+		<iconPath>Abilities/StringOfFate/ReverseFate</iconPath>
+		<abilityClass>MakaiTechPsycast.StringOfFate.Ability_ReverseFate</abilityClass>
+		<castTime>60</castTime>
+		<targetMode>Pawn</targetMode>
+		<range>10</range>
+		<targetingParameters>
+			<canTargetSelf>True</canTargetSelf>
+			<canTargetHumans>True</canTargetHumans>
+			<canTargetMechs>True</canTargetMechs>
+			<canTargetAnimals>True</canTargetAnimals>
+			<canTargetBuildings>False</canTargetBuildings>
+		</targetingParameters>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_String_of_Fate</path>
+				<level>1</level>
+				<order>1</order>
+				<psyfocusCost>0.5</psyfocusCost>
+				<entropyGain>10</entropyGain>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>15</successThreshold>
+				<hediffDefWhenSuccess>MakaiPsy_SF_Reverse</hediffDefWhenSuccess>
+				<hours>2</hours>
+				<greatSuccessThreshold>18</greatSuccessThreshold>
+				<skillBonus>Intellectual</skillBonus>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>String_of_Fate_MirroredFate</defName>
+		<label>Mirrored Fate</label>
+		<description>create a psychic mirror that reflect back damage target pawn take.  &lt;color=#01F1F1&gt;\n\nSuccess: 15 \nGreat Success: 18&lt;/color&gt;</description>
+		<iconPath>Abilities/StringOfFate/MirroredFate</iconPath>
+		<abilityClass>MakaiTechPsycast.StringOfFate.Ability_MirroredFate</abilityClass>
+		<castTime>60</castTime>
+		<targetMode>Pawn</targetMode>
+		<range>10</range>
+		<targetingParameters>
+			<canTargetSelf>True</canTargetSelf>
+			<canTargetHumans>True</canTargetHumans>
+			<canTargetMechs>True</canTargetMechs>
+			<canTargetAnimals>True</canTargetAnimals>
+			<canTargetBuildings>False</canTargetBuildings>
+		</targetingParameters>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_String_of_Fate</path>
+				<level>2</level>
+				<order>1</order>
+				<psyfocusCost>0.3</psyfocusCost>
+				<entropyGain>25</entropyGain>
+				<prerequisites>
+					<li>String_of_Fate_ReverseFate</li>
+				</prerequisites>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>15</successThreshold>
+				<hediffDefWhenSuccess>MakaiPsy_SF_Counter</hediffDefWhenSuccess>
+				<greatSuccessThreshold>18</greatSuccessThreshold>
+				<skillBonus>Intellectual</skillBonus>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>String_of_Fate_TempFate</defName>
+		<label>Temp Fate</label>
+		<description>target a wounded pawn, and attempt to interfere with the flow of fate, immediately tend all their wound, or fully cure them if caster roll a great success. be warn, if caster failed. target might suffer more that they already have. &lt;color=#01F1F1&gt;\n\nSuccess: 15 \nGreat Success: 22&lt;/color&gt;</description>
+		<iconPath>Abilities/StringOfFate/TempFate</iconPath>
+		<abilityClass>MakaiTechPsycast.StringOfFate.Ability_TempFate</abilityClass>
+		<castTime>60</castTime>
+		<targetMode>Pawn</targetMode>
+		<range>10</range>
+		<targetingParameters>
+			<canTargetSelf>True</canTargetSelf>
+			<canTargetHumans>True</canTargetHumans>
+			<canTargetMechs>True</canTargetMechs>
+			<canTargetAnimals>True</canTargetAnimals>
+			<canTargetBuildings>False</canTargetBuildings>
+		</targetingParameters>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_String_of_Fate</path>
+				<level>3</level>
+				<order>1</order>
+				<psyfocusCost>0.25</psyfocusCost>
+				<entropyGain>50</entropyGain>
+				<prerequisites>
+					<li>String_of_Fate_MirroredFate</li>
+				</prerequisites>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>15</successThreshold>
+				<greatSuccessThreshold>22</greatSuccessThreshold>
+				<skillBonus>Intellectual</skillBonus>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>String_of_Fate_Precognition</defName>
+		<label>Precognition</label>
+		<description>peek into possible future on what might come. \n\n disclaimer: Storytelelr doesn't always have incident in queue. expect it to be empty most of the time.&lt;color=#01F1F1&gt;\n\nSuccess: 10 \nGreat Success: 11&lt;/color&gt;</description>
+		<iconPath>Abilities/StringOfFate/Precognition</iconPath>
+		<abilityClass>MakaiTechPsycast.StringOfFate.Ability_Precognition</abilityClass>
+		<castTime>100</castTime>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_String_of_Fate</path>
+				<level>3</level>
+				<order>2</order>
+				<psyfocusCost>0.1</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>String_of_Fate_MirroredFate</li>
+				</prerequisites>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>10</successThreshold>
+				<greatSuccessThreshold>11</greatSuccessThreshold>
+				<skillBonus>Intellectual</skillBonus>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>String_of_Fate_AccelFate</defName>
+		<label>Accelerate Fate</label>
+		<description>throught interfering with target string of fate, accelerate their course faster. causing whatever condition they have to go forward faster in a beneficial way. &lt;color=#01F1F1&gt;\n\nSuccess: 15 \nGreat Success: 18&lt;/color&gt;</description>
+		<iconPath>Abilities/StringOfFate/AccelerateFate</iconPath>
+		<abilityClass>MakaiTechPsycast.StringOfFate.Ability_AccelerateFate</abilityClass>
+		<castTime>60</castTime>
+		<targetMode>Pawn</targetMode>
+		<range>10</range>
+		<targetingParameters>
+			<canTargetSelf>True</canTargetSelf>
+			<canTargetHumans>True</canTargetHumans>
+			<canTargetMechs>True</canTargetMechs>
+			<canTargetAnimals>True</canTargetAnimals>
+			<canTargetBuildings>False</canTargetBuildings>
+		</targetingParameters>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_String_of_Fate</path>
+				<level>3</level>
+				<order>3</order>
+				<psyfocusCost>0.35</psyfocusCost>
+				<entropyGain>10</entropyGain>
+				<prerequisites>
+					<li>String_of_Fate_MirroredFate</li>
+				</prerequisites>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>15</successThreshold>
+				<hediffDefWhenSuccess>MakaiPsy_SF_Accelerate</hediffDefWhenSuccess>
+				<hours>2</hours>
+				<greatSuccessThreshold>18</greatSuccessThreshold>
+				<skillBonus>Intellectual</skillBonus>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>String_of_Fate_Convergence</defName>
+		<label>Reversal Beacon</label>
+		<description>linked caster mind to the convergence of fate, and summon forth one of it beacon. reversing fate of ally who come near. saving them from whatever fate await them. &lt;color=#01F1F1&gt;\n\nSuccess: 15 \nGreat Success: 19&lt;/color&gt;</description>
+		<iconPath>Abilities/StringOfFate/ReverseFateBeacon</iconPath>
+		<abilityClass>MakaiTechPsycast.StringOfFate.Ability_BeaconOfFate</abilityClass>
+		<castTime>60</castTime>
+		<targetMode>Location</targetMode>
+		<range>20</range>
+		<needsTicking>true</needsTicking>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_String_of_Fate</path>
+				<level>4</level>
+				<order>1</order>
+				<psyfocusCost>0.75</psyfocusCost>
+				<entropyGain>100</entropyGain>
+				<prerequisites>
+					<li>String_of_Fate_Precognition</li>
+				</prerequisites>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>15</successThreshold>
+				<thingToSpawnWhenSuccess>MakaiTechPsy_SF_ReverseTower</thingToSpawnWhenSuccess>
+				<hours>4</hours>
+				<greatSuccessThreshold>19</greatSuccessThreshold>
+				<skillBonus>Intellectual</skillBonus>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>String_of_Fate_FateFavor</defName>
+		<label>Seven Favor</label>
+		<description>call upon the favor of Fate. grant target a set amount of favor for them to call upon from the seven lucky gods. the more favor traded for blessing the longer it last upto 7 hours. and also the more powerful it is. &lt;color=#01F1F1&gt;\n\nSuccess: 15 \nGreat Success: 19&lt;/color&gt;</description>
+		<iconPath>Abilities/StringOfFate/SevenFavor</iconPath>
+		<abilityClass>MakaiTechPsycast.StringOfFate.Ability_FateFavor</abilityClass>
+		<castTime>77</castTime>
+		<targetMode>Pawn</targetMode>
+		<range>10</range>
+		<targetingParameters>
+			<canTargetSelf>True</canTargetSelf>
+			<canTargetHumans>True</canTargetHumans>
+			<canTargetMechs>True</canTargetMechs>
+			<canTargetAnimals>True</canTargetAnimals>
+			<canTargetBuildings>False</canTargetBuildings>
+		</targetingParameters>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_String_of_Fate</path>
+				<level>4</level>
+				<order>2</order>
+				<psyfocusCost>0.25</psyfocusCost>
+				<entropyGain>77</entropyGain>
+				<prerequisites>
+					<li>String_of_Fate_Precognition</li>
+				</prerequisites>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>15</successThreshold>
+				<hediffDefWhenSuccess>MakaiPsy_SF_FateFavor</hediffDefWhenSuccess>
+				<greatSuccessThreshold>19</greatSuccessThreshold>
+				<skillBonus>Intellectual</skillBonus>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>String_of_Fate_EightRevenge</defName>
+		<label>Revenged Eight-fold</label>
+		<description>cover target in a thread of fate, next incoming attack that would hit them will be return back up to eightfold.&lt;color=#01F1F1&gt;\n\nSuccess: 15 \nGreat Success: 18&lt;/color&gt;</description>
+		<iconPath>Abilities/StringOfFate/EightRevenge</iconPath>
+		<abilityClass>MakaiTechPsycast.StringOfFate.Ability_EightRevenge</abilityClass>
+		<castTime>80</castTime>
+		<targetMode>Pawn</targetMode>
+		<range>10</range>
+		<targetingParameters>
+			<canTargetSelf>True</canTargetSelf>
+			<canTargetHumans>True</canTargetHumans>
+			<canTargetMechs>True</canTargetMechs>
+			<canTargetAnimals>True</canTargetAnimals>
+			<canTargetBuildings>False</canTargetBuildings>
+		</targetingParameters>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_String_of_Fate</path>
+				<level>4</level>
+				<order>3</order>
+				<psyfocusCost>0.25</psyfocusCost>
+				<entropyGain>80</entropyGain>
+				<prerequisites>
+					<li>String_of_Fate_Precognition</li>
+				</prerequisites>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>15</successThreshold>
+				<hediffDefWhenSuccess>MakaiPsy_SF_EightRevenge</hediffDefWhenSuccess>
+				<greatSuccessThreshold>18</greatSuccessThreshold>
+				<skillBonus>Intellectual</skillBonus>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>String_of_Fate_LifeLine</defName>
+		<label>LifeLine</label>
+		<description>Interfere with target fate, making harmful act toward them turn into the opposite. any damage they take for the duration will instead heal them. &lt;color=#01F1F1&gt;\n\nSuccess: 15 \nGreat Success: 18&lt;/color&gt;</description>
+		<iconPath>Abilities/StringOfFate/LifeLine</iconPath>
+		<abilityClass>MakaiTechPsycast.Ability_GiveHediffTemplate</abilityClass>
+		<castTime>300</castTime>
+		<targetMode>Pawn</targetMode>
+		<range>10</range>
+		<targetingParameters>
+			<canTargetSelf>True</canTargetSelf>
+			<canTargetHumans>True</canTargetHumans>
+			<canTargetMechs>True</canTargetMechs>
+			<canTargetAnimals>True</canTargetAnimals>
+			<canTargetBuildings>False</canTargetBuildings>
+		</targetingParameters>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_String_of_Fate</path>
+				<level>5</level>
+				<order>1</order>
+				<psyfocusCost>0.5</psyfocusCost>
+				<entropyGain>100</entropyGain>
+				<prerequisites>
+					<li>String_of_Fate_FateFavor</li>
+				</prerequisites>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>15</successThreshold>
+				<hediffDefWhenSuccess>MakaiPsy_SF_Lifeline</hediffDefWhenSuccess>
+				<greatSuccessThreshold>18</greatSuccessThreshold>
+				<hours>1</hours>
+				<skillBonus>Intellectual</skillBonus>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>String_of_Fate_UltimateFate</defName>
+		<label>Convergence of Fate</label>
+		<description>connect target fate and life force with any nearby pawn excluding caster. syphon 10 years worth of life from surrounding pawns into target to shielded them from gravious injury. &lt;color=#01F1F1&gt;\n\nSuccess: 15 \nGreat Success: 19&lt;/color&gt;</description>
+		<iconPath>Abilities/StringOfFate/UltimateFate</iconPath>
+		<abilityClass>MakaiTechPsycast.StringOfFate.Ability_UltimateFate</abilityClass>
+		<castTime>300</castTime>
+		<targetMode>Pawn</targetMode>
+		<range>10</range>
+		<targetingParameters>
+			<canTargetSelf>True</canTargetSelf>
+			<canTargetHumans>True</canTargetHumans>
+			<canTargetMechs>True</canTargetMechs>
+			<canTargetAnimals>True</canTargetAnimals>
+			<canTargetBuildings>False</canTargetBuildings>
+		</targetingParameters>
+		<radius>5</radius>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_String_of_Fate</path>
+				<level>5</level>
+				<order>2</order>
+				<psyfocusCost>0.1</psyfocusCost>
+				<entropyGain>25</entropyGain>
+				<prerequisites>
+					<li>String_of_Fate_FateFavor</li>
+				</prerequisites>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>15</successThreshold>
+				<hediffDefWhenSuccess>MakaiPsy_SF_UltimateFate</hediffDefWhenSuccess>
+				<greatSuccessThreshold>19</greatSuccessThreshold>
+				<skillBonus>Intellectual</skillBonus>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+
+</Defs>

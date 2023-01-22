@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<MentalBreakDef>
+		<defName>Wander_TalkingToFakeFriend</defName>
+		<mentalState>Wander_TalkingToFakeFriend</mentalState>
+		<baseCommonality>0</baseCommonality>
+		<intensity>Major</intensity>
+	</MentalBreakDef>
+	
+	<MentalStateDef ParentName="BaseMentalState">
+    <defName>Wander_TalkingToFakeFriend</defName>
+    <stateClass>MentalState_WanderPsychotic</stateClass>
+    <label>talking to imaginary friend</label>
+    <category>Misc</category>
+    <blockNormalThoughts>false</blockNormalThoughts>
+    <nameColor>(0.65, 0.9, 0.93)</nameColor>
+    <minTicksBeforeRecovery>5000</minTicksBeforeRecovery>
+    <maxTicksBeforeRecovery>5000</maxTicksBeforeRecovery>
+    <recoveryMtbDays>0.166</recoveryMtbDays>
+    <recoveryMessage>{0} is no longer talking to imaginary friend.</recoveryMessage>
+    <beginLetterLabel>daze</beginLetterLabel>
+    <beginLetter>{0} is wandering around talking to non-existence friend.</beginLetter>
+    <beginLetterDef>NegativeEvent</beginLetterDef>
+    <baseInspectLine>Mental state: Psychotic Friend</baseInspectLine>
+    <tale>MentalStateGaveUp</tale>
+	</MentalStateDef>
+	
+</Defs>

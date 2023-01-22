@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>CorruptedProphet_GainTaint</defName>
+		<label>Tainted Focus</label>
+		<description>Gain Tainted level to be used by other Corrupted Prophet ability. consume all psyfocus until there 10% left. &lt;color=#01F1F1&gt;\n\nSuccess: 5 \nGreat Success: 15&lt;/color&gt;</description>
+		<iconPath>Abilities/CorruptedProphet/TaintedFocus</iconPath>
+		<abilityClass>MakaiTechPsycast.CorruptedProphet.Ability_GainTaint</abilityClass>
+		<castTime>60</castTime>
+		<targetMode>Self</targetMode>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_Corrupted_Prophet</path>
+				<level>1</level>
+				<order>2</order>
+				<psyfocusCost>0</psyfocusCost>
+				<entropyGain>0</entropyGain>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>5</successThreshold>
+				<hediffDefWhenSuccess>MakaiPsy_CP_TaintLevel</hediffDefWhenSuccess>
+				<greatSuccessThreshold>15</greatSuccessThreshold>
+				<hediffDefWhenGreatSuccess>MakaiPsy_CP_TaintLevel</hediffDefWhenGreatSuccess>
+				<hediffDefWhenFail>MakaiPsy_CP_TaintLevel</hediffDefWhenFail>
+				<hours>168</hours>
+				<skillBonus>Social</skillBonus>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>CorruptedProphet_Maddening</defName>
+		<label>Haunting Whisper</label>
+		<description>Psychically whisper into target mind. make them drop their weapon and take damage depend on how well equip they are. &lt;color=#01F1F1&gt;\n\nSuccess: 5 \nGreat Success: 15 \nTaint Cost: 2&lt;/color&gt;</description>
+		<iconPath>Abilities/CorruptedProphet/HauntingWhisper</iconPath>
+		<abilityClass>MakaiTechPsycast.CorruptedProphet.Ability_TargetCorrupted</abilityClass>
+		<castTime>30</castTime>
+		<range>20</range>
+		<radius>5</radius>
+		<targetMode>Location</targetMode>
+		<hasAoE>true</hasAoE>
+		<targetingParametersForAoE>
+			<canTargetHumans>True</canTargetHumans>
+			<canTargetAnimals>True</canTargetAnimals>
+		</targetingParametersForAoE>
+		<castSound>CreepyOneShot</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_Corrupted_Prophet</path>
+				<level>1</level>
+				<order>1</order>
+				<psyfocusCost>0</psyfocusCost>
+				<entropyGain>25</entropyGain>
+				<prerequisites>
+					<li>CorruptedProphet_NightmareClaw</li>
+				</prerequisites>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>5</successThreshold>
+				<greatSuccessThreshold>15</greatSuccessThreshold>
+				<hours>2</hours>
+				<costs>3</costs>
+				<skillBonus>Social</skillBonus>
+				<targetOnlyEnemies>True</targetOnlyEnemies>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>CorruptedProphet_ConvertToPsyfocus</defName>
+		<label>Siphon Focus</label>
+		<description>Siphon all psyfocus from target pawn if they are psycaster. &lt;color=#01F1F1&gt;\n\nSuccess: 10 \nGreat Success: 18 \nTaint Cost: 3&lt;/color&gt;</description>
+		<iconPath>Abilities/CorruptedProphet/SiphonFocus</iconPath>
+		<abilityClass>MakaiTechPsycast.CorruptedProphet.Ability_SiphonFocus</abilityClass>
+		<castTime>30</castTime>
+		<range>20</range>
+		<targetMode>Pawn</targetMode>
+		<targetingParameters>
+			<canTargetSelf>False</canTargetSelf>
+			<canTargetHumans>True</canTargetHumans>
+			<canTargetMechs>False</canTargetMechs>
+			<canTargetAnimals>False</canTargetAnimals>
+		</targetingParameters>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_Corrupted_Prophet</path>
+				<level>1</level>
+				<order>3</order>
+				<psyfocusCost>0</psyfocusCost>
+				<entropyGain>10</entropyGain>
+				<prerequisites>
+					<li>CorruptedProphet_C_Beacon</li>
+				</prerequisites>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>10</successThreshold>
+				<greatSuccessThreshold>18</greatSuccessThreshold>
+				<costs>3</costs>
+				<hours>2</hours>
+				<skillBonus>Social</skillBonus>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>CorruptedProphet_NightmareClaw</defName>
+		<label>Nightmare Claw</label>
+		<description>communicating with the local eldritch god. borrowing part of it power and call down nightmare claw that drive people mad on contact. &lt;color=#01F1F1&gt;\n\nSuccess: 13 \nGreat Success: 19 \nTaint Cost: 5&lt;/color&gt;</description>
+		<iconPath>Abilities/CorruptedProphet/NightmareClaw</iconPath>
+		<abilityClass>MakaiTechPsycast.CorruptedProphet.Ability_NightmareClaw</abilityClass>
+		<durationTime>60</durationTime>
+		<castTime>30</castTime>
+		<radius>5</radius>
+		<range>40</range>
+		<targetMode>Location</targetMode>
+		<!--targetingParameters>
+			<canTargetSelf>False</canTargetSelf>
+			<canTargetHumans>True</canTargetHumans>
+			<canTargetMechs>True</canTargetMechs>
+			<canTargetAnimals>True</canTargetAnimals>
+			<canTargetBuildings>True</canTargetBuildings>
+		</targetingParameters-->
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_Corrupted_Prophet</path>
+				<level>2</level>
+				<order>1</order>
+				<psyfocusCost>0</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>CorruptedProphet_GainTaint</li>
+				</prerequisites>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>13</successThreshold>
+				<greatSuccessThreshold>19</greatSuccessThreshold>
+				<multiplier>PsychicSensitivity</multiplier>
+				<costs>5</costs>
+				<skillBonus>Social</skillBonus>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>CorruptedProphet_ClawGrab</defName>
+		<label>Claw Grab</label>
+		<description>launch a claw of nightmare at target pawn or location. if target is a pawn and roll a great success will attempt to pull pawn to caster location. &lt;color=#01F1F1&gt;\n\nSuccess: 11 \nGreat Success: 18 \nTaint Cost: 5&lt;/color&gt;</description>
+		<iconPath>Abilities/CorruptedProphet/ClawGrab</iconPath>
+		<abilityClass>MakaiTechPsycast.CorruptedProphet.Ability_ShootRollTaint</abilityClass>
+		<castTime>30</castTime>
+		<targetMode>Pawn</targetMode>
+		<range>20</range>
+		<targetingParameters>
+			<canTargetItems>true</canTargetItems>
+			<canTargetLocations>true</canTargetLocations>
+		</targetingParameters>
+		<castSound>Claw_Sweep</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_Corrupted_Prophet</path>
+				<level>2</level>
+				<order>2</order>
+				<psyfocusCost>0</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>CorruptedProphet_MindBreak</li>
+				</prerequisites>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>11</successThreshold>
+				<projectileWhenSuccess>MakaiPsy_CP_ClawGrab</projectileWhenSuccess>
+				<greatSuccessThreshold>18</greatSuccessThreshold>
+				<projectileWhenGreatSuccess>MakaiPsy_CP_ClawGrab</projectileWhenGreatSuccess>
+				<projectileWhenFail>MakaiPsy_CP_ClawGrab</projectileWhenFail>
+				<multiplier>PsychicSensitivity</multiplier>
+				<costs>2</costs>
+				<skillBonus>Social</skillBonus>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>CorruptedProphet_C_Beacon</defName>
+		<label>Corruption Beacon</label>
+		<description>summon a psychic construct of madness. any hostile pawn will be driven mad when they get near it. &lt;color=#01F1F1&gt;\n\nSuccess: 13 \nGreat Success: 19 \nTaint Cost: 5&lt;/color&gt;</description>
+		<iconPath>Abilities/CorruptedProphet/CorruptionBeacon</iconPath>
+		<abilityClass>MakaiTechPsycast.CorruptedProphet.Ability_SpawnThingWithRollTaintCost</abilityClass>
+		<durationTime>10000</durationTime>
+		<castTime>60</castTime>
+		<targetMode>Location</targetMode>
+		<range>20</range>
+		<needsTicking>true</needsTicking>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_Corrupted_Prophet</path>
+				<level>2</level>
+				<order>3</order>
+				<psyfocusCost>0</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>CorruptedProphet_GainTaint</li>
+				</prerequisites>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>13</successThreshold>
+				<thingToSpawnWhenSuccess>MakaiTechPsy_CP_CorruptedTower</thingToSpawnWhenSuccess>
+				<greatSuccessThreshold>19</greatSuccessThreshold>
+				<thingToSpawnWhenGreatSuccess>MakaiTechPsy_CP_CorruptedTower</thingToSpawnWhenGreatSuccess>
+				<hediffDefWhenFail>MakaiPsy_PK_Brain_Mulfunction</hediffDefWhenFail>
+				<hours>1</hours>
+				<costs>5</costs>
+				<skillBonus>Social</skillBonus>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>CorruptedProphet_MindBreak</defName>
+		<label>Mind Corruption</label>
+		<description>Spread the corruption over targer mind. converting them to caster faction temporary. once the effect worn out victim will die. &lt;color=#01F1F1&gt;\n\nSuccess: 13 \nGreat Success: 19 \nTaint Cost: 3&lt;/color&gt;</description>
+		<iconPath>Abilities/CorruptedProphet/MindCorruption</iconPath>
+		<abilityClass>MakaiTechPsycast.CorruptedProphet.Ability_MindBreak</abilityClass>
+		<goodwillImpact>-20</goodwillImpact>
+		<castTime>30</castTime>
+		<range>20</range>
+		<targetMode>Pawn</targetMode>
+		<targetingParameters>
+			<canTargetSelf>False</canTargetSelf>
+			<canTargetHumans>True</canTargetHumans>
+			<canTargetMechs>False</canTargetMechs>
+			<canTargetAnimals>True</canTargetAnimals>
+		</targetingParameters>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_Corrupted_Prophet</path>
+				<level>3</level>
+				<order>1</order>
+				<psyfocusCost>0</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>CorruptedProphet_MadPillar</li>
+				</prerequisites>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>13</successThreshold>
+				<hediffDefWhenSuccess>MakaiPsy_CP_MindBreak</hediffDefWhenSuccess>
+				<greatSuccessThreshold>19</greatSuccessThreshold>
+				<hediffDefWhenGreatSuccess>MakaiPsy_CP_MindBreak</hediffDefWhenGreatSuccess>
+				<hediffDefWhenFail>MakaiPsy_CP_MindBreak</hediffDefWhenFail>
+				<hours>2</hours>
+				<multiplier>PsychicSensitivity</multiplier>
+				<costs>3</costs>
+				<skillBonus>Social</skillBonus>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>CorruptedProphet_MadPillar</defName>
+		<label>Maddening Pillar</label>
+		<description>after a brief moment of concentrating, gain the ability to bargain like a great merchant for a short period. &lt;color=#01F1F1&gt;\n\nSuccess: 13 \nGreat Success: 19 \nTaint Cost: 5&lt;/color&gt;</description>
+		<iconPath>Abilities/CorruptedProphet/MaddeningPillar</iconPath>
+		<abilityClass>MakaiTechPsycast.CorruptedProphet.Ability_NightmarePillar</abilityClass>
+		<durationTime>180</durationTime>
+		<castTime>30</castTime>
+		<radius>5</radius>
+		<range>40</range>
+		<targetMode>Location</targetMode>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_Corrupted_Prophet</path>
+				<level>4</level>
+				<order>1</order>
+				<psyfocusCost>0</psyfocusCost>
+				<entropyGain>50</entropyGain>
+				<prerequisites>
+					<li>CorruptedProphet_NightmareClaw</li>
+					<li>CorruptedProphet_C_Beacon</li>
+				</prerequisites>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>13</successThreshold>
+				<greatSuccessThreshold>19</greatSuccessThreshold>
+				<multiplier>PsychicSensitivity</multiplier>
+				<costs>5</costs>
+				<skillBonus>Social</skillBonus>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<!--VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>CorruptedProphet_TempNine</defName>
+		<label>Temp Nine</label>
+		<description>after a brief moment of concentrating, gain the ability to bargain like a great merchant for a short period.</description>
+		<iconPath>Abilities/Archon/GroupLink</iconPath>
+		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+		<durationTime>1000</durationTime>
+		<castTime>30</castTime>
+		<targetMode>Self</targetMode>
+		<radius>10</radius>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_Corrupted_Prophet</path>
+				<level>4</level>
+				<order>2</order>
+				<psyfocusCost>0.1</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>CorruptedProphet_NightmareClaw</li>
+					<li>CorruptedProphet_C_Beacon</li>
+				</prerequisites>
+			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+				<hediff>MakaiPsy_BI_Trading</hediff>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>CorruptedProphet_TempTen</defName>
+		<label>Temp Ten</label>
+		<description>after a brief moment of concentrating, gain the ability to bargain like a great merchant for a short period.</description>
+		<iconPath>Abilities/Archon/GroupLink</iconPath>
+		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+		<durationTime>1000</durationTime>
+		<castTime>30</castTime>
+		<targetMode>Self</targetMode>
+		<radius>10</radius>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_Corrupted_Prophet</path>
+				<level>4</level>
+				<order>3</order>
+				<psyfocusCost>0.1</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>CorruptedProphet_C_Beacon</li>
+				</prerequisites>
+			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+				<hediff>MakaiPsy_BI_Trading</hediff>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef-->
+
+</Defs>

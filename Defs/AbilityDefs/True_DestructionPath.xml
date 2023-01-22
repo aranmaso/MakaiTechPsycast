@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>True_Destruction_EnergizedOrb</defName>
+		<label>Energizing Orbs</label>
+		<description>launch a slow moving energized orb that homing in on target. condensed with unstable energy, when it close enought to the target it will burst into multiple shrapnel over forward cone area &lt;color=#01F1F1&gt;\n\nSuccess: 10 \nGreat Success: 18&lt;/color&gt;</description>
+		<iconPath>Abilities/TrueDestruction/EnergizingOrbs</iconPath>
+		<abilityClass>MakaiTechPsycast.Ability_Shoot</abilityClass>
+		<castTime>60</castTime>
+		<targetMode>Location</targetMode>
+		<range>40</range>
+		<targetingParameters>
+			<canTargetItems>true</canTargetItems>
+			<canTargetLocations>true</canTargetLocations>
+		</targetingParameters>
+		<castSound>Shot_ChargeBlaster</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_True_Destruction</path>
+				<level>1</level>
+				<order>1</order>
+				<psyfocusCost>0.01</psyfocusCost>
+				<entropyGain>10</entropyGain>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>10</successThreshold>
+				<greatSuccessThreshold>18</greatSuccessThreshold>
+				<projectileWhenSuccess>MakaiPsy_TD_ProxyMine</projectileWhenSuccess>
+				<projectileBurstCount>1</projectileBurstCount>
+				<spawnProjectileAtRandom>true</spawnProjectileAtRandom>
+				<skillBonus>Melee</skillBonus>
+				<skillBonus2>Shooting</skillBonus2>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>True_Destruction_SwordRain</defName>
+		<label>Sword Rain</label>
+		<description>connected to an extradimensional armory, then call down several mystic swords from above. very small chance for the mystic sword to not despawn after impact. &lt;color=#01F1F1&gt;\n\nSuccess: 10 \nGreat Success: 15&lt;/color&gt;</description>
+		<iconPath>Abilities/TrueDestruction/SwordRain</iconPath>
+		<abilityClass>MakaiTechPsycast.TrueDestruction.Ability_SwordRain</abilityClass>
+		<needsTicking>true</needsTicking>
+		<castTime>60</castTime>
+		<targetMode>Pawn</targetMode>
+		<range>40</range>
+		<targetingParameters>
+			<canTargetItems>true</canTargetItems>
+			<canTargetLocations>true</canTargetLocations>
+		</targetingParameters>
+		<castSound>Shot_ChargeBlaster</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_True_Destruction</path>
+				<level>2</level>
+				<order>1</order>
+				<psyfocusCost>0.01</psyfocusCost>
+				<entropyGain>25</entropyGain>
+				<prerequisites>
+					<li>True_Destruction_HeavenlyChain</li>
+				</prerequisites>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>10</successThreshold>
+				<greatSuccessThreshold>15</greatSuccessThreshold>
+				<projectileWhenSuccess>MakaiPsy_TD_SwordRain</projectileWhenSuccess>
+				<projectileBurstCount>5</projectileBurstCount>
+				<tickBurstInterval>10</tickBurstInterval>
+				<skillBonus>Melee</skillBonus>
+				<skillBonus2>Shooting</skillBonus2>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>True_Destruction_HeavenlyChain</defName>
+		<label>Heavenly Chain</label>
+		<description>call upon the heavenly chain, bind down all living thing in the target arae. on rolling great success will disarm pawns as well. will affect both friend and foes, so be caution when casting. &lt;color=#01F1F1&gt;\n\nSuccess: 13 \nGreat Success: 18&lt;/color&gt;</description>
+		<iconPath>Abilities/TrueDestruction/LockedChain</iconPath>
+		<abilityClass>MakaiTechPsycast.TrueDestruction.Ability_HeavenlyChain</abilityClass>
+		<needsTicking>true</needsTicking>
+		<castTime>60</castTime>
+		<targetMode>Pawn</targetMode>
+		<range>40</range>
+		<radius>5</radius>
+		<targetingParameters>
+			<canTargetItems>true</canTargetItems>
+			<canTargetLocations>true</canTargetLocations>
+		</targetingParameters>
+		<castSound>HeavenChain</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_True_Destruction</path>
+				<level>2</level>
+				<order>2</order>
+				<psyfocusCost>0.05</psyfocusCost>
+				<entropyGain>50</entropyGain>
+				<prerequisites>
+					<li>True_Destruction_EnergizedOrb</li>
+				</prerequisites>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>13</successThreshold>
+				<greatSuccessThreshold>18</greatSuccessThreshold>
+				<hediffDefWhenSuccess>MakaiPsy_TD_ChainLock</hediffDefWhenSuccess>
+				<projectileWhenSuccess>MakaiPsy_TD_HeavenlyChain</projectileWhenSuccess>
+				<ticks>2500</ticks>
+				<projectileBurstCount>10</projectileBurstCount>
+				<tickBurstInterval>10</tickBurstInterval>
+				<skillBonus>Melee</skillBonus>
+				<skillBonus2>Shooting</skillBonus2>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>True_Destruction_LightningBeacon</defName>
+		<label>Stormruler</label>
+		<description>summon a beacon that periodically call down lightning on hostile in vicinity. &lt;color=#01F1F1&gt;\n\nSuccess: 12 \nGreat Success: 19&lt;/color&gt;</description>
+		<iconPath>Abilities/TrueDestruction/StormRuler</iconPath>
+		<abilityClass>MakaiTechPsycast.Ability_SpawnThingWithRoll</abilityClass>
+		<castTime>60</castTime>
+		<targetMode>Location</targetMode>
+		<range>20</range>
+		<needsTicking>true</needsTicking>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_True_Destruction</path>
+				<level>2</level>
+				<order>3</order>
+				<psyfocusCost>0.25</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>True_Destruction_HeavenlyChain</li>
+				</prerequisites>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>12</successThreshold>
+				<thingToSpawnWhenSuccess>MakaiTechPsy_TD_LightningTower</thingToSpawnWhenSuccess>
+				<greatSuccessThreshold>19</greatSuccessThreshold>
+				<hours>2</hours>
+				<skillBonus>Melee</skillBonus>
+				<skillBonus2>Shooting</skillBonus2>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>True_Destruction_Rhongomyniad</defName>
+		<label>Rhongomyniad</label>
+		<description>summon a giant spear of light from above. slowly descending on target location. purge the area in a large radius in a blast of blinding light. &lt;color=#01F1F1&gt;\n\nSuccess: 12 \nGreat Success: 17&lt;/color&gt;</description>
+		<iconPath>Abilities/TrueDestruction/RhongoBongo</iconPath>
+		<abilityClass>MakaiTechPsycast.TrueDestruction.Ability_Rhongobongo</abilityClass>
+		<castTime>60</castTime>
+		<targetMode>Location</targetMode>
+		<range>60</range>
+		<radius>20</radius>
+		<cooldownTime>2500</cooldownTime>
+		<requireLineOfSight>false</requireLineOfSight>
+		<targetingParameters>
+			<canTargetPawns>false</canTargetPawns>
+			<canTargetItems>true</canTargetItems>
+			<canTargetLocations>true</canTargetLocations>
+		</targetingParameters>
+		<castSound>Shot_ChargeBlaster</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_True_Destruction</path>
+				<level>3</level>
+				<order>1</order>
+				<psyfocusCost>0.1</psyfocusCost>
+				<entropyGain>200</entropyGain>
+				<prerequisites>
+					<li>True_Destruction_SwordRain</li>
+				</prerequisites>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>12</successThreshold>
+				<greatSuccessThreshold>17</greatSuccessThreshold>
+				<projectileWhenSuccess>MakaiPsy_TD_Rhongo</projectileWhenSuccess>
+				<skillBonus>Melee</skillBonus>
+				<skillBonus2>Shooting</skillBonus2>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>True_Destruction_Skyblessing</defName>
+		<label>Sky Blessing</label>
+		<description>bless the target with a blessing of the sky, cause their shot to arc upward and split into multiple shot raining down. &lt;color=#01F1F1&gt;\n\nSuccess: 12 \nGreat Success: 18&lt;/color&gt;</description>
+		<iconPath>Abilities/TrueDestruction/SkyBlessing</iconPath>
+		<abilityClass>MakaiTechPsycast.TrueDestruction.Ability_SkyBlessing</abilityClass>
+		<castTime>77</castTime>
+		<targetMode>Pawn</targetMode>
+		<range>10</range>
+		<targetingParameters>
+			<canTargetSelf>True</canTargetSelf>
+			<canTargetHumans>True</canTargetHumans>
+			<canTargetMechs>True</canTargetMechs>
+			<canTargetAnimals>True</canTargetAnimals>
+			<canTargetBuildings>False</canTargetBuildings>
+		</targetingParameters>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_True_Destruction</path>
+				<level>3</level>
+				<order>2</order>
+				<psyfocusCost>0.1</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>True_Destruction_LightningBeacon</li>
+				</prerequisites>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>12</successThreshold>
+				<hediffDefWhenSuccess>MakaiTechPsy_TD_SkyBlessing</hediffDefWhenSuccess>
+				<greatSuccessThreshold>18</greatSuccessThreshold>
+				<hours>12</hours>
+				<skillBonus>Melee</skillBonus>
+				<skillBonus2>Shooting</skillBonus2>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>True_Destruction_FrenziedFlame</defName>
+		<label>Frenzied Flame</label>
+		<description>enhance the user mind with a flame of frenzy, burning brighter the more they attacking the same target. the brighter the flame, the stronger the effect. &lt;color=#01F1F1&gt;\n\nSuccess: 12 \nGreat Success: 18&lt;/color&gt;</description>
+		<iconPath>Abilities/TrueDestruction/FrenziedFlame</iconPath>
+		<abilityClass>MakaiTechPsycast.Ability_GiveHediffTemplate</abilityClass>
+		<castTime>77</castTime>
+		<targetMode>Pawn</targetMode>
+		<range>10</range>
+		<targetingParameters>
+			<canTargetSelf>True</canTargetSelf>
+			<canTargetHumans>True</canTargetHumans>
+			<canTargetMechs>True</canTargetMechs>
+			<canTargetAnimals>True</canTargetAnimals>
+			<canTargetBuildings>False</canTargetBuildings>
+		</targetingParameters>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_True_Destruction</path>
+				<level>4</level>
+				<order>1</order>
+				<psyfocusCost>0.15</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>True_Destruction_Rhongomyniad</li>
+				</prerequisites>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>12</successThreshold>
+				<hediffDefWhenSuccess>MakaiTechPsy_TD_FrenziedFlame</hediffDefWhenSuccess>
+				<greatSuccessThreshold>18</greatSuccessThreshold>
+				<hours>2</hours>
+				<skillBonus>Melee</skillBonus>
+				<skillBonus2>Shooting</skillBonus2>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>True_Destruction_SetAblaze</defName>
+		<label>trail, set ablaze</label>
+		<description>embodied the infernal flame, set ablaze everything in the path that Deathmarch walk. &lt;color=#01F1F1&gt;\n\nSuccess: 12 \nGreat Success: 18&lt;/color&gt;</description>
+		<iconPath>Abilities/TrueDestruction/TrailAblaze</iconPath>
+		<abilityClass>MakaiTechPsycast.Ability_GiveHediffTemplate</abilityClass>
+		<castTime>300</castTime>
+		<targetMode>Self</targetMode>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_True_Destruction</path>
+				<level>4</level>
+				<order>2</order>
+				<psyfocusCost>0.15</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>True_Destruction_HeavenlyChain</li>
+					<li>True_Destruction_FrenziedFlame</li>
+					<li>True_Destruction_HeavenWrath</li>
+				</prerequisites>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>12</successThreshold>
+				<hediffDefWhenSuccess>MakaiTechPsy_TD_BlazingTrail</hediffDefWhenSuccess>
+				<greatSuccessThreshold>18</greatSuccessThreshold>
+				<hours>1</hours>
+				<skillBonus>Melee</skillBonus>
+				<skillBonus2>Shooting</skillBonus2>
+			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_WarmupEffecter">
+				<onCaster>True</onCaster>
+				<effecterDef>MakaiPsy_DD_Suck</effecterDef>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>True_Destruction_HeavenWrath</defName>
+		<label>Heaven Wrath</label>
+		<description>command the heaven above, call down several pillar of light that scorch up to 7 hostiles on the map. &lt;color=#01F1F1&gt;\n\nSuccess: 15 \nGreat Success: 19&lt;/color&gt;</description>
+		<iconPath>Abilities/TrueDestruction/HeavenAngy</iconPath>
+		<abilityClass>MakaiTechPsycast.TrueDestruction.Ability_HeavenWrath</abilityClass>
+		<needsTicking>true</needsTicking>
+		<castTime>30</castTime>
+		<targetMode>Self</targetMode>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_True_Destruction</path>
+				<level>4</level>
+				<order>3</order>
+				<psyfocusCost>0.2</psyfocusCost>
+				<entropyGain>150</entropyGain>
+				<prerequisites>
+					<li>True_Destruction_Skyblessing</li>
+				</prerequisites>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>15</successThreshold>
+				<greatSuccessThreshold>19</greatSuccessThreshold>
+				<skillBonus>Melee</skillBonus>
+				<skillBonus2>Shooting</skillBonus2>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>True_Destruction_WillOfTheFallen</defName>
+		<label>Will of the Fallen</label>
+		<description>Grant user the ability to absorb power from fallen foes, boosting damage dealth based on the amount of power absorbed. &lt;color=#01F1F1&gt;\n\nSuccess: 15 \nGreat Success: 19&lt;/color&gt;</description>
+		<iconPath>Abilities/TrueDestruction/WillOfTheFallen</iconPath>
+		<abilityClass>MakaiTechPsycast.TrueDestruction.Ability_WillOfTheFallen</abilityClass>
+		<castTime>30</castTime>
+		<targetMode>Self</targetMode>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_True_Destruction</path>
+				<level>5</level>
+				<order>1</order>
+				<psyfocusCost>0.5</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>True_Destruction_SetAblaze</li>
+				</prerequisites>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>1</successThreshold>
+				<hediffDefWhenSuccess>MakaiTechPsy_TD_WillOfTheFallen</hediffDefWhenSuccess>
+				<greatSuccessThreshold>119</greatSuccessThreshold>
+				<skillBonus>Melee</skillBonus>
+				<skillBonus2>Shooting</skillBonus2>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+
+</Defs>
