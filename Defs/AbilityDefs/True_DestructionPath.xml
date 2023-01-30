@@ -266,7 +266,7 @@
 	
 	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
 		<defName>True_Destruction_SetAblaze</defName>
-		<label>trail, set ablaze</label>
+		<label>Burning Trail</label>
 		<description>embodied the infernal flame, set ablaze everything in the path that Deathmarch walk. &lt;color=#01F1F1&gt;\n\nSuccess: 12 \nGreat Success: 18&lt;/color&gt;</description>
 		<iconPath>Abilities/TrueDestruction/TrailAblaze</iconPath>
 		<abilityClass>MakaiTechPsycast.Ability_GiveHediffTemplate</abilityClass>
@@ -334,7 +334,7 @@
 	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
 		<defName>True_Destruction_WillOfTheFallen</defName>
 		<label>Will of the Fallen</label>
-		<description>Grant user the ability to absorb power from fallen foes, boosting damage dealth based on the amount of power absorbed. &lt;color=#01F1F1&gt;\n\nSuccess: 15 \nGreat Success: 19&lt;/color&gt;</description>
+		<description>Grant user the ability to absorb power from fallen foes, boosting damage dealth based on the amount of power absorbed. after casting and gain Will of the Fallen buff, whenever user kill an entity they will collect stack from victim. &lt;color=#01F1F1&gt;\n\nSuccess: 15 \nGreat Success: 19&lt;/color&gt;</description>
 		<iconPath>Abilities/TrueDestruction/WillOfTheFallen</iconPath>
 		<abilityClass>MakaiTechPsycast.TrueDestruction.Ability_WillOfTheFallen</abilityClass>
 		<castTime>30</castTime>

@@ -86,7 +86,7 @@
 				<path>MakaiTech_VPE_Distorted_Reality</path>
 				<level>2</level>
 				<order>2</order>
-				<psyfocusCost>0.25</psyfocusCost>
+				<psyfocusCost>0.50</psyfocusCost>
 				<entropyGain>0</entropyGain>
 				<prerequisites>
 					<li>DistortedReality_DistortWeapon</li>
@@ -171,7 +171,7 @@
 				<successThreshold>1</successThreshold>
 				<hediffDefWhenSuccess>MakaiTechPsy_DR_RandomlyChangeHediff_Main</hediffDefWhenSuccess>
 				<greatSuccessThreshold>200</greatSuccessThreshold>
-				<hours>6</hours>
+				<hours>9</hours>
 				<skillBonus>Intellectual</skillBonus>
 			</li>
 		</modExtensions>
@@ -202,7 +202,7 @@
 				<skillBonus>Intellectual</skillBonus>
 			</li>
 			<li Class="VanillaPsycastsExpanded.AbilityExtension_PsychicComa">
-				<hours>6</hours>
+				<hours>12</hours>
 			</li>
 		</modExtensions>
 	</VFECore.Abilities.AbilityDef>

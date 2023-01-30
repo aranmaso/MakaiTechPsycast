@@ -176,8 +176,8 @@
 	
 	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
 		<defName>String_of_Fate_Convergence</defName>
-		<label>Reversal Beacon</label>
-		<description>linked caster mind to the convergence of fate, and summon forth one of it beacon. reversing fate of ally who come near. saving them from whatever fate await them. &lt;color=#01F1F1&gt;\n\nSuccess: 15 \nGreat Success: 19&lt;/color&gt;</description>
+		<label>Fate Beacon</label>
+		<description>linked caster mind to the convergence of fate, and summon forth one of it beacon. reversing or accelerating fate of ally who come near. saving them from whatever fate await them. &lt;color=#01F1F1&gt;\n\nSuccess: 15 \nGreat Success: 19&lt;/color&gt;</description>
 		<iconPath>Abilities/StringOfFate/ReverseFateBeacon</iconPath>
 		<abilityClass>MakaiTechPsycast.StringOfFate.Ability_BeaconOfFate</abilityClass>
 		<castTime>60</castTime>

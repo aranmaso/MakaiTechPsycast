@@ -125,7 +125,7 @@
 		<iconPath>Projectiles/DestinedDeath/SpinScythe/sarispinG</iconPath>
 		<abilityClass>MakaiTechPsycast.Ability_Shoot</abilityClass>
 		<durationTime>1000</durationTime>
-		<range>19.9</range>
+		<range>6.9</range>
 		<castTime>30</castTime>
 		<targetMode>Pawn</targetMode>
 		<castSound>Claw_Sweep</castSound>
@@ -361,7 +361,7 @@
 	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
 		<defName>DestinedDeath_LinkBomb</defName>
 		<label>Life Link Detonation</label>
-		<description>after a brief moment of concentrating, gain the ability to bargain like a great merchant for a short period.</description>
+		<description>target a pawn with Lifelink, then detonate it. doing half the total accumulate damage. &lt;color=#01F1F1&gt;\n\nSuccess: 10 \nGreat Success: 18&lt;/color&gt;</description>
 		<iconPath>Abilities/DestinedDeath/LinkBomb</iconPath>
 		<abilityClass>MakaiTechPsycast.DestinedDeath.Ability_LifeLinkDetonation</abilityClass>
 		<castTime>100</castTime>

@@ -112,13 +112,13 @@
 		<defName>MakaiTechPsy_DD_LichSoul_Administer</defName>
 		<label>Administer Lich Soul</label>
 		<description>Administer Lich Soul</description>
-		<workerClass>MakaiTechPsycast.Recipe_AdministerLichSoul</workerClass>
+		<workerClass>MakaiTechPsycast.Recipe_AdministerLichSoulNoConsume</workerClass>
 		<jobString>Administer Lich Soul</jobString>
 		<workAmount>1300</workAmount>
 		<hideBodyPartNames>true</hideBodyPartNames>
 		<isViolation>false</isViolation>
 		<targetsBodyPart>false</targetsBodyPart>
-		<removesHediff>MakaiTechPsy_DD_LichSoul</removesHediff>
+		<!-- <removesHediff>MakaiTechPsy_DD_LichSoul</removesHediff> -->
 		<surgeryIgnoreEnvironment>true</surgeryIgnoreEnvironment>
 		<surgerySuccessChanceFactor>9999</surgerySuccessChanceFactor>
 		<anesthetize>false</anesthetize>

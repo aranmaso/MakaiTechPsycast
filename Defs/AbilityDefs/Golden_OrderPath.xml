@@ -3,7 +3,7 @@
   
 	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
 		<defName>Golden_Order_AbilityOne</defName>
-		<label>Ability One</label>
+		<label>Black thread</label>
 		<description>after a brief moment of concentrating, gain the ability to bargain like a great merchant for a short period.</description>
 		<iconPath>Abilities/Archon/GroupLink</iconPath>
 		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
@@ -19,6 +19,9 @@
 				<order>1</order>
 				<psyfocusCost>0.1</psyfocusCost>
 				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>Golden_Order_AbilityThree</li>
+				</prerequisites>
 			</li>
 			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
 				<hediff>MakaiPsy_BI_Trading</hediff>
@@ -28,7 +31,7 @@
 	
 	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
 		<defName>Golden_Order_AbilityTwo</defName>
-		<label>Ability Two</label>
+		<label>Shivering Wind</label>
 		<description>after a brief moment of concentrating, gain the ability to bargain like a great merchant for a short period.</description>
 		<iconPath>Abilities/Archon/GroupLink</iconPath>
 		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
@@ -45,7 +48,7 @@
 				<psyfocusCost>0.1</psyfocusCost>
 				<entropyGain>0</entropyGain>
 				<prerequisites>
-					
+					<li>Golden_Order_AbilityFour</li>
 				</prerequisites>
 			</li>
 			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
@@ -56,7 +59,7 @@
 	
 	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
 		<defName>Golden_Order_AbilityThree</defName>
-		<label>Ability Three</label>
+		<label>Thorn Tree</label>
 		<description>after a brief moment of concentrating, gain the ability to bargain like a great merchant for a short period.</description>
 		<iconPath>Abilities/Archon/GroupLink</iconPath>
 		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
@@ -69,62 +72,6 @@
 			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
 				<path>MakaiTech_VPE_Golden_Order</path>
 				<level>2</level>
-				<order>1</order>
-				<psyfocusCost>0.1</psyfocusCost>
-				<entropyGain>0</entropyGain>
-				<prerequisites>
-					<li>Golden_Order_AbilityOne</li>
-				</prerequisites>
-			</li>
-			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
-				<hediff>MakaiPsy_BI_Trading</hediff>
-			</li>
-		</modExtensions>
-	</VFECore.Abilities.AbilityDef>
-	
-	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
-		<defName>Golden_Order_AbilityFour</defName>
-		<label>Ability Four</label>
-		<description>after a brief moment of concentrating, gain the ability to bargain like a great merchant for a short period.</description>
-		<iconPath>Abilities/Archon/GroupLink</iconPath>
-		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
-		<durationTime>1000</durationTime>
-		<castTime>30</castTime>
-		<targetMode>Self</targetMode>
-		<radius>10</radius>
-		<castSound>PsychicSoothePulserCast</castSound>
-		<modExtensions>
-			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-				<path>MakaiTech_VPE_Golden_Order</path>
-				<level>2</level>
-				<order>2</order>
-				<psyfocusCost>0.1</psyfocusCost>
-				<entropyGain>0</entropyGain>
-				<prerequisites>
-					<li>Golden_Order_AbilityTwo</li>
-				</prerequisites>
-			</li>
-			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
-				<hediff>MakaiPsy_BI_Trading</hediff>
-			</li>
-		</modExtensions>
-	</VFECore.Abilities.AbilityDef>
-	
-	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
-		<defName>Golden_Order_AbilityFive</defName>
-		<label>Ability Five</label>
-		<description>after a brief moment of concentrating, gain the ability to bargain like a great merchant for a short period.</description>
-		<iconPath>Abilities/Archon/GroupLink</iconPath>
-		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
-		<durationTime>1000</durationTime>
-		<castTime>30</castTime>
-		<targetMode>Self</targetMode>
-		<radius>10</radius>
-		<castSound>PsychicSoothePulserCast</castSound>
-		<modExtensions>
-			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-				<path>MakaiTech_VPE_Golden_Order</path>
-				<level>3</level>
 				<order>1</order>
 				<psyfocusCost>0.1</psyfocusCost>
 				<entropyGain>0</entropyGain>
@@ -139,9 +86,37 @@
 	</VFECore.Abilities.AbilityDef>
 	
 	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
-		<defName>Golden_Order_AbilitySix</defName>
-		<label>Ability Six</label>
-		<description>after a brief moment of concentrating, gain the ability to bargain like a great merchant for a short period.</description>
+		<defName>Golden_Order_AbilityFour</defName>
+		<label>Boiling Ground</label>
+		<description>summon a burning ground that occasionally spill flame at nearby hostile</description>
+		<iconPath>Abilities/Archon/GroupLink</iconPath>
+		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+		<durationTime>1000</durationTime>
+		<castTime>30</castTime>
+		<targetMode>Self</targetMode>
+		<radius>10</radius>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_Golden_Order</path>
+				<level>2</level>
+				<order>2</order>
+				<psyfocusCost>0.1</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>Golden_Order_AbilitySix</li>
+				</prerequisites>
+			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+				<hediff>MakaiPsy_BI_Trading</hediff>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>Golden_Order_AbilityFive</defName>
+		<label>Mentor Sight</label>
+		<description>target a pawn, select one trait then turn it into random one. great success have 3 choice to choose from.</description>
 		<iconPath>Abilities/Archon/GroupLink</iconPath>
 		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
 		<durationTime>1000</durationTime>
@@ -153,16 +128,43 @@
 			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
 				<path>MakaiTech_VPE_Golden_Order</path>
 				<level>3</level>
-				<order>2</order>
+				<order>1</order>
 				<psyfocusCost>0.1</psyfocusCost>
 				<entropyGain>0</entropyGain>
 				<prerequisites>
-					<li>Golden_Order_AbilityThree</li>
-					<li>Golden_Order_AbilityFour</li>
+					<li>Golden_Order_AbilityOne</li>
 				</prerequisites>
 			</li>
 			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
 				<hediff>MakaiPsy_BI_Trading</hediff>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>Golden_Order_AbilitySix</defName>
+		<label>Path of Naraka</label>
+		<description>grant permanent buff to self. while the buff is active, as user meditate they will accumulate a charge up to 100%, used as cost by other psycast in the same Path &lt;color=#01F1F1&gt;\n\nSuccess: 5 \nGreat Success: 15&lt;/color&gt;</description>
+		<iconPath>Abilities/Archon/GroupLink</iconPath>
+		<abilityClass>MakaiTechPsycast.GoldenOrder.Ability_PathOfNaraka</abilityClass>
+		<castTime>300</castTime>
+		<targetMode>Self</targetMode>
+		<castSound>PsychicSoothePulserCast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>MakaiTech_VPE_Golden_Order</path>
+				<level>3</level>
+				<order>2</order>
+				<psyfocusCost>0</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+				</prerequisites>
+			</li>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>5</successThreshold>
+				<hediffDefWhenSuccess>MakaiTechPsy_GD_PathOfNaraka</hediffDefWhenSuccess>
+				<greatSuccessThreshold>15</greatSuccessThreshold>
+				<skillBonus>Intellectual</skillBonus>
 			</li>
 		</modExtensions>
 	</VFECore.Abilities.AbilityDef>
@@ -186,7 +188,7 @@
 				<psyfocusCost>0.1</psyfocusCost>
 				<entropyGain>0</entropyGain>
 				<prerequisites>
-					<li>Golden_Order_AbilitySix</li>
+					<li>Golden_Order_AbilityTwo</li>
 				</prerequisites>
 			</li>
 			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
@@ -214,7 +216,7 @@
 				<psyfocusCost>0.1</psyfocusCost>
 				<entropyGain>0</entropyGain>
 				<prerequisites>
-					<li>Golden_Order_AbilitySix</li>
+					<li>Golden_Order_AbilityFive</li>
 				</prerequisites>
 			</li>
 			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
@@ -225,7 +227,7 @@
 	
 	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
 		<defName>Golden_Order_AbilityNine</defName>
-		<label>Ability Nine</label>
+		<label>The Five Line</label>
 		<description>after a brief moment of concentrating, gain the ability to bargain like a great merchant for a short period.</description>
 		<iconPath>Abilities/Archon/GroupLink</iconPath>
 		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
@@ -242,7 +244,7 @@
 				<psyfocusCost>0.1</psyfocusCost>
 				<entropyGain>0</entropyGain>
 				<prerequisites>
-					<li>Golden_Order_AbilitySix</li>
+					<li>Golden_Order_AbilitySeven</li>
 				</prerequisites>
 			</li>
 			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
@@ -253,12 +255,12 @@
 	
 	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
 		<defName>Golden_Order_AbilityTen</defName>
-		<label>Ability Ten</label>
-		<description>after a brief moment of concentrating, gain the ability to bargain like a great merchant for a short period.</description>
+		<label>Enlightenment</label>
+		<description>enter a meditation state, after one hour, gain an enlightenment buff that last permanently. . should they ever go into mental break a set amount of charge will be consume to end mental state immediately</description>
 		<iconPath>Abilities/Archon/GroupLink</iconPath>
 		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
 		<durationTime>1000</durationTime>
-		<castTime>30</castTime>
+		<castTime>2500</castTime>
 		<targetMode>Self</targetMode>
 		<radius>10</radius>
 		<castSound>PsychicSoothePulserCast</castSound>
@@ -270,7 +272,8 @@
 				<psyfocusCost>0.1</psyfocusCost>
 				<entropyGain>0</entropyGain>
 				<prerequisites>
-					<li>Golden_Order_AbilitySix</li>
+					<li>Golden_Order_AbilityNine</li>
+					<li>Golden_Order_AbilityEight</li>
 				</prerequisites>
 			</li>
 			<li Class="VFECore.Abilities.AbilityExtension_Hediff">

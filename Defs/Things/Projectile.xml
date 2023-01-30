@@ -193,10 +193,10 @@
 	<ThingDef ParentName="OrbitalStrikeBase">
     <defName>MakaiPsy_CP_Pillar</defName>
     <label>Pillar beam</label>
-    <thingClass>MakaiTechPsycast.CorruptedProphet.MakaiPsy_CP_PillarStrike</thingClass>
+    <thingClass>MakaiTechPsycast.CorruptedProphet.MakaiCP_PillarBeam</thingClass>
     <comps>
       <li Class="MakaiTechPsycast.CorruptedProphet.MakaiPsyCompProperties_PillarBeam">
-        <width>20</width>
+        <width>10</width>
         <color>(255, 255, 255, 255)</color>
 		<sound>OrbitalBeam</sound>
 		<offsetZ>40</offsetZ>

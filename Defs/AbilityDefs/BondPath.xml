@@ -352,7 +352,7 @@
 				<psyfocusCost>0.1</psyfocusCost>
 				<entropyGain>0</entropyGain>
 				<prerequisites>
-					<li>BondIntertwined_Link</li>
+					<li>BondIntertwined_Trading</li>
 				</prerequisites>
 			</li>
 			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
