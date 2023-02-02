@@ -90,11 +90,10 @@
 		<label>Boiling Ground</label>
 		<description>summon a burning ground that occasionally spill flame at nearby hostile</description>
 		<iconPath>Abilities/Archon/GroupLink</iconPath>
-		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
-		<durationTime>1000</durationTime>
-		<castTime>30</castTime>
-		<targetMode>Self</targetMode>
-		<radius>10</radius>
+		<abilityClass>MakaiTechPsycast.Ability_SpawnThingWithRoll</abilityClass>
+		<castTime>60</castTime>
+		<targetMode>Location</targetMode>
+		<range>20</range>
 		<castSound>PsychicSoothePulserCast</castSound>
 		<modExtensions>
 			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
@@ -107,8 +106,12 @@
 					<li>Golden_Order_AbilitySix</li>
 				</prerequisites>
 			</li>
-			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
-				<hediff>MakaiPsy_BI_Trading</hediff>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>12</successThreshold>
+				<thingToSpawnWhenSuccess>MakaiTechPsy_GD_BoilingGround</thingToSpawnWhenSuccess>
+				<greatSuccessThreshold>19</greatSuccessThreshold>
+				<hours>2</hours>
+				<skillBonus>Intellectual</skillBonus>
 			</li>
 		</modExtensions>
 	</VFECore.Abilities.AbilityDef>
