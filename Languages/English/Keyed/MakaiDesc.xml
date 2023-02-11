@@ -4,7 +4,8 @@
 	
 	<Makai_PassArollcheck>{USER_labelShort} rolled a {1}({2}) and pass the roll check.</Makai_PassArollcheck>
 	<Makai_GreatPassArollcheck>{USER_labelShort} rolled a {1}({2}) and achieve a great success in roll check.</Makai_GreatPassArollcheck>
-	<Makai_FailArollcheck>{USER_labelShort} rolled a {1}({2}) and fail catastrophically in roll check.</Makai_FailArollcheck>
+	<!-- <Makai_FailArollcheck>{USER_labelShort} rolled a {1}({2}) and fail catastrophically in roll check.</Makai_FailArollcheck> -->
+	<Makai_FailArollcheck>{USER_labelShort} rolled a {1}({2}) and fail in roll check.</Makai_FailArollcheck>
 	<Makai_GreatFailArollcheck>{USER_labelShort} rolled a {1}({2}) and pawn skill wasn't high enough ({3}). need ({4}) </Makai_GreatFailArollcheck>
 	<Makai_SkillFailArollcheck>{USER_labelShort} rolled a {1}({2}) but pawn skill wasn't high enough ({3}). need ({4}) </Makai_SkillFailArollcheck>
 	<Makai_SkillFailDownGradeArollcheck>{USER_labelShort} rolled a {1}({2}) but pawn skill wasn't high enough ({3}). need ({4}). psycast has been downgraded to normal success.</Makai_SkillFailDownGradeArollcheck>
@@ -217,5 +218,20 @@
 	<Makai_PassArollcheckWillOfTheFallen>{USER_labelShort} has embrace the will of the fallen foe</Makai_PassArollcheckWillOfTheFallen>
 	<Makai_GreatPassArollcheckWillOfTheFallen>{USER_labelShort} has embrace the will of the fallen foe, the buff is considerably stronger than usual</Makai_GreatPassArollcheckWillOfTheFallen>
 	<Makai_FailArollcheckWillOfTheFallen>{USER_labelShort} has embrace the will of the fallen foe, the buff seem weaker than usual</Makai_FailArollcheckWillOfTheFallen>
+	
+	<!-- Golden Order -->
+	<Makai_PassArollcheckSpawnThingGD>{USER_labelShort} summoned {1}</Makai_PassArollcheckSpawnThingGD>
+	<Makai_GreatPassArollcheckSpawnThingGD>{USER_labelShort} summoned {1} with double duration</Makai_GreatPassArollcheckSpawnThingGD>
+	<Makai_FailArollcheckSpawnThingGD>{USER_labelShort} summoned {1}</Makai_FailArollcheckSpawnThingGD>
+	
+	<Makai_PassArollcheckBlackThread>{USER_labelShort} draw a line of karma upon the battlefield</Makai_PassArollcheckBlackThread>
+	<Makai_GreatPassArollcheckBlackThread>{USER_labelShort} draw a line of karma upon the battlefield</Makai_GreatPassArollcheckBlackThread>
+	<Makai_FailArollcheckBlackThread>{USER_labelShort} draw a line of karma upon the battlefield</Makai_FailArollcheckBlackThread>
+	
+	<Makai_PassArollcheckChangeTrait>{USER_labelShort} changed target trait into a random one</Makai_PassArollcheckChangeTrait>
+	<Makai_GreatPassArollcheckChangeTrait>{USER_labelShort} changed target trait into a new one</Makai_GreatPassArollcheckChangeTrait>
+	<Makai_FailArollcheckChangeTrait>{USER_labelShort} changed target trait into a random one</Makai_FailArollcheckChangeTrait>
+	
+	
 	
 </LanguageData>
