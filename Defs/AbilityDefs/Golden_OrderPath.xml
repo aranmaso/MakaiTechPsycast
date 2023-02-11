@@ -4,27 +4,53 @@
 	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
 		<defName>Golden_Order_AbilityOne</defName>
 		<label>Black thread</label>
-		<description>after a brief moment of concentrating, gain the ability to bargain like a great merchant for a short period.</description>
-		<iconPath>Abilities/Archon/GroupLink</iconPath>
-		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
-		<durationTime>1000</durationTime>
-		<castTime>30</castTime>
-		<targetMode>Self</targetMode>
-		<radius>10</radius>
+		<description>draw a line of karma between two point. damaging and slow pawn that cross the line, doesn't distinguish between friend and foes. &lt;color=#01F1F1&gt;\n\nSuccess: 10 \nGreat Success: 15 \nCost: 10%&lt;/color&gt;</description>
+		<iconPath>Abilities/GoldenOrder/BlackThread</iconPath>
+		<abilityClass>MakaiTechPsycast.GoldenOrder.Ability_BlackThread</abilityClass>
+		<castTime>60</castTime>
+        <requireLineOfSight>false</requireLineOfSight>
+        <targetCount>2</targetCount>
+        <targetModes>
+            <li>Location</li>
+            <li>Location</li>
+        </targetModes>
+		<targetingParametersList>
+            <li>
+                <canTargetPawns>False</canTargetPawns>
+                <canTargetAnimals>False</canTargetAnimals>
+                <canTargetMechs>False</canTargetMechs>
+                <canTargetBuildings>True</canTargetBuildings>
+                <canTargetLocations>True</canTargetLocations>
+            </li>
+            <li>
+                <canTargetPawns>False</canTargetPawns>
+                <canTargetAnimals>False</canTargetAnimals>
+                <canTargetMechs>False</canTargetMechs>
+                <canTargetBuildings>True</canTargetBuildings>
+                <canTargetLocations>True</canTargetLocations>
+            </li>
+        </targetingParametersList>
+        <range>20.9</range>
 		<castSound>PsychicSoothePulserCast</castSound>
 		<modExtensions>
 			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
 				<path>MakaiTech_VPE_Golden_Order</path>
 				<level>1</level>
 				<order>1</order>
-				<psyfocusCost>0.1</psyfocusCost>
+				<psyfocusCost>0</psyfocusCost>
 				<entropyGain>0</entropyGain>
 				<prerequisites>
 					<li>Golden_Order_AbilityThree</li>
 				</prerequisites>
 			</li>
-			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
-				<hediff>MakaiPsy_BI_Trading</hediff>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>10</successThreshold>
+				<greatSuccessThreshold>15</greatSuccessThreshold>
+				<projectileWhenSuccess>MakaiPsy_GD_BlackLine</projectileWhenSuccess>
+				<hediffDefWhenSuccess>MakaiTechPsy_GD_Blackthread</hediffDefWhenSuccess>
+				<ticks>2500</ticks>
+				<costs>0.1</costs>
+				<skillBonus>Social</skillBonus>
 			</li>
 		</modExtensions>
 	</VFECore.Abilities.AbilityDef>
@@ -32,27 +58,41 @@
 	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
 		<defName>Golden_Order_AbilityTwo</defName>
 		<label>Shivering Wind</label>
-		<description>after a brief moment of concentrating, gain the ability to bargain like a great merchant for a short period.</description>
-		<iconPath>Abilities/Archon/GroupLink</iconPath>
-		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
-		<durationTime>1000</durationTime>
-		<castTime>30</castTime>
-		<targetMode>Self</targetMode>
-		<radius>10</radius>
-		<castSound>PsychicSoothePulserCast</castSound>
+		<description>open the gate to hell of frozen plain onto the target area. slow anyone down for a period of time. &lt;color=#01F1F1&gt;\n\nSuccess: 11 \nGreat Success: 18 \nCost: 5%&lt;/color&gt;</description>
+		<iconPath>Abilities/GoldenOrder/ShiveringWind</iconPath>
+		<abilityClass>MakaiTechPsycast.GoldenOrder.Ability_GiveHediffGD</abilityClass>
+		<castTime>60</castTime>
+		<range>20</range>
+		<radius>5</radius>
+		<targetMode>Location</targetMode>
+		<hasAoE>true</hasAoE>
+		<fleckOnTarget>PsycastAreaEffect</fleckOnTarget>
+		<fleckOnTargetScaleWithRadius>true</fleckOnTargetScaleWithRadius>
+		<targetingParametersForAoE>
+			<canTargetPawns>True</canTargetPawns>
+			<canTargetAnimals>True</canTargetAnimals>
+			<canTargetMechs>True</canTargetMechs>
+		</targetingParametersForAoE>
+		<!-- <castSound>PsychicSoothePulserCast</castSound> -->
 		<modExtensions>
 			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
 				<path>MakaiTech_VPE_Golden_Order</path>
 				<level>1</level>
 				<order>2</order>
-				<psyfocusCost>0.1</psyfocusCost>
+				<psyfocusCost>0</psyfocusCost>
 				<entropyGain>0</entropyGain>
 				<prerequisites>
 					<li>Golden_Order_AbilityFour</li>
 				</prerequisites>
 			</li>
-			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
-				<hediff>MakaiPsy_BI_Trading</hediff>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>11</successThreshold>
+				<greatSuccessThreshold>18</greatSuccessThreshold>
+				<hediffDefWhenSuccess>MakaiTechPsy_GD_ColdWind</hediffDefWhenSuccess>
+				<ticks>2500</ticks>
+				<costs>0.05</costs>
+				<targetOnlyEnemies>True</targetOnlyEnemies>
+				<skillBonus>Social</skillBonus>
 			</li>
 		</modExtensions>
 	</VFECore.Abilities.AbilityDef>
@@ -60,27 +100,34 @@
 	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
 		<defName>Golden_Order_AbilityThree</defName>
 		<label>Thorn Tree</label>
-		<description>after a brief moment of concentrating, gain the ability to bargain like a great merchant for a short period.</description>
-		<iconPath>Abilities/Archon/GroupLink</iconPath>
-		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
-		<durationTime>1000</durationTime>
-		<castTime>30</castTime>
-		<targetMode>Self</targetMode>
-		<radius>10</radius>
+		<description>summon a tall tree full of thorn, periodically rain down spike onto hostile pawn. &lt;color=#01F1F1&gt;\n\nSuccess: 11 \nGreat Success: 18 \nCost: 15%&lt;/color&gt;</description>
+		<iconPath>Abilities/GoldenOrder/ThornTree</iconPath>
+		<abilityClass>MakaiTechPsycast.GoldenOrder.Ability_SpawnThingGD</abilityClass>
+		<castTime>60</castTime>
+		<targetMode>Location</targetMode>
+		<range>20</range>
+		<radius>6</radius>
+		<fleckOnTarget>PsycastAreaEffect</fleckOnTarget>
+		<fleckOnTargetScaleWithRadius>true</fleckOnTargetScaleWithRadius>
 		<castSound>PsychicSoothePulserCast</castSound>
 		<modExtensions>
 			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
 				<path>MakaiTech_VPE_Golden_Order</path>
 				<level>2</level>
 				<order>1</order>
-				<psyfocusCost>0.1</psyfocusCost>
+				<psyfocusCost>0</psyfocusCost>
 				<entropyGain>0</entropyGain>
 				<prerequisites>
 					<li>Golden_Order_AbilitySix</li>
 				</prerequisites>
 			</li>
-			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
-				<hediff>MakaiPsy_BI_Trading</hediff>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>12</successThreshold>
+				<thingToSpawnWhenSuccess>MakaiTechPsy_GD_ThornTree</thingToSpawnWhenSuccess>
+				<greatSuccessThreshold>15</greatSuccessThreshold>
+				<costs>0.15</costs>
+				<hours>2</hours>
+				<skillBonus>Social</skillBonus>
 			</li>
 		</modExtensions>
 	</VFECore.Abilities.AbilityDef>
@@ -88,19 +135,22 @@
 	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
 		<defName>Golden_Order_AbilityFour</defName>
 		<label>Boiling Ground</label>
-		<description>summon a burning ground that occasionally spill flame at nearby hostile</description>
-		<iconPath>Abilities/Archon/GroupLink</iconPath>
-		<abilityClass>MakaiTechPsycast.Ability_SpawnThingWithRoll</abilityClass>
+		<description>summon a burning ground that occasionally spew flame at nearby hostile&lt;color=#01F1F1&gt;\n\nSuccess: 12 \nGreat Success: 15&lt;/color&gt;</description>
+		<iconPath>Things/Buildings/BoilingHell</iconPath>
+		<abilityClass>MakaiTechPsycast.GoldenOrder.Ability_SpawnThingGD</abilityClass>
 		<castTime>60</castTime>
 		<targetMode>Location</targetMode>
 		<range>20</range>
-		<castSound>PsychicSoothePulserCast</castSound>
+		<radius>6</radius>
+		<fleckOnTarget>PsycastAreaEffect</fleckOnTarget>
+		<fleckOnTargetScaleWithRadius>true</fleckOnTargetScaleWithRadius>
+		<!-- <castSound>PsychicSoothePulserCast</castSound> -->
 		<modExtensions>
 			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
 				<path>MakaiTech_VPE_Golden_Order</path>
 				<level>2</level>
 				<order>2</order>
-				<psyfocusCost>0.1</psyfocusCost>
+				<psyfocusCost>0</psyfocusCost>
 				<entropyGain>0</entropyGain>
 				<prerequisites>
 					<li>Golden_Order_AbilitySix</li>
@@ -109,9 +159,10 @@
 			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
 				<successThreshold>12</successThreshold>
 				<thingToSpawnWhenSuccess>MakaiTechPsy_GD_BoilingGround</thingToSpawnWhenSuccess>
-				<greatSuccessThreshold>19</greatSuccessThreshold>
+				<greatSuccessThreshold>15</greatSuccessThreshold>
+				<costs>0.15</costs>
 				<hours>2</hours>
-				<skillBonus>Intellectual</skillBonus>
+				<skillBonus>Social</skillBonus>
 			</li>
 		</modExtensions>
 	</VFECore.Abilities.AbilityDef>
@@ -119,27 +170,36 @@
 	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
 		<defName>Golden_Order_AbilityFive</defName>
 		<label>Mentor Sight</label>
-		<description>target a pawn, select one trait then turn it into random one. great success have 3 choice to choose from.</description>
-		<iconPath>Abilities/Archon/GroupLink</iconPath>
-		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
-		<durationTime>1000</durationTime>
-		<castTime>30</castTime>
-		<targetMode>Self</targetMode>
-		<radius>10</radius>
-		<castSound>PsychicSoothePulserCast</castSound>
+		<description>target a pawn, select one trait then turn it into random one. great success have 3 choice to choose from. &lt;color=#01F1F1&gt;\n\nSuccess: 10 \nGreat Success: 19&lt;/color&gt;</description>
+		<iconPath>Abilities/GoldenOrder/MentorSight</iconPath>
+		<abilityClass>MakaiTechPsycast.GoldenOrder.Ability_ChangeTrait</abilityClass>
+		<castTime>60</castTime>
+		<targetMode>Pawn</targetMode>
+		<range>10</range>
+		<targetingParameters>
+			<canTargetSelf>True</canTargetSelf>
+			<canTargetPawns>True</canTargetPawns>
+			<canTargetAnimals>False</canTargetAnimals>
+			<canTargetMechs>False</canTargetMechs>
+		</targetingParameters>
+		<!-- <castSound>PsychicSoothePulserCast</castSound> -->
 		<modExtensions>
 			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
 				<path>MakaiTech_VPE_Golden_Order</path>
 				<level>3</level>
 				<order>1</order>
-				<psyfocusCost>0.1</psyfocusCost>
+				<psyfocusCost>0</psyfocusCost>
 				<entropyGain>0</entropyGain>
 				<prerequisites>
 					<li>Golden_Order_AbilityOne</li>
 				</prerequisites>
 			</li>
-			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
-				<hediff>MakaiPsy_BI_Trading</hediff>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>10</successThreshold>
+				<greatSuccessThreshold>19</greatSuccessThreshold>
+				<costs>0.15</costs>
+				<hediffDefWhenFail>MakaiTechPsy_GD_ChangeTraitBad</hediffDefWhenFail>
+				<skillBonus>Social</skillBonus>
 			</li>
 		</modExtensions>
 	</VFECore.Abilities.AbilityDef>
@@ -147,8 +207,8 @@
 	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
 		<defName>Golden_Order_AbilitySix</defName>
 		<label>Path of Naraka</label>
-		<description>grant permanent buff to self. while the buff is active, as user meditate they will accumulate a charge up to 100%, used as cost by other psycast in the same Path &lt;color=#01F1F1&gt;\n\nSuccess: 5 \nGreat Success: 15&lt;/color&gt;</description>
-		<iconPath>Abilities/Archon/GroupLink</iconPath>
+		<description>grant permanent buff to self. while the buff is active, as user meditate they will accumulate a charge up to 100%, used as cost by other psycast of the same Path &lt;color=#01F1F1&gt;\n\nSuccess: 5 \nGreat Success: 15&lt;/color&gt;</description>
+		<iconPath>Abilities/GoldenOrder/PathOfNaraka</iconPath>
 		<abilityClass>MakaiTechPsycast.GoldenOrder.Ability_PathOfNaraka</abilityClass>
 		<castTime>300</castTime>
 		<targetMode>Self</targetMode>
@@ -167,91 +227,108 @@
 				<successThreshold>5</successThreshold>
 				<hediffDefWhenSuccess>MakaiTechPsy_GD_PathOfNaraka</hediffDefWhenSuccess>
 				<greatSuccessThreshold>15</greatSuccessThreshold>
-				<skillBonus>Intellectual</skillBonus>
+				<skillBonus>Social</skillBonus>
 			</li>
 		</modExtensions>
 	</VFECore.Abilities.AbilityDef>
 	
 	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
 		<defName>Golden_Order_AbilitySeven</defName>
-		<label>Ability Seven</label>
-		<description>after a brief moment of concentrating, gain the ability to bargain like a great merchant for a short period.</description>
-		<iconPath>Abilities/Archon/GroupLink</iconPath>
-		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
-		<durationTime>1000</durationTime>
-		<castTime>30</castTime>
-		<targetMode>Self</targetMode>
-		<radius>10</radius>
+		<label>Gaia Embrace</label>
+		<description>Call upon the blessing of mother earth, fortified user mental and physical. &lt;color=#01F1F1&gt;\n\nSuccess: 10 \nGreat Success: 15 \nCost: 20%&lt;/color&gt;</description>
+		<iconPath>Abilities/GoldenOrder/GaiaEmbrace</iconPath>
+		<abilityClass>MakaiTechPsycast.GoldenOrder.Ability_GiveHediffGD</abilityClass>
+		<castTime>60</castTime>
+		<targetMode>Pawn</targetMode>
+		<range>10</range>
+		<targetingParameters>
+			<canTargetSelf>True</canTargetSelf>
+			<canTargetPawns>True</canTargetPawns>
+			<canTargetAnimals>False</canTargetAnimals>
+			<canTargetMechs>False</canTargetMechs>
+		</targetingParameters>
 		<castSound>PsychicSoothePulserCast</castSound>
 		<modExtensions>
 			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
 				<path>MakaiTech_VPE_Golden_Order</path>
 				<level>3</level>
 				<order>3</order>
-				<psyfocusCost>0.1</psyfocusCost>
+				<psyfocusCost>0</psyfocusCost>
 				<entropyGain>0</entropyGain>
 				<prerequisites>
 					<li>Golden_Order_AbilityTwo</li>
 				</prerequisites>
 			</li>
-			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
-				<hediff>MakaiPsy_BI_Trading</hediff>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>10</successThreshold>
+				<hediffDefWhenSuccess>MakaiTechPsy_GD_GaiaEmbrace</hediffDefWhenSuccess>
+				<greatSuccessThreshold>15</greatSuccessThreshold>
+				<costs>0.2</costs>
+				<skillBonus>Social</skillBonus>
 			</li>
 		</modExtensions>
 	</VFECore.Abilities.AbilityDef>
 	
 	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
 		<defName>Golden_Order_AbilityEight</defName>
-		<label>Ability Eight</label>
-		<description>after a brief moment of concentrating, gain the ability to bargain like a great merchant for a short period.</description>
-		<iconPath>Abilities/Archon/GroupLink</iconPath>
-		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
-		<durationTime>1000</durationTime>
-		<castTime>30</castTime>
+		<label>Stillness of mind</label>
+		<description>calm one own mind, prevent naturally occuring mental break from taking place. &lt;color=#01F1F1&gt;\n\nSuccess: 10 \nGreat Success: 15 \nCost: 40%&lt;/color&gt;</description>
+		<iconPath>Abilities/GoldenOrder/StillMind</iconPath>
+		<abilityClass>MakaiTechPsycast.GoldenOrder.Ability_GiveHediffGD</abilityClass>
+		<castTime>60</castTime>
 		<targetMode>Self</targetMode>
-		<radius>10</radius>
-		<castSound>PsychicSoothePulserCast</castSound>
 		<modExtensions>
 			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
 				<path>MakaiTech_VPE_Golden_Order</path>
 				<level>4</level>
 				<order>1</order>
-				<psyfocusCost>0.1</psyfocusCost>
+				<psyfocusCost>0</psyfocusCost>
 				<entropyGain>0</entropyGain>
 				<prerequisites>
 					<li>Golden_Order_AbilityFive</li>
 				</prerequisites>
 			</li>
-			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
-				<hediff>MakaiPsy_BI_Trading</hediff>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>10</successThreshold>
+				<hediffDefWhenSuccess>MakaiTechPsy_GD_StillAsAFuckingWater</hediffDefWhenSuccess>
+				<greatSuccessThreshold>15</greatSuccessThreshold>
+				<costs>0.4</costs>
+				<skillBonus>Social</skillBonus>
 			</li>
 		</modExtensions>
 	</VFECore.Abilities.AbilityDef>
 	
 	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
 		<defName>Golden_Order_AbilityNine</defName>
-		<label>The Five Line</label>
-		<description>after a brief moment of concentrating, gain the ability to bargain like a great merchant for a short period.</description>
-		<iconPath>Abilities/Archon/GroupLink</iconPath>
-		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
-		<durationTime>1000</durationTime>
-		<castTime>30</castTime>
-		<targetMode>Self</targetMode>
-		<radius>10</radius>
-		<castSound>PsychicSoothePulserCast</castSound>
+		<label>Five Line</label>
+		<description>utilizing the black thread, summon five line at once originate from the target point into random location nearby &lt;color=#01F1F1&gt;\n\nSuccess: 10 \nGreat Success: 15 \nCost: 25%&lt;/color&gt;</description>
+		<iconPath>Abilities/GoldenOrder/FiveLine</iconPath>
+		<abilityClass>MakaiTechPsycast.GoldenOrder.Ability_FiveLine</abilityClass>
+		<castTime>60</castTime>
+		<targetMode>Location</targetMode>
+		<range>30</range>
+		<radius>6</radius>
+		<fleckOnTarget>PsycastAreaEffect</fleckOnTarget>
+		<fleckOnTargetScaleWithRadius>true</fleckOnTargetScaleWithRadius>
 		<modExtensions>
 			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
 				<path>MakaiTech_VPE_Golden_Order</path>
 				<level>4</level>
 				<order>2</order>
-				<psyfocusCost>0.1</psyfocusCost>
+				<psyfocusCost>0</psyfocusCost>
 				<entropyGain>0</entropyGain>
 				<prerequisites>
 					<li>Golden_Order_AbilitySeven</li>
 				</prerequisites>
 			</li>
-			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
-				<hediff>MakaiPsy_BI_Trading</hediff>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>10</successThreshold>
+				<greatSuccessThreshold>15</greatSuccessThreshold>
+				<projectileWhenSuccess>MakaiPsy_GD_BlackLine</projectileWhenSuccess>
+				<hediffDefWhenSuccess>MakaiTechPsy_GD_Blackthread</hediffDefWhenSuccess>
+				<ticks>2500</ticks>
+				<costs>0.25</costs>
+				<skillBonus>Social</skillBonus>
 			</li>
 		</modExtensions>
 	</VFECore.Abilities.AbilityDef>
@@ -259,9 +336,9 @@
 	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
 		<defName>Golden_Order_AbilityTen</defName>
 		<label>Enlightenment</label>
-		<description>enter a meditation state, after one hour, gain an enlightenment buff that last permanently. . should they ever go into mental break a set amount of charge will be consume to end mental state immediately</description>
-		<iconPath>Abilities/Archon/GroupLink</iconPath>
-		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+		<description>enter a meditation state, after one hour, gain an enlightenment buff that last permanently. should user ever go into mental break a set amount of charge will be consume to end mental state immediately &lt;color=#01F1F1&gt;\n\nSuccess: 5 \nGreat Success: 15 \nCost: 100%&lt;/color&gt;</description>
+		<iconPath>Abilities/GoldenOrder/Enlightment</iconPath>
+		<abilityClass>MakaiTechPsycast.GoldenOrder.Ability_GiveHediffGD</abilityClass>
 		<durationTime>1000</durationTime>
 		<castTime>2500</castTime>
 		<targetMode>Self</targetMode>
@@ -272,15 +349,19 @@
 				<path>MakaiTech_VPE_Golden_Order</path>
 				<level>5</level>
 				<order>1</order>
-				<psyfocusCost>0.1</psyfocusCost>
+				<psyfocusCost>0</psyfocusCost>
 				<entropyGain>0</entropyGain>
 				<prerequisites>
 					<li>Golden_Order_AbilityNine</li>
 					<li>Golden_Order_AbilityEight</li>
 				</prerequisites>
 			</li>
-			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
-				<hediff>MakaiPsy_BI_Trading</hediff>
+			<li Class="MakaiTechPsycast.AbilityExtension_Roll1D20">
+				<successThreshold>5</successThreshold>
+				<hediffDefWhenSuccess>MakaiTechPsy_GD_Buddha</hediffDefWhenSuccess>
+				<greatSuccessThreshold>15</greatSuccessThreshold>
+				<costs>1</costs>
+				<skillBonus>Social</skillBonus>
 			</li>
 		</modExtensions>
 	</VFECore.Abilities.AbilityDef>

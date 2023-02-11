@@ -125,8 +125,8 @@
 		<iconPath>Projectiles/DestinedDeath/SpinScythe/sarispinG</iconPath>
 		<abilityClass>MakaiTechPsycast.Ability_Shoot</abilityClass>
 		<durationTime>1000</durationTime>
-		<range>6.9</range>
-		<castTime>30</castTime>
+		<range>3.9</range>
+		<castTime>120</castTime>
 		<targetMode>Pawn</targetMode>
 		<castSound>Claw_Sweep</castSound>
 		<requireLineOfSight>false</requireLineOfSight>

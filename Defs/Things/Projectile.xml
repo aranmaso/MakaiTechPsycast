@@ -574,5 +574,74 @@
 		</comps>
 	</ThingDef>
 	
-
+	<!-- Golden Order -->
+	<ThingDef ParentName="BaseBullet">
+		<defName>MakaiPsy_GD_Fireball</defName>
+		<label>flameball</label>
+		<description>A ball of flame spewed by a boiling ground</description>
+		<thingClass>VanillaPsycastsExpanded.Graphics.Projectile_Pointing</thingClass>
+		<graphicData Class="VanillaPsycastsExpanded.Graphics.GraphicData_Animated">
+			<texPath>Effects/Conflagrator/Fireball</texPath>
+			<ticksPerFrame>5</ticksPerFrame>
+			<graphicClass>VanillaPsycastsExpanded.Graphics.Graphic_Animated</graphicClass>
+			<shaderType>MoteGlow</shaderType>
+		</graphicData>
+		<drawOffscreen>true</drawOffscreen>
+		<drawerType>RealtimeOnly</drawerType>
+		<projectile>
+			<explosionRadius>1</explosionRadius>
+			<damageDef>Flame</damageDef>
+			<speed>10</speed>
+			<arcHeightFactor>50</arcHeightFactor>
+			<ai_IsIncendiary>true</ai_IsIncendiary>
+			<shadowSize>0.6</shadowSize>
+		</projectile>
+	</ThingDef>
+	
+	<ThingDef ParentName="BaseBullet">
+		<defName>MakaiPsy_GD_BlackLine</defName>
+		<label>black line</label>
+		<thingClass>MakaiTechPsycast.GoldenOrder.Projectile_BlackThread</thingClass>
+		<altitudeLayer>VisEffects</altitudeLayer>
+		<drawOffscreen>true</drawOffscreen>
+		<graphicData Class="VanillaPsycastsExpanded.Graphics.GraphicData_Animated">
+			<texPath>Projectiles/GoldenOrder/Blackthread</texPath>
+			<graphicClass>VanillaPsycastsExpanded.Graphics.Graphic_Animated</graphicClass>
+			<ticksPerFrame>10</ticksPerFrame>
+		</graphicData>
+		<projectile>
+			<speed>200</speed>
+			<damageDef>GoldenOrder_BlackLine</damageDef>
+			<damageAmountBase>3</damageAmountBase>
+		</projectile>
+		<comps>
+		</comps>
+	</ThingDef>
+	
+	<ThingDef ParentName="BaseBullet">
+		<defName>MakaiPsy_GD_Thorn</defName>
+		<label>Falling Thorn</label>
+		<description>A falling thorn</description>
+		<graphicData>
+			<texPath>Projectiles/GoldenOrder/Thorn</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+            <shaderType>Cutout</shaderType>
+			<drawSize>1</drawSize>
+		</graphicData>
+		<drawOffscreen>true</drawOffscreen>
+		<projectile>
+			<damageDef>Cut</damageDef>
+			<damageAmountBase>5</damageAmountBase>
+			<armorPenetrationBase>1</armorPenetrationBase>
+			<speed>10</speed>
+		</projectile>
+		<comps>
+			<li Class="VFECore.CompProperties_HomingProjectile">
+				<homingDistanceFractionPassed>0.3</homingDistanceFractionPassed>
+				<homingCorrectionTickRate>2</homingCorrectionTickRate>				
+			</li>
+		</comps>
+	</ThingDef>
+	
+	
 </Defs>

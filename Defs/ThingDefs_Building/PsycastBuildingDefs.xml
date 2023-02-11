@@ -48,7 +48,7 @@
 			</li>
 			<li Class="CompProperties_Glower">
 				<glowRadius>2.9</glowRadius>
-				<glowColor>(255,255,255,0)</glowColor>
+				<glowColor>(255,255,255,255)</glowColor>
 			</li>
 		</comps>
 	</ThingDef>
@@ -103,7 +103,7 @@
 			</li>
 			<li Class="CompProperties_Glower">
 				<glowRadius>2.9</glowRadius>
-				<glowColor>(255,255,255,0)</glowColor>
+				<glowColor>(255,255,255,255)</glowColor>
 			</li>
 		</comps>
 	</ThingDef>
@@ -403,5 +403,128 @@
 			</li>
 		</comps>
 	</ThingDef>
-
+	
+	<ThingDef ParentName="BuildingBase">
+		<defName>MakaiTechPsy_GD_BoilingGround</defName>
+		<label>Boiling Hell</label>
+		<description>a gate to the hell of boiling flame. damage pawn that come in contact and occasionally spew boiling droplet</description>
+		<category>Building</category>
+		<graphicData>
+			<texPath>Things/Buildings/BoilingHell</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawRotated>false</drawRotated>
+			<allowFlip>false</allowFlip>
+			<drawSize>(3,3)</drawSize>
+			<drawOffset>(0,0.2,0)</drawOffset>
+			<damageData>
+				<rect>(0.2,0,0.6,0.1)</rect>
+			</damageData>
+		</graphicData>
+		<size>(3,3)</size>
+		<castEdgeShadows>false</castEdgeShadows>
+		<rotatable>false</rotatable>
+		<altitudeLayer>Floor</altitudeLayer>
+		<passability>Standable</passability>
+		<pathCost>30</pathCost>
+		<tickerType>Normal</tickerType>
+		<fillPercent>0.1</fillPercent>
+		<useHitPoints>false</useHitPoints>
+		<statBases>
+			<!-- <MaxHitPoints>500</MaxHitPoints> -->
+		</statBases>
+		<selectable>true</selectable>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Small</destroySound>
+		</building>
+		<soundImpactDefault>BulletImpact_Ground</soundImpactDefault>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<resourcesFractionWhenDeconstructed>0</resourcesFractionWhenDeconstructed>
+		<placeWorkers>
+		</placeWorkers>
+		<specialDisplayRadius>1.9</specialDisplayRadius>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<comps>
+			<li Class="MakaiTechPsycast.CompProperties_NearbyDamager">
+			<contactRadius>1.9</contactRadius>
+			<spewRadius>6</spewRadius>
+			<contactInterval>60</contactInterval>
+			<spewInterval>250</spewInterval>
+			<contactAffectFriendly>true</contactAffectFriendly>
+			<damageDefs>
+				<li>Burn</li>
+			</damageDefs>
+			<damageAmount>5</damageAmount>
+			<projectileDefs>
+				<li>MakaiPsy_GD_Fireball</li>
+			</projectileDefs>
+			</li>
+			<li Class="CompProperties_Glower">
+				<glowRadius>6</glowRadius>
+				<glowColor>(255,209,0)</glowColor>
+			</li>
+			<li>
+				<compClass>VFECore.Abilities.CompSpawnedBuilding</compClass>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	<ThingDef ParentName="BuildingBase">
+		<defName>MakaiTechPsy_GD_ThornTree</defName>
+		<label>Thorn Hell</label>
+		<description>a gate to the hell of thorned tree. damage pawn that come in contact and occasionally drop sharp spike</description>
+		<category>Building</category>
+		<graphicData>
+			<texPath>Things/Buildings/ThornTree</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawRotated>false</drawRotated>
+			<allowFlip>false</allowFlip>
+			<drawSize>(8,8)</drawSize>
+			<drawOffset>(0,6,3)</drawOffset>
+			<damageData>
+				<rect>(0.2,0,0.6,0.1)</rect>
+			</damageData>
+		</graphicData>
+		<size>(1,1)</size>
+		<castEdgeShadows>false</castEdgeShadows>
+		<rotatable>false</rotatable>
+		<altitudeLayer>Floor</altitudeLayer>
+		<passability>Standable</passability>
+		<pathCost>30</pathCost>
+		<tickerType>Normal</tickerType>
+		<fillPercent>0.1</fillPercent>
+		<statBases>
+			<MaxHitPoints>500</MaxHitPoints>
+		</statBases>
+		<selectable>true</selectable>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Small</destroySound>
+		</building>
+		<soundImpactDefault>BulletImpact_Ground</soundImpactDefault>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<resourcesFractionWhenDeconstructed>0</resourcesFractionWhenDeconstructed>
+		<placeWorkers>
+		</placeWorkers>
+		<specialDisplayRadius>1</specialDisplayRadius>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<comps>
+			<li Class="MakaiTechPsycast.CompProperties_NearbyDamager">
+			<contactRadius>1</contactRadius>
+			<spewRadius>10</spewRadius>
+			<contactInterval>60</contactInterval>
+			<spewInterval>240</spewInterval>
+			<contactAffectFriendly>true</contactAffectFriendly>
+			<damageDefs>
+				<li>Cut</li>
+			</damageDefs>
+			<damageAmount>5</damageAmount>
+			<projectileDefs>
+				<li>MakaiPsy_GD_Thorn</li>
+			</projectileDefs>
+			<spawnFromAbove>true</spawnFromAbove>
+			</li>
+			<li>
+				<compClass>VFECore.Abilities.CompSpawnedBuilding</compClass>
+			</li>
+		</comps>
+	</ThingDef>
 </Defs>

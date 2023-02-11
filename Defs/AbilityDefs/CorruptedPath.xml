@@ -192,7 +192,6 @@
 		<castTime>60</castTime>
 		<targetMode>Location</targetMode>
 		<range>20</range>
-		<needsTicking>true</needsTicking>
 		<castSound>PsychicSoothePulserCast</castSound>
 		<modExtensions>
 			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">

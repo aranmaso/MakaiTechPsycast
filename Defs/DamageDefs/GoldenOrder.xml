@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<DamageDef>
+	<defName>GoldenOrder_BlackLine</defName>
+    <label>Cut</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has been rot to death</deathMessage>
+    <hediff>Cut</hediff>
+    <hediffSolid>Crack</hediffSolid>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+	<additionalHediffs>
+		<li>
+			<hediff>MakaiTechPsy_GD_ThreadSlow</hediff>
+			<severityPerDamageDealt>1</severityPerDamageDealt>
+		</li>
+    </additionalHediffs>
+	<buildingDamageFactor>1</buildingDamageFactor>
+    <plantDamageFactor>1</plantDamageFactor>
+    <impactSoundType>Electric</impactSoundType>
+    <armorCategory>Sharp</armorCategory>
+    <overkillPctToDestroyPart>0~0.7</overkillPctToDestroyPart>
+    <isRanged>false</isRanged>
+    <makesAnimalsFlee>true</makesAnimalsFlee>
+	</DamageDef>
+
+</Defs>

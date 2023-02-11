@@ -2964,4 +2964,197 @@
     </stages>
 	</HediffDef>
 	
+	<HediffDef ParentName="DiseaseBase">
+    <defName>MakaiTechPsy_GD_Buddha</defName>
+    <label>Enlightment</label>
+	<defaultLabelColor>(238, 142, 0)</defaultLabelColor>
+    <description>found the truth of the world, consume 10% of Path of Naraka stack to snap out of mental break</description>
+	<initialSeverity>1</initialSeverity>
+    <maxSeverity>1</maxSeverity>
+    <isBad>false</isBad>
+    <comps>
+		<li Class="MakaiTechPsycast.GoldenOrder.HediffCompProperties_Enlightment">
+			<costPerTrigger>0.1</costPerTrigger>
+		</li>
+    </comps>
+    <stages>
+		<li>
+			<becomeVisible>true</becomeVisible>
+			<capMods>
+			</capMods>
+			<statFactors>
+			</statFactors>
+		</li>
+    </stages>
+	</HediffDef>
+	
+	<HediffDef ParentName="DiseaseBase">
+    <defName>MakaiTechPsy_GD_Blackthread</defName>
+    <label>Blackthread</label>
+	<defaultLabelColor>(238, 142, 0)</defaultLabelColor>
+    <description>the path to enlightenment</description>
+	<initialSeverity>1</initialSeverity>
+    <maxSeverity>1</maxSeverity>
+    <isBad>false</isBad>
+    <comps>
+	<li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>True</showRemainingTime>
+    </li>		
+    </comps>
+    <stages>
+		<li>
+			<becomeVisible>false</becomeVisible>
+			<capMods>
+			</capMods>
+			<statFactors>
+			</statFactors>
+		</li>
+    </stages>
+	</HediffDef>
+	
+	<HediffDef ParentName="DiseaseBase">
+    <defName>MakaiTechPsy_GD_ChangeTraitBad</defName>
+    <label>Headache</label>
+	<defaultLabelColor>(238, 142, 0)</defaultLabelColor>
+    <description>encountered a bad form of mentoring</description>
+	<initialSeverity>1</initialSeverity>
+    <maxSeverity>1</maxSeverity>
+    <isBad>true</isBad>
+    <comps>
+	<li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>True</showRemainingTime>
+    </li>		
+    </comps>
+    <stages>
+		<li>			
+			<capMods>
+				<li>
+					<capacity>Consciousness</capacity>
+					<postFactor>0.75</postFactor>
+				</li>
+			</capMods>
+			<statFactors>
+			</statFactors>
+		</li>
+    </stages>
+	</HediffDef>
+	
+	<HediffDef ParentName="DiseaseBase">
+    <defName>MakaiTechPsy_GD_ColdWind</defName>
+    <label>Shivering Wind</label>
+	<defaultLabelColor>(238, 142, 0)</defaultLabelColor>
+    <description>cold of punishment</description>
+	<initialSeverity>1</initialSeverity>
+    <maxSeverity>1</maxSeverity>
+    <isBad>true</isBad>
+    <comps>
+	<li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>True</showRemainingTime>
+    </li>		
+    </comps>
+    <stages>
+		<li>			
+			<capMods>
+				<li>
+					<capacity>Moving</capacity>
+					<postFactor>0.5</postFactor>
+				</li>
+			</capMods>
+			<statFactors>
+			</statFactors>
+		</li>
+    </stages>
+	</HediffDef>
+	
+	<HediffDef ParentName="DiseaseBase">
+    <defName>MakaiTechPsy_GD_ThreadSlow</defName>
+    <label>binded by karma</label>
+	<defaultLabelColor>(238, 142, 0)</defaultLabelColor>
+    <description>bind of karma, slow down pawn movement as long as they touched by the black thread</description>
+	<initialSeverity>1</initialSeverity>
+    <maxSeverity>1</maxSeverity>
+    <isBad>true</isBad>
+    <comps>
+	<li Class="HediffCompProperties_Disappears">
+		<disappearsAfterTicks>600</disappearsAfterTicks>
+        <showRemainingTime>True</showRemainingTime>
+    </li>		
+    </comps>
+    <stages>
+		<li>			
+			<capMods>
+				<li>
+					<capacity>Moving</capacity>
+					<setMax>0.5</setMax>
+				</li>
+			</capMods>
+			<statFactors>
+			</statFactors>
+		</li>
+    </stages>
+	</HediffDef>
+	
+	<HediffDef ParentName="DiseaseBase">
+    <defName>MakaiTechPsy_GD_GaiaEmbrace</defName>
+    <label>blessing of mother earth</label>
+	<defaultLabelColor>(238, 142, 0)</defaultLabelColor>
+    <description>fortified existence</description>
+	<initialSeverity>1</initialSeverity>
+    <maxSeverity>1</maxSeverity>
+    <isBad>true</isBad>
+    <comps>
+	<li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>True</showRemainingTime>
+    </li>		
+    </comps>
+    <stages>
+		<li>			
+			<capMods>
+				<li>
+					<capacity>Moving</capacity>
+					<postFactor>0.9</postFactor>
+				</li>
+			</capMods>
+			<statOffsets>
+				<ArmorRating_Sharp>0.5</ArmorRating_Sharp>
+				<ArmorRating_Blunt>0.5</ArmorRating_Blunt>
+				<ArmorRating_Heat>0.5</ArmorRating_Heat>
+			</statOffsets>
+			<statFactors>
+				<MentalBreakThreshold>0.5</MentalBreakThreshold>
+			</statFactors>
+		</li>
+    </stages>
+	</HediffDef>
+	
+	<HediffDef ParentName="DiseaseBase">
+    <defName>MakaiTechPsy_GD_StillAsAFuckingWater</defName>
+    <label>calm mind</label>
+	<defaultLabelColor>(238, 142, 0)</defaultLabelColor>
+    <description>fortified mentality</description>
+	<initialSeverity>1</initialSeverity>
+    <maxSeverity>1</maxSeverity>
+    <isBad>true</isBad>
+    <comps>
+	<li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>True</showRemainingTime>
+    </li>		
+    </comps>
+    <stages>
+		<li>			
+			<capMods>
+			</capMods>
+			<statOffsets>
+			</statOffsets>
+			<statFactors>
+				<MentalBreakThreshold>0</MentalBreakThreshold>
+			</statFactors>
+		</li>
+    </stages>
+	</HediffDef>
+	
+	
+	
+	
+	
 </Defs>
