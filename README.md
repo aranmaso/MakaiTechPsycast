@@ -4,7 +4,7 @@ Release version of MakaiTech - Psycast on github
 Todo list
 
 Finish all the psycast path
-  - Enlightened One
+  - Enlightened One - Done
   - Frigidstar
   - Flameheart
   - Voidwalker
