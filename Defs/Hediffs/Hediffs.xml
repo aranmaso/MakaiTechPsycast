@@ -217,7 +217,7 @@
     <stages>
 		<li>
 			<statOffsets>
-				<TradePriceImprovement>3</TradePriceImprovement>
+				<TradePriceImprovement>0.5</TradePriceImprovement>
 			</statOffsets>
 		</li>
 	</stages>
@@ -238,7 +238,7 @@
     <stages>
 		<li>
 			<statOffsets>
-				<TradePriceImprovement>0.50</TradePriceImprovement>
+				<TradePriceImprovement>0.25</TradePriceImprovement>
 			</statOffsets>
 		</li>
 	</stages>
